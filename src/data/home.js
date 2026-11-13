@@ -1,10 +1,5 @@
 import { images } from '@/config/images';
-
-export const homeHighlights = [
-  { icon: 'dumbbell', title: 'Get Fit', text: 'Stay Active' },
-  { icon: 'network', title: 'Network', text: '& Connect' },
-  { icon: 'trending-up', title: 'Grow', text: 'Together' },
-];
+import { products } from '@/data/merchandise';
 
 export const route = {
   title: 'Event Route Map',
@@ -19,24 +14,42 @@ export const route = {
 };
 
 export const raceCategoryDetails = {
-  '3k': { name: 'Fun Run', audience: 'Families, students & beginners', reporting: '4:20 AM' },
-  '5k': { name: 'Community Run', audience: 'Fitness enthusiasts', reporting: '4:20 AM' },
-  '10k': { name: 'Professional Run', audience: 'Industry professionals', reporting: '4:00 AM' },
-  '21k': { name: 'Half Marathon', audience: 'Elite marathoners', reporting: '3:30 AM' },
+  '3k': { name: 'Fun Run', audience: 'Families, students & beginners' },
+  '5k': { name: 'Community Run', audience: 'Fitness enthusiasts' },
+  '10k': { name: 'Professional Run', audience: 'Industry professionals' },
+  '21k': { name: 'Half Marathon', audience: 'Elite marathoners' },
 };
 
-export const pointsOfInterest = [
-  { title: 'Financial District', text: 'Hyderabad\'s towering business hub' },
-  { title: 'Commercial Corridor', text: 'Offices and retail along the route' },
-  { title: 'Residential Enclaves', text: 'Gated communities cheering you on' },
-  { title: 'Green Stretch', text: 'Tree-lined roads and open spaces' },
-  { title: 'Lakeside View', text: 'A calm, scenic mid-race section' },
-].map((p, i) => ({ ...p, src: images.home.poi[i] }));
-
-export const infoCards = [
-  { icon: 'droplets', title: 'Hydration Points', text: 'Every 2 km with water and electrolytes' },
-  { icon: 'heart-pulse', title: 'Medical Support', text: 'Ambulances and doctors on the route' },
-  { icon: 'shield', title: 'Safety First', text: 'Closed roads, marshals and volunteers' },
-  { icon: 'utensils', title: 'Runner Amenities', text: 'Baggage, restrooms and refreshments' },
-  { icon: 'info', title: 'Important Info', text: 'Carry your bib and ID on race day' },
+export const homePartners = [
+  { title: 'Powered by & Principal Partners', logos: images.home.partners.principal },
+  { title: 'Builder & Infrastructure Partners', logos: images.home.partners.builders },
+  { title: 'Banking & Financial Partners', logos: images.home.partners.banking },
 ];
+
+const homeProductIds = ['tee-white', 'cap', 'bottle', 'medal', 'bag'];
+export const homeMerchandise = homeProductIds.map((id, index) => {
+  const product = products.find((item) => item.id === id);
+  return { ...product, src: images.home.merch[index] };
+});
+
+export const homeExpoHighlights = [
+  { title: 'Flag off', src: images.home.expoHighlights[0] },
+  { title: 'Builders & developers', src: images.home.expoHighlights[1] },
+  { title: 'Corporate partners', src: images.home.expoHighlights[2] },
+  { title: 'Awards', src: images.home.expoHighlights[3] },
+  { title: 'Food court', src: images.home.expoHighlights[4] },
+];
+
+export const homeOrganizers = [
+  { role: 'Chief Patron', description: 'Leading the vision, inspiring the change.' },
+  { role: 'Event Chairman', description: 'Driving purpose, building connections.' },
+  { role: 'Event Director', description: 'Planning today, transforming tomorrow.' },
+  { role: 'Race Director', description: 'On the track, for an unforgettable race.' },
+  { role: 'Advisory Board', description: 'Guiding the path towards excellence.' },
+  { role: 'Advisory Board', description: 'Guiding the path towards excellence.' },
+].map((person, index) => ({
+  id: `organizer-${index + 1}`,
+  ...person,
+  name: person.role,
+  src: images.home.organizers[index],
+}));

@@ -96,4 +96,6 @@ export const BANKS = [
 
 export const PAYMENT_METHODS = [
   { value: 'upi', title: 'Instant UPI & QR', description: 'Google Pay, PhonePe, Paytm, any UPI app', badge: 'Recommended' },
-  { value: 'card', title: 'Credit / Debit Card', description: 'Visa, Mastercard, R
+  { value: 'card', title: 'Credit / Debit Card', description: 'Visa, Mastercard, RuPay, Amex' },
+  { value: 'netbanking', title: 'Net Banking', description: 'All major Indian banks' },
+];

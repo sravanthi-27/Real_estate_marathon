@@ -15,8 +15,14 @@ export const images = {
   },
   home: {
     hero: p('home', 'hero.png'),
-    routeMap: p('home', 'route-map.png'),
-    poi: seq('home', 'poi', 5),
+    partners: {
+      principal: seq('home', 'principal-partner', 6, 'png'),
+      builders: seq('home', 'builder-partner', 7, 'png'),
+      banking: seq('home', 'banking-partner', 3, 'png'),
+    },
+    merch: seq('home', 'merchandise', 5, 'png'),
+    expoHighlights: seq('home', 'expo-highlight', 5),
+    organizers: seq('home', 'organizer', 6),
   },
   about: {
     hero: p('about', 'hero.jpg'),

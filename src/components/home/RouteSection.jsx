@@ -21,10 +21,10 @@ export default function RouteSection() {
               return (
                 <article key={category.id} className={styles.category}>
                   <span className={styles.categoryName}>{details.name}</span>
-                  <strong className={styles.distance}>{category.km} <small>KM</small></strong>
+                  <strong className={styles.distance}>{category.short.replace('K', '')} <small>KM</small></strong>
                   <p className={styles.audience}>{details.audience}</p>
                   <div className={styles.schedule}>
-                    <span>Reporting: {details.reporting}</span>
+                    <span>Reporting: {category.reporting}</span>
                     <span>Start: {category.start}</span>
                   </div>
                 </article>
@@ -45,10 +45,10 @@ export default function RouteSection() {
           <div className={styles.routeHeading}>
             <div>
               <h2 className="card__title">{route.title}</h2>
-              <p className={styles.subtitle}>Official 21 KM route map</p>
+              <p className={styles.subtitle}>Interactive map · Gachibowli Stadium</p>
             </div>
             <a className={styles.mapLink} href={route.mapUrl} target="_blank" rel="noreferrer">
-              View full route <Icon name="arrow-right" size={13} />
+              View full map <Icon name="arrow-right" size={13} />
             </a>
           </div>
           <div className={styles.routeContent}>
