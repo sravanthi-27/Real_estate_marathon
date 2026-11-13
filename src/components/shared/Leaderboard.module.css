@@ -1,0 +1,4 @@
+.table { width: 100%; border-collapse: collapse; font-size: var(--fs-xs); }
+.table th { text-align: left; color: var(--color-muted); font-weight: var(--fw-semibold); padding: .35rem .3rem; border-bottom: 1px solid var(--color-border); }
+.table td { padding: .5rem .3rem; border-bottom: 1px solid var(--color-surface); }
+.table tr:first-child td { font-weight: var(--fw-semibold); color: var(--color-accent); }

@@ -1,0 +1,5 @@
+.grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.2rem; align-items: start; }
+.map { height: 360px; border-radius: var(--radius-md); }
+.side { display: flex; flex-direction: column; gap: 1.2rem; grid-row: span 2; }
+.chart { grid-column: 1; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .side { grid-row: auto; } }

@@ -1,0 +1,3 @@
+.top { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; align-items: center; }
+.list { font-size: var(--fs-xs); display: flex; flex-direction: column; gap: .35rem; }
+.img { height: 110px; border-radius: var(--radius-md); }

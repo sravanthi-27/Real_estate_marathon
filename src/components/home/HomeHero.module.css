@@ -1,0 +1,108 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+}
+
+.banner {
+  width: 100%;
+}
+
+.banner img {
+  display: block;
+  height: auto;
+}
+
+.registerCard {
+  position: absolute;
+  top: 24%;
+  right: 7.5%;
+  width: 23%;
+  padding: clamp(.55rem, 1.1vw, .9rem);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  color: var(--color-primary-dark);
+  text-align: center;
+}
+
+.priceLabel,
+.participants,
+.medical {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.priceLabel {
+  color: var(--color-muted);
+  font-size: clamp(.45rem, .9vw, .75rem);
+  letter-spacing: .04em;
+}
+
+.price {
+  margin: .1em 0;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.6vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+.participants {
+  margin-bottom: .55rem;
+  color: var(--color-muted);
+  font-size: clamp(.42rem, .75vw, .65rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: .05em;
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  width: 100%;
+  padding: clamp(.35rem, .7vw, .6rem) .4rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: clamp(.5rem, .9vw, .75rem);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.register:hover {
+  filter: brightness(.94);
+}
+
+.medical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .25rem;
+  margin-top: .45rem;
+  color: var(--color-muted);
+  font-size: clamp(.4rem, .65vw, .55rem);
+}
+
+.medical svg {
+  color: var(--color-accent);
+}
+
+@media (max-width: 560px) {
+  .registerCard {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    margin: .75rem 1rem 1rem;
+    padding: 1rem;
+  }
+
+  .priceLabel { font-size: .7rem; }
+  .price { font-size: 2rem; }
+  .participants { font-size: .6rem; }
+  .register { font-size: .75rem; }
+  .medical { font-size: .55rem; }
+}

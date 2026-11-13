@@ -1,0 +1,4 @@
+.wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.reverse .img { order: 2; }
+.img { border-radius: var(--radius-md); }
+@media (max-width: 800px) { .wrap { grid-template-columns: 1fr; } .reverse .img { order: 0; } }

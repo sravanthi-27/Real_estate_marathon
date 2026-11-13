@@ -1,0 +1,5 @@
+.row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.8rem; }
+.person { text-align: center; width: 130px; display: flex; flex-direction: column; }
+.photo { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto .6rem; border: 3px solid var(--color-accent); }
+.person strong { font-family: var(--font-main); font-size: var(--fs-sm); color: var(--color-primary-dark); }
+.person span { font-size: var(--fs-xs); color: var(--color-muted); }

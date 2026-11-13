@@ -1,0 +1,7 @@
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.shirt { height: 160px; background: transparent; }
+.points { margin: .8rem 0; font-size: var(--fs-xs); display: grid; grid-template-columns: 1fr 1fr; gap: .3rem; }
+.min { font-size: var(--fs-xs); font-weight: var(--fw-semibold); color: var(--color-accent); margin-bottom: 1rem; }
+.collection { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; text-align: center; }
+.piece { height: 100px; background: transparent; }
+.collection figcaption { font-size: var(--fs-xs); font-weight: var(--fw-medium); margin-top: .2rem; }

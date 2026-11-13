@@ -1,0 +1,7 @@
+.strip { position: relative; background: var(--color-primary-dark); color: var(--color-white); overflow: hidden; }
+.bg { position: absolute; inset: 0; opacity: .25; }
+.row { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; padding-top: 1.8rem; padding-bottom: 1.8rem; }
+.title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); text-transform: uppercase; max-width: 560px; }
+.title span { color: var(--color-accent); }
+.actions { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.hash { font-family: var(--font-heading); font-size: var(--fs-md); color: var(--color-accent); }

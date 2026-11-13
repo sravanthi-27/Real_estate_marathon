@@ -1,0 +1,6 @@
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; margin-bottom: 1rem; }
+.tier { text-align: center; padding: .8rem .4rem; border-radius: var(--radius-md); display: flex; flex-direction: column; color: var(--color-primary-dark); }
+.tier span { font-size: var(--fs-xs); font-weight: var(--fw-semibold); text-transform: uppercase; }
+.tier strong { font-family: var(--font-heading); font-size: var(--fs-xl); line-height: 1.1; }
+.tier small { font-size: var(--fs-xs); }
+.bronze { background: #f3dcc6; } .silver { background: #e6e8ee; } .gold { background: #fbe9a6; } .platinum { background: #d9e7f7; }

@@ -1,0 +1,127 @@
+# Image checklist
+
+Add your images with EXACTLY these names. Until a file exists, a soft placeholder is shown.
+Paths are defined in `src/config/images.js` (change a name there if you prefer a different file name).
+Re-generate this file any time with `npm run images`.
+
+## public/images/common/
+- logo.png
+- logo-light.png
+- skyline-strip.png
+
+## public/images/home/
+- hero.png
+- route-map.png
+- poi-1.jpg
+- poi-2.jpg
+- poi-3.jpg
+- poi-4.jpg
+- poi-5.jpg
+
+## public/images/about/
+- hero.jpg
+- intro.jpg
+- hyderabad.jpg
+- organizer-1.jpg
+- organizer-2.jpg
+- organizer-3.jpg
+- organizer-4.jpg
+- organizer-5.jpg
+
+## public/images/sponsors/
+- hero.jpg
+- title-1.png
+- powered-1.png
+- powered-2.png
+- powered-3.png
+- powered-4.png
+- platinum-1.png
+- platinum-2.png
+- platinum-3.png
+- platinum-4.png
+- gold-1.png
+- gold-2.png
+- gold-3.png
+- gold-4.png
+- silver-1.png
+- silver-2.png
+- silver-3.png
+- silver-4.png
+- bronze-1.png
+- bronze-2.png
+- bronze-3.png
+- bronze-4.png
+- supporting-1.png
+- supporting-2.png
+- supporting-3.png
+- supporting-4.png
+- media-1.png
+- media-2.png
+- media-3.png
+- media-4.png
+
+## public/images/expo/
+- hero.jpg
+- why-exhibit.jpg
+- zone-1.jpg
+- zone-2.jpg
+- zone-3.jpg
+- zone-4.jpg
+- zone-5.jpg
+- zone-6.jpg
+- gallery-1.jpg
+- gallery-2.jpg
+- gallery-3.jpg
+- gallery-4.jpg
+
+## public/images/merchandise/
+- hero.jpg
+- kit-1.png
+- kit-2.png
+- kit-3.png
+- kit-4.png
+- kit-5.png
+- kit-6.png
+- kit-7.png
+- kit-8.png
+- product-1.png
+- product-2.png
+- product-3.png
+- product-4.png
+- product-5.png
+- product-6.png
+- corporate-front.png
+- corporate-back.png
+- limited-1.png
+- limited-2.png
+- limited-3.png
+- limited-4.png
+- limited-5.png
+- limited-6.png
+
+## public/images/why-participate/
+- hero.jpg
+- run-for-planet.jpg
+- finisher-1.jpg
+- finisher-2.jpg
+- finisher-3.jpg
+- partner-1.png
+- partner-2.png
+- partner-3.png
+- banner.jpg
+- register-qr.png
+
+## public/images/contact/
+- hero.jpg
+- organizer-1.jpg
+- organizer-2.jpg
+- organizer-3.jpg
+- organizer-4.jpg
+- organizer-5.jpg
+- organizer-6.jpg
+- map.png
+- volunteer.jpg
+- support.jpg
+
+## public/images/register/
+- banner.jpg

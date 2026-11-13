@@ -1,0 +1,4 @@
+.wrap { display: flex; gap: .6rem; justify-content: center; }
+.box { background: var(--color-primary-dark); color: var(--color-white); border: 1px solid rgba(255,255,255,.25); border-radius: var(--radius-sm); min-width: 62px; padding: .45rem .4rem; text-align: center; }
+.box strong { display: block; font-family: var(--font-heading); font-size: var(--fs-xl); line-height: 1.1; }
+.box span { font-size: var(--fs-xs); text-transform: uppercase; opacity: .85; }

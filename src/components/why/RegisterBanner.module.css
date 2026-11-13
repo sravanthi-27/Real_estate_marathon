@@ -1,0 +1,9 @@
+.banner { position: relative; background: linear-gradient(100deg, var(--color-green), #0f7a42); color: var(--color-white); overflow: hidden; }
+.bg { position: absolute; inset: 0; opacity: .3; }
+.row { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; padding-top: 2rem; padding-bottom: 2rem; }
+.title { font-size: var(--fs-xl); text-transform: uppercase; }
+.title span { color: #ffd9c2; }
+.sub { font-size: var(--fs-sm); opacity: .95; }
+.hash { font-family: var(--font-heading); margin-top: .4rem; }
+.qr { display: flex; align-items: center; gap: 1rem; }
+.qrImg { width: 84px; height: 84px; background: var(--color-white); border-radius: var(--radius-sm); }

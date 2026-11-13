@@ -1,0 +1,9 @@
+.wrap { display: flex; flex-direction: column; gap: 1rem; }
+.title { text-align: center; font-family: var(--font-main); font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--color-accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .8rem; display: flex; align-items: center; gap: .8rem; }
+.title::before, .title::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
+.row { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+.logo { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+.xl .logo { width: 320px; height: 130px; }
+.lg .logo { width: 170px; height: 80px; }
+.md .logo { width: 140px; height: 64px; }
+.sm .logo { width: 120px; height: 54px; }

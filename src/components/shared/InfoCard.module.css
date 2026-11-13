@@ -1,0 +1,5 @@
+.list { display: flex; flex-direction: column; gap: .45rem; }
+.bullet { display: flex; gap: .5rem; align-items: flex-start; font-size: var(--fs-xs); opacity: .95; }
+.bullet svg { flex: none; color: var(--color-accent); margin-top: 3px; }
+.row { display: flex; justify-content: space-between; gap: 1rem; font-size: var(--fs-xs); border-bottom: 1px dashed rgba(127,127,160,.3); padding-bottom: .35rem; }
+.row span { opacity: .8; }

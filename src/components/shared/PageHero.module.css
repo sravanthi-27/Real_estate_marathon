@@ -1,0 +1,10 @@
+.hero { position: relative; color: var(--color-white); background: linear-gradient(120deg, var(--color-primary-dark), var(--color-primary)); overflow: hidden; }
+.bg { position: absolute; inset: 0; opacity: .35; }
+.inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-top: 3.5rem; padding-bottom: 3.5rem; min-height: 280px; }
+.text { max-width: 640px; }
+.eyebrow { font-size: var(--fs-sm); font-weight: var(--fw-semibold); letter-spacing: .15em; text-transform: uppercase; opacity: .9; }
+.title { font-size: var(--fs-3xl); font-weight: var(--fw-bold); text-transform: uppercase; line-height: 1.05; }
+.title span { color: var(--color-accent); }
+.sub { margin-top: .8rem; font-size: var(--fs-md); opacity: .92; }
+.side { flex: none; }
+@media (max-width: 800px) { .inner { flex-direction: column; align-items: flex-start; } }

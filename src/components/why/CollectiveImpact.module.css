@@ -1,0 +1,5 @@
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.item { background: var(--color-green-soft); border-radius: var(--radius-md); padding: .8rem; text-align: center; display: flex; flex-direction: column; }
+.item strong { font-family: var(--font-heading); font-size: var(--fs-xl); color: var(--color-green); line-height: 1.1; }
+.item span { font-size: var(--fs-xs); color: var(--color-muted); }
+.note { text-align: center; margin-top: .8rem; font-size: var(--fs-xs); font-weight: var(--fw-semibold); color: var(--color-green); }
