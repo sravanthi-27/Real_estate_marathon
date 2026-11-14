@@ -11,8 +11,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div>
-          <Img src={images.common.logoLight} alt={SITE.name} contain style={{ width: 130, height: 48, background: 'transparent' }} />
-          <p className={styles.about}>{SITE.description}</p>
+          <Img src={images.common.logo} alt={SITE.name} contain className={styles.logo} />
+          <p className={styles.about}>
+            Unifying India&apos;s leading developers, channel partners, associates and residents through purposeful community wellness.
+          </p>
         </div>
         <div className={styles.cols}>
           {FOOTER_COLUMNS.map((col, i) => (

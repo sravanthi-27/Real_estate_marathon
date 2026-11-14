@@ -1,5 +1,5 @@
 .row { display: flex; }
-.input { flex: 1; min-width: 0; padding: .55rem .7rem; border: 0; border-radius: var(--radius-sm) 0 0 var(--radius-sm); font-size: var(--fs-xs); }
-.btn { background: var(--color-accent); color: var(--color-white); padding: 0 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: var(--fs-xs); font-weight: var(--fw-semibold); }
-.ok { font-size: var(--fs-xs); color: #7be3a6; margin-top: .4rem; }
-.err { font-size: var(--fs-xs); color: #ffb4ab; margin-top: .4rem; }
+.input { flex: 1; min-width: 0; padding: .38rem .5rem; border: 1px solid #dfe3eb; border-radius: 3px 0 0 3px; font-size: .54rem; }
+.btn { background: var(--color-accent); color: var(--color-white); padding: 0 .6rem; border-radius: 0 3px 3px 0; font-size: .52rem; font-weight: var(--fw-semibold); text-transform: uppercase; }
+.ok { font-size: .56rem; color: #21834a; margin-top: .35rem; }
+.err { font-size: .56rem; color: #b42318; margin-top: .35rem; }

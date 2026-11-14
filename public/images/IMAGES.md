@@ -4,45 +4,45 @@ Add your images with EXACTLY these names. Until a file exists, a soft placeholde
 Paths are defined in `src/config/images.js` (change a name there if you prefer a different file name).
 Re-generate this file any time with `npm run images`.
 
-## public/images/common/
+## public/images/
 - logo.png
-- logo-light.png
+
+## public/images/common/
 - skyline-strip.png
 
 ## public/images/home/
 - hero.png
-- principal-partner-1.png
-- principal-partner-2.png
-- principal-partner-3.png
-- principal-partner-4.png
-- principal-partner-5.png
-- principal-partner-6.png
-- builder-partner-1.png
-- builder-partner-2.png
-- builder-partner-3.png
-- builder-partner-4.png
-- builder-partner-5.png
-- builder-partner-6.png
-- builder-partner-7.png
-- banking-partner-1.png
-- banking-partner-2.png
-- banking-partner-3.png
-- merchandise-1.png
-- merchandise-2.png
-- merchandise-3.png
-- merchandise-4.png
-- merchandise-5.png
-- expo-highlight-1.jpg
-- expo-highlight-2.jpg
-- expo-highlight-3.jpg
-- expo-highlight-4.jpg
-- expo-highlight-5.jpg
-- organizer-1.jpg
-- organizer-2.jpg
-- organizer-3.jpg
-- organizer-4.jpg
-- organizer-5.jpg
-- organizer-6.jpg
+
+## public/images/home/event partners/
+- c48112dc50d188b694e219662b9261ca974898a2 (1).png
+- a0efaa5f1c376dab6e7d6a36b82bf4e004c26cce (1).png
+- 1cb104a05e3e6b7872b7734493b41e7515913eb1 (1).png
+- f54a2e398062cc0c3568d3ce182d16319113a785 (1).png
+- 462b1e42ff91a38a40ea8ac2fe2ae89153c086bc (1).png
+- 73b8694f6ee8d71ddbbaaa2fb938d770b2a80108 (1).png
+- 539364c4be9760d9b4d3457ccd7c2a75b3f448d5 (1).png
+- 8ffba54bb570756b4d011c1d14cf335d837ba14c (1).png
+- 87ceab295cdaa7200cf3955296667e89998fad5f (1).png
+- 93841153dff5f308229e567c3268a9c2b5e306ed (1).png
+- 149c21435d9ec752a7792eaf0d516ed2ac50f72b (1).png
+- ad846d443d32c0a43c79df313921bd93bc301091 (1).png
+- 6923490c2d9188e738e071d330067aa17cfbaae5 (1).png
+- f81f0eadce2dbd06f2072a98ea0a3f0cb284f023 (1).png
+
+## public/images/home/real-estate-marathon-kits/kits/merchandise/
+- 01_official-t-shirt.png
+- 02_running-cap.png
+- 04_water-bottle.png
+- 05_medal-replica.png
+- 03_sports-bag.png
+
+## public/images/home/community/
+- 237cf77f27482a14f79343209cd6e28953684b0a.jpg
+- 6267e4a0bcb5661afb74429bc72fecc48b75d115.jpg
+- 124b07233952195363169b49204bae4e1329190d.jpg
+- b98db517f26b182b0fd78283b87240d4ee1bbd77.jpg
+- 7a3f2fcd2b3977e57e2c8439708dadd7805a37df.jpg
+- 124b07233952195363169b49204bae4e1329190d (1).jpg
 
 ## public/images/about/
 - hero.jpg

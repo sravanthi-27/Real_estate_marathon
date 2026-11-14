@@ -24,8 +24,8 @@ export const CONTACT = {
 };
 
 export const SOCIALS = [
-  { label: 'Instagram', icon: 'instagram', href: '#' },
   { label: 'Facebook', icon: 'facebook', href: '#' },
+  { label: 'Instagram', icon: 'instagram', href: '#' },
   { label: 'LinkedIn', icon: 'linkedin', href: '#' },
   { label: 'YouTube', icon: 'youtube', href: '#' },
 ];

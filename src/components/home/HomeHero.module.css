@@ -6,6 +6,7 @@
 
 .banner {
   width: 100%;
+  clip-path: inset(0 0 0 5px);
 }
 
 .banner img {

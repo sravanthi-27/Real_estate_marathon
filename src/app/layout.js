@@ -16,9 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${oswald.variable}`}>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <div className="appShell">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

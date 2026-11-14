@@ -23,7 +23,6 @@ export const raceCategoryDetails = {
 export const homePartners = [
   { title: 'Powered by & Principal Partners', logos: images.home.partners.principal },
   { title: 'Builder & Infrastructure Partners', logos: images.home.partners.builders },
-  { title: 'Banking & Financial Partners', logos: images.home.partners.banking },
 ];
 
 const homeProductIds = ['tee-white', 'cap', 'bottle', 'medal', 'bag'];

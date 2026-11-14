@@ -19,7 +19,7 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={cn('container', styles.inner)}>
         <Link href="/" className={styles.logo} aria-label={`${SITE.name} home`}>
-          <Img src={images.common.logo} alt={SITE.name} contain style={{ width: 120, height: 44, background: 'transparent' }} />
+          <Img src={images.common.logo} alt={SITE.name} contain className={styles.logoImage} />
         </Link>
         <nav className={cn(styles.nav, open && styles.open)} aria-label="Main">
           {NAV_LINKS.map((l) => (

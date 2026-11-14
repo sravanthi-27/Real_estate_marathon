@@ -16,7 +16,10 @@ const files = [...new Set(flatten(images))];
 
 const byFolder = {};
 for (const f of files) {
-  const [, , folder, name] = f.split('/');
+  const [, root, ...parts] = f.split('/');
+  if (root !== 'images' || parts.length === 0) throw new Error(`Invalid image path in src/config/images.js: ${f}`);
+  const name = parts.pop();
+  const folder = parts.join('/');
   (byFolder[folder] ||= []).push(name);
 }
 
@@ -24,8 +27,8 @@ let md = '# Image checklist\n\nAdd your images with EXACTLY these names. Until a
 for (const [folder, names] of Object.entries(byFolder)) {
   const dir = join(root, 'public/images', folder);
   mkdirSync(dir, { recursive: true });
-  if (!existsSync(join(dir, '.gitkeep'))) writeFileSync(join(dir, '.gitkeep'), '');
-  md += `\n## public/images/${folder}/\n${names.map((n) => `- ${n}`).join('\n')}\n`;
+  if (folder && !existsSync(join(dir, '.gitkeep'))) writeFileSync(join(dir, '.gitkeep'), '');
+  md += `\n## public/images/${folder ? `${folder}/` : ''}\n${names.map((n) => `- ${n}`).join('\n')}\n`;
 }
 writeFileSync(join(root, 'public/images/IMAGES.md'), md);
 console.log(`Created ${Object.keys(byFolder).length} folders, ${files.length} image slots. See public/images/IMAGES.md`);
