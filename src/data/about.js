@@ -20,11 +20,11 @@ export const visionMission = {
 };
 
 export const aboutStats = [
-  { value: '10000+', label: 'Participants' },
-  { value: '250+', label: 'Real Estate Companies' },
-  { value: '100+', label: 'Exhibitors' },
-  { value: '50', label: 'Speakers' },
-  { value: 'One', label: 'Stronger Community' },
+  { value: '10000+', label: 'Participants', icon: 'users' },
+  { value: '250+', label: 'Real Estate Companies', icon: 'building' },
+  { value: '100+', label: 'Exhibitors', icon: 'store' },
+  { value: '50', label: 'Speakers', icon: 'handshake' },
+  { value: 'One', label: 'Stronger Community', icon: 'heart' },
 ];
 
 export const whyThisMarathon = [
@@ -48,5 +48,11 @@ export const whoCanParticipate = {
 
 export const organizers = {
   title: 'Organized by Industry, for the Community',
-  people: ['Organizer 1', 'Organizer 2', 'Organizer 3', 'Organizer 4', 'Organizer 5'].map((name, i) => ({ name, role: 'Committee Member', src: images.about.organizers[i] })),
+  people: [
+    { name: 'Chief Patron', role: 'Leading the vision, inspiring the change.' },
+    { name: 'Event Chairman', role: 'Driving purpose, building connections.' },
+    { name: 'Event Director', role: 'Planning today, transforming tomorrow.' },
+    { name: 'Race Director', role: 'On the track, for an unforgettable race.' },
+    { name: 'Advisory Board', role: 'Guiding the path towards excellence.' },
+  ].map((person, i) => ({ ...person, src: images.about.organizers[i] })),
 };

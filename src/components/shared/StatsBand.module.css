@@ -1,7 +1,11 @@
 .band { background: var(--color-primary); color: var(--color-white); padding: 1.8rem 0; }
+.withIcons { background: var(--color-primary-dark); padding: 1.15rem 0; }
 .light { background: var(--color-primary-dark); }
 .row { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 1rem; text-align: center; }
 .item + .item { border-left: 1px solid rgba(255,255,255,.2); }
+.icon { display: block; margin: 0 auto .2rem; color: var(--color-accent); }
 .item strong { display: block; font-family: var(--font-heading); font-size: var(--fs-2xl); line-height: 1.1; }
 .item span { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
+.withIcons .item strong { font-size: clamp(1.2rem, 2.5vw, 2rem); }
+.withIcons .item span { font-size: clamp(.45rem, .7vw, .62rem); letter-spacing: .06em; }
 @media (max-width: 700px) { .row { grid-template-columns: repeat(2, 1fr); } .item + .item { border: 0; } }

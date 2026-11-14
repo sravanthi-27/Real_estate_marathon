@@ -1,0 +1,328 @@
+.page {
+  background: var(--color-surface);
+}
+
+.hero {
+  width: 100%;
+  aspect-ratio: 2.67;
+}
+
+.hero img {
+  object-fit: cover;
+}
+
+.mapSection,
+.detailsSection,
+.supportSection {
+  padding: .65rem;
+}
+
+.mapPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(180px, .7fr);
+  gap: .65rem;
+  padding: .65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+}
+
+.mapColumn h1,
+.routeDetails h2,
+.pointsPanel > h2 {
+  margin-bottom: .45rem;
+  color: var(--color-primary-dark);
+  font-size: .82rem;
+  text-transform: uppercase;
+}
+
+.mapFrame {
+  position: relative;
+  height: clamp(210px, 30vw, 350px);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: #e8eee8;
+}
+
+.mapFrame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.startBadge {
+  position: absolute;
+  bottom: .45rem;
+  left: .45rem;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .35rem .5rem;
+  border-radius: 4px;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  font-size: .55rem;
+  font-weight: var(--fw-semibold);
+}
+
+.startBadge svg {
+  color: var(--color-accent);
+}
+
+.disclaimer,
+.elevation > p {
+  margin-top: .35rem;
+  color: var(--color-muted);
+  font-size: .52rem;
+  line-height: 1.4;
+}
+
+.routeDetails {
+  display: flex;
+  flex-direction: column;
+  padding: .65rem;
+  border-radius: 4px;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.routeDetails h2 {
+  color: var(--color-white);
+}
+
+.routeDetails ul {
+  display: grid;
+  gap: .55rem;
+}
+
+.routeDetails li {
+  display: flex;
+  align-items: flex-start;
+  gap: .35rem;
+  font-size: .55rem;
+  line-height: 1.4;
+}
+
+.routeDetails li svg {
+  flex: none;
+  margin-top: 1px;
+  color: var(--color-accent);
+}
+
+.mapLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  margin-top: auto;
+  padding: .45rem;
+  border-radius: 4px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: .52rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: minmax(180px, .75fr) minmax(0, 2.25fr);
+  gap: .65rem;
+}
+
+.elevation,
+.pointsPanel {
+  min-width: 0;
+  padding: .65rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.elevation {
+  display: flex;
+  flex-direction: column;
+}
+
+.elevation h2 {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  margin-bottom: .5rem;
+  color: var(--color-white);
+  font-size: .68rem;
+  text-transform: uppercase;
+}
+
+.elevation h2 svg {
+  color: var(--color-accent);
+}
+
+.profilePending {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: .6rem;
+  min-height: 100px;
+}
+
+.profilePending > span {
+  display: flex;
+  height: 38px;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: .25rem;
+  padding: 0 .4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .24);
+}
+
+.profilePending i {
+  width: 14%;
+  height: 35%;
+  border-radius: 2px 2px 0 0;
+  background: rgba(255, 107, 26, .45);
+}
+
+.profilePending i:nth-child(2),
+.profilePending i:nth-child(5) { height: 55%; }
+.profilePending i:nth-child(3) { height: 75%; }
+.profilePending i:nth-child(4) { height: 90%; }
+
+.profilePending p {
+  color: rgba(255, 255, 255, .75);
+  font-size: .48rem;
+  line-height: 1.4;
+}
+
+.pointsPanel > h2 {
+  color: var(--color-white);
+}
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: .4rem;
+}
+
+.point {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .07);
+}
+
+.pointImage {
+  height: clamp(55px, 7vw, 90px);
+}
+
+.pointImage img {
+  object-fit: cover;
+}
+
+.point > div {
+  padding: .3rem;
+}
+
+.point h3 {
+  color: var(--color-white);
+  font-size: .48rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.point p {
+  margin-top: .12rem;
+  color: rgba(255, 255, 255, .72);
+  font-size: .42rem;
+  line-height: 1.3;
+}
+
+.supportGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .5rem;
+}
+
+.supportCard {
+  display: flex;
+  min-width: 0;
+  gap: .45rem;
+  padding: .6rem;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.supportCard > span {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 107, 26, .16);
+  color: var(--color-accent);
+}
+
+.supportCard h2 {
+  margin-bottom: .2rem;
+  font-size: .55rem;
+  text-transform: uppercase;
+}
+
+.supportCard p {
+  color: rgba(255, 255, 255, .75);
+  font-size: .46rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+  .mapPanel {
+    grid-template-columns: minmax(0, 1fr) minmax(150px, .7fr);
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pointsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .supportGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    aspect-ratio: 1.8;
+  }
+
+  .mapPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .mapFrame {
+    height: 240px;
+  }
+
+  .routeDetails ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .pointsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .supportGrid {
+    grid-template-columns: 1fr;
+  }
+}

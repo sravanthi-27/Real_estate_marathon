@@ -1,50 +1,60 @@
-import PageHero from '@/components/shared/PageHero';
-import StatsBand from '@/components/shared/StatsBand';
 import CtaStrip from '@/components/shared/CtaStrip';
-import InfoCard from '@/components/shared/InfoCard';
 import Leaderboard from '@/components/shared/Leaderboard';
 import EnquiryForm from '@/components/shared/EnquiryForm';
-import Button from '@/components/ui/Button';
 import KitCarousel from '@/components/merchandise/KitCarousel';
 import KitTiers from '@/components/merchandise/KitTiers';
 import MerchStore from '@/components/merchandise/MerchStore';
 import { CorporateKits, LimitedEdition } from '@/components/merchandise/CorporateAndLimited';
-import { communityChallenge, howItWorks, merchStats, registerCommunityFields } from '@/data/merchandise';
+import { communityChallenge, howItWorks, registerCommunityFields } from '@/data/merchandise';
 import { images } from '@/config/images';
+import Img from '@/components/ui/Img';
+import styles from './MerchandisePage.module.css';
 
 export const metadata = { title: 'Merchandise & Community Kits' };
 
 export default function MerchandisePage() {
   return (
-    <>
-      <PageHero title="Run in your" highlight="community colors" subtitle="Official marathon kits powered by Hyderabad's leading real estate communities." image={images.merchandise.hero}>
-        <div style={{ display: 'flex', gap: '.8rem', marginTop: '1.2rem', flexWrap: 'wrap' }}>
-          <Button href="#store">Order your kit</Button>
-          <Button href="#kit-sponsor-form" variant="ghost">Sponsor community kits</Button>
-        </div>
-      </PageHero>
-      <StatsBand items={merchStats} />
-      <KitCarousel />
-      <section className="section">
-        <div className="container layout-3">
-          <InfoCard title={howItWorks.title} items={howItWorks.steps} />
-          <Leaderboard title={communityChallenge.title} columns={communityChallenge.columns} rows={communityChallenge.rows} />
-          <EnquiryForm id="community-form" type="community_register" title="Don't see your community?" fields={registerCommunityFields} submitLabel="Register my community" successMessage="Thank you! We will set up your community kit shortly." />
+    <div className={styles.page}>
+      <div className={styles.hero}>
+        <Img src={images.merchandise.hero} alt="Run in your community colors — Real Estate Marathon Hyderabad" className={styles.heroImage} />
+        <a className={styles.orderLink} href="#store" aria-label="Order your kit" />
+        <a className={styles.sponsorLink} href="#kit-sponsor-form" aria-label="Sponsor community kits" />
+      </div>
+      <KitCarousel className={styles.kitSection} />
+      <section className={`section ${styles.infoSection}`}>
+        <div className={`container ${styles.infoGrid}`}>
+          <article className={`card ${styles.stepsCard}`}>
+            <h2 className={styles.heading}>{howItWorks.title}</h2>
+            <div className={styles.steps}>
+              {howItWorks.steps.map((step, i) => (
+                <div className={styles.step} key={step}>
+                  <Img src={images.merchandise.howItWorks[i]} alt="" contain className={styles.stepImage} />
+                  <span>{step}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+          <div className={styles.challenge}>
+            <Leaderboard title={communityChallenge.title} columns={communityChallenge.columns} rows={communityChallenge.rows} />
+          </div>
+          <div className={styles.register}>
+            <EnquiryForm id="community-form" type="community_register" title="Don't see your community?" fields={registerCommunityFields} submitLabel="Register my community" successMessage="Thank you! We will set up your community kit shortly." />
+          </div>
         </div>
       </section>
-      <section className="section section--white">
-        <div className="container layout-2">
+      <section className={`section section--white ${styles.storeSection}`}>
+        <div className={`container ${styles.storeGrid}`}>
           <KitTiers />
           <div id="store"><MerchStore /></div>
         </div>
       </section>
-      <section className="section">
-        <div className="container layout-2">
+      <section className={`section ${styles.lastSection}`}>
+        <div className={`container ${styles.lastGrid}`}>
           <CorporateKits />
           <LimitedEdition />
         </div>
       </section>
       <CtaStrip />
-    </>
+    </div>
   );
 }

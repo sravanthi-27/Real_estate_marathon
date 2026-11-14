@@ -5,7 +5,7 @@ import styles from './ExpoZones.module.css';
 
 export default function ExpoZones() {
   return (
-    <section className="section">
+    <section className={`section ${styles.section}`}>
       <div className="container">
         <SectionTitle>Expo Zones</SectionTitle>
         <div className={styles.grid}>

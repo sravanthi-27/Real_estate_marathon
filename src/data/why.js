@@ -27,15 +27,17 @@ export const finisherReceives = {
   title: 'Every Finisher Receives',
   items: [
     { label: 'E-Certificate', src: images.why.finisher[0] },
-    { label: 'Tree Plantation Proof', src: images.why.finisher[1] },
+    { label: 'Tree Plantation Certificate', src: images.why.finisher[1] },
     { label: 'Your Tree Location', src: images.why.finisher[2] },
+    { label: 'Finisher Medal', src: images.why.finisher[3] },
   ],
 };
 
 export const plantationPartners = {
   title: 'Our Tree Plantation Partners',
-  text: 'We work with trusted environmental groups to plant, protect and track every tree.',
-  partners: ['Partner 1', 'Partner 2', 'Partner 3'].map((name, i) => ({ name, src: images.why.partners[i] })),
+  text: 'Every participating community can help make the city greener.',
+  image: images.why.plantation,
+  steps: ['Choose native trees for local conditions', 'Plant and care for each sapling', 'Track growth and long-term impact'],
 };
 
 export const greenChallenge = {

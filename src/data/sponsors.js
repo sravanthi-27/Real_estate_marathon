@@ -1,6 +1,6 @@
 import { images } from '@/config/images';
 
-const logos = (arr, label) => arr.map((src, i) => ({ src, name: `${label} ${i + 1}` }));
+const logos = (arr, names) => arr.map((src, i) => ({ src, name: names[i] }));
 
 export const sponsorStats = [
   { value: '10000+', label: 'Participants' },
@@ -11,14 +11,14 @@ export const sponsorStats = [
 ];
 
 export const sponsorTiers = [
-  { key: 'title', title: 'Title Sponsor', size: 'xl', logos: logos(images.sponsors.title, 'Title Sponsor') },
-  { key: 'powered', title: 'Powered By Sponsors', size: 'lg', logos: logos(images.sponsors.powered, 'Powered By') },
-  { key: 'platinum', title: 'Platinum Sponsors', size: 'md', logos: logos(images.sponsors.platinum, 'Platinum') },
-  { key: 'gold', title: 'Gold Sponsors', size: 'md', logos: logos(images.sponsors.gold, 'Gold') },
-  { key: 'silver', title: 'Silver Sponsors', size: 'md', logos: logos(images.sponsors.silver, 'Silver') },
-  { key: 'bronze', title: 'Bronze Sponsors', size: 'sm', logos: logos(images.sponsors.bronze, 'Bronze') },
-  { key: 'supporting', title: 'Supporting Partners', size: 'sm', logos: logos(images.sponsors.supporting, 'Supporting') },
-  { key: 'media', title: 'Media Partners', size: 'sm', logos: logos(images.sponsors.media, 'Media') },
+  { key: 'title', title: 'Title Sponsors', size: 'xl', logos: logos(images.sponsors.title, ['Prestige Group']) },
+  { key: 'powered', title: 'Powered By Sponsors', size: 'lg', logos: logos(images.sponsors.powered, ['My Home Group', 'Rajapushpa Properties', 'Ramky Estates', 'Sumadhura Group', 'Urbanrise', 'Vasavi Group']) },
+  { key: 'platinum', title: 'Platinum Sponsors', size: 'md', logos: logos(images.sponsors.platinum, ['APR Group', 'SAS Infra', 'Anuhar Homes', 'EIPL', 'LIC Housing Finance']) },
+  { key: 'gold', title: 'Gold Sponsors', size: 'md', logos: logos(images.sponsors.gold, ['PNB Housing Finance', 'Bank of Baroda', 'Candeur', 'Jain Housing']) },
+  { key: 'silver', title: 'Silver Sponsors', size: 'md', logos: logos(images.sponsors.silver, ['Cybercity', 'Modi Builders', 'Indis', 'Sreenidhi', 'Holistic Living Spaces']) },
+  { key: 'bronze', title: 'Bronze Sponsors', size: 'sm', logos: logos(images.sponsors.bronze, ['Ashoka Developers', 'NSL Infratech', 'Vertex', 'Primark', 'SV Infra']) },
+  { key: 'supporting', title: 'Supporting Partners', size: 'sm', logos: logos(images.sponsors.supporting, ['CREDAI', 'NAREDCO', 'TS RERA', 'GHMC', 'HMDA']) },
+  { key: 'media', title: 'Media Partners', size: 'sm', logos: logos(images.sponsors.media, ['TV9', 'Hybiz TV', 'CityLight', 'Telangana Today']) },
 ];
 
 export const partnerWithPurpose = {

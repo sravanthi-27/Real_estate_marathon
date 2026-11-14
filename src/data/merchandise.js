@@ -6,8 +6,16 @@ export const merchStats = [
   { value: '100+', label: 'Real Estate Companies' },
 ];
 
-export const communityKits = ['Community 1', 'Community 2', 'Community 3', 'Community 4', 'Community 5', 'Community 6', 'Community 7', 'Community 8']
-  .map((name, i) => ({ name, runners: 40 + i * 12, src: images.merchandise.kits[i] }));
+export const communityKits = [
+  'Aparna Constructions',
+  'My Home Communities',
+  'Prestige Group',
+  'Rajapushpa Properties',
+  'Ramky Estates',
+  'Sumadhura Group',
+  'Vasavi Group',
+  'Brigade Group',
+].map((name, i) => ({ name, src: images.merchandise.kits[i] }));
 
 export const howItWorks = {
   title: 'How It Works',
@@ -46,12 +54,12 @@ export const kitSponsorFields = [
 
 /* PLACEHOLDER prices (INR) - edit before launch */
 export const products = [
-  { id: 'tee-white', name: 'Winners Event Tee', price: 599, src: images.merchandise.products[0] },
+  { id: 'tee-white', name: 'Official Running T-shirt', price: 599, src: images.merchandise.products[0] },
   { id: 'cap', name: 'Running Cap', price: 349, src: images.merchandise.products[1] },
-  { id: 'tee-sports', name: 'Sports Dri-Fit Tee', price: 699, src: images.merchandise.products[2] },
+  { id: 'bag', name: 'Sports Bag', price: 899, src: images.merchandise.products[2] },
   { id: 'bottle', name: 'Insulated Bottle', price: 499, src: images.merchandise.products[3] },
-  { id: 'medal', name: 'Finisher Medal Frame', price: 799, src: images.merchandise.products[4] },
-  { id: 'bag', name: 'Gear Bag', price: 899, src: images.merchandise.products[5] },
+  { id: 'medal', name: 'Medal Replica', price: 799, src: images.merchandise.products[4] },
+  { id: 'mug', name: 'Coffee Mug', price: 399, src: images.merchandise.products[5] },
 ];
 
 export const corporateKits = {
@@ -63,7 +71,7 @@ export const corporateKits = {
 
 export const limitedEdition = {
   title: 'Limited Edition Hyderabad Collection',
-  items: ['Charminar', 'Financial District', 'Hussain Sagar', 'Golconda', 'Hi-Tech City', 'Telangana Rising'].map((name, i) => ({ name, src: images.merchandise.limited[i] })),
+  items: ['Charminar', 'Financial District', 'Tank Bund Buddha', 'Durgam Cheruvu Bridge', 'Telangana Rising 2047'].map((name, i) => ({ name, src: images.merchandise.limited[i] })),
 };
 
 export const orderFormFields = [

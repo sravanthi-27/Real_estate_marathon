@@ -1,9 +1,16 @@
-.wrap { display: flex; flex-direction: column; gap: 1rem; }
-.title { text-align: center; font-family: var(--font-main); font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--color-accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .8rem; display: flex; align-items: center; gap: .8rem; }
+.wrap { display: flex; flex-direction: column; gap: .42rem; }
+.wrap > section { padding: .35rem .55rem; border-radius: 5px; box-shadow: none; }
+.title { text-align: center; font-family: var(--font-main); font-size: .55rem; font-weight: var(--fw-bold); color: var(--color-primary-dark); text-transform: uppercase; letter-spacing: .045em; margin-bottom: .25rem; display: flex; align-items: center; gap: .45rem; }
 .title::before, .title::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
-.row { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
-.logo { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
-.xl .logo { width: 320px; height: 130px; }
-.lg .logo { width: 170px; height: 80px; }
-.md .logo { width: 140px; height: 64px; }
-.sm .logo { width: 120px; height: 54px; }
+.row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: .25rem .4rem; }
+.logo { background: transparent; border: 0; border-radius: 0; }
+.xl .logo { width: min(100%, 130px); height: 52px; }
+.lg .logo { width: clamp(58px, 12%, 92px); height: 36px; }
+.md .logo { width: clamp(50px, 15%, 82px); height: 32px; }
+.sm .logo { width: clamp(44px, 14%, 74px); height: 28px; }
+
+@media (max-width: 560px) {
+  .xl .logo { height: 58px; }
+  .lg .logo { width: 27%; height: 40px; }
+  .md .logo, .sm .logo { width: 28%; height: 38px; }
+}

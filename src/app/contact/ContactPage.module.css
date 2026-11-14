@@ -1,0 +1,156 @@
+.page {
+  background: #f5f7fa;
+}
+
+.hero {
+  width: 100%;
+  aspect-ratio: 1916 / 821;
+}
+
+.hero img {
+  object-fit: cover;
+}
+
+.quickSection {
+  padding: .5rem 0;
+  background: var(--color-primary-dark);
+}
+
+.quickContainer > div {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .45rem;
+}
+
+.quickContainer > div > div {
+  padding: .55rem;
+  border-radius: var(--radius-sm);
+}
+
+.quickContainer > div > div > span:first-child {
+  width: 30px;
+  height: 30px;
+}
+
+.section {
+  padding: .8rem 0;
+}
+
+.section > div > div:first-child {
+  margin-bottom: .65rem;
+}
+
+.section h2 {
+  font-size: var(--fs-md);
+}
+
+.section :global(.section-title) {
+  margin-bottom: .65rem;
+}
+
+.section :global(.section-title h2) {
+  font-size: var(--fs-md);
+}
+
+.section :global(.section-title p) {
+  font-size: var(--fs-xs);
+}
+
+.helpContainer > div:last-child {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .5rem;
+}
+
+.helpContainer > div:last-child article {
+  padding: .55rem;
+}
+
+.helpContainer > div:last-child article h3 {
+  font-size: .65rem;
+}
+
+.section :global(.container) > div:first-child {
+  margin-bottom: .65rem;
+}
+
+.organizers {
+  gap: .9rem;
+}
+
+.organizers > div {
+  width: 110px;
+}
+
+.organizers img {
+  width: 78px;
+  height: 78px;
+  margin-bottom: .35rem;
+}
+
+.organizers strong {
+  font-size: var(--fs-xs);
+}
+
+.organizers span {
+  font-size: .62rem;
+}
+
+.departmentContainer > div {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.departmentContainer > div > div {
+  padding: .55rem;
+}
+
+.departmentContainer > div > div > span:first-child {
+  width: 30px;
+  height: 30px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: .65rem;
+  align-items: start;
+}
+
+.contactGrid > :global(.card),
+.contactGrid > :global(form),
+.contactGrid > div {
+  padding: .8rem;
+}
+
+.contactGrid :global(.card__title) {
+  margin-bottom: .55rem;
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 900px) {
+  .departmentContainer > div {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quickContainer > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .helpContainer > div:last-child {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .departmentContainer > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    aspect-ratio: 1.65;
+  }
+}

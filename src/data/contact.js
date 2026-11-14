@@ -21,18 +21,22 @@ export const eventSnapshot = {
 };
 
 export const helpTopics = [
-  { icon: 'ticket', title: 'Participant Registration' },
-  { icon: 'handshake', title: 'Sponsorship Opportunities' },
-  { icon: 'store', title: 'Expo Stall Booking' },
-  { icon: 'users', title: 'Community Participation' },
-  { icon: 'shirt', title: 'Merchandise Orders' },
-  { icon: 'tree', title: 'Plantation Partnerships' },
-  { icon: 'megaphone', title: 'Media & Press' },
-  { icon: 'message', title: 'General Queries' },
+  { title: 'Participant Registration', image: images.contact.serviceIcons.participantRegistration },
+  { title: 'Sponsorship Opportunities', image: images.contact.serviceIcons.sponsorPartnership },
+  { title: 'Expo Stall Booking', image: images.contact.serviceIcons.expoStallBooking },
+  { title: 'Community Registration', image: images.contact.serviceIcons.communityRegistration },
+  { title: 'Merchandise Orders', image: images.contact.serviceIcons.merchandiseOrders },
+  { title: 'Emergency Support', image: images.contact.serviceIcons.emergencySupport },
+  { title: 'Media Partnership', image: images.contact.serviceIcons.mediaPartnership },
+  { title: 'Volunteer Opportunities', image: images.contact.serviceIcons.volunteers },
 ];
 
-export const organizers = ['Organizer 1', 'Organizer 2', 'Organizer 3', 'Organizer 4', 'Organizer 5', 'Organizer 6']
-  .map((name, i) => ({ name, role: 'Committee Member', src: images.contact.organizers[i] }));
+export const organizers = images.contact.organizers.map((src, i) => ({
+  id: `organizer-${i + 1}`,
+  name: `Event Team ${i + 1}`,
+  role: 'Organizing Committee',
+  src,
+}));
 
 export const departments = [
   { icon: 'ticket', title: 'Participant Support', value: CONTACT.email },

@@ -1,3 +1,4 @@
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; text-align: center; }
-.img { height: 110px; border-radius: var(--radius-sm); }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .45rem; text-align: center; }
+.img { height: 95px; border-radius: var(--radius-sm); background: transparent; }
 .grid figcaption { font-size: var(--fs-xs); font-weight: var(--fw-medium); margin-top: .3rem; }
+@media (max-width: 520px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

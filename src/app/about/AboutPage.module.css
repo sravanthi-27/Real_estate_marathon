@@ -1,0 +1,29 @@
+.heroImage {
+  width: 100%;
+  aspect-ratio: 2059 / 764;
+}
+
+.heroImage img {
+  object-fit: cover;
+}
+
+.why {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.why :global(h2) {
+  font-size: .9rem;
+}
+
+.why :global(h2)::after {
+  width: 30px;
+  height: 2px;
+  margin-top: .3rem;
+}
+
+@media (max-width: 560px) {
+  .heroImage {
+    aspect-ratio: 1.8;
+  }
+}

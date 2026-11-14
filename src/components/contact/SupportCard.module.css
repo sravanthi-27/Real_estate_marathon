@@ -1,0 +1,17 @@
+.liveChat {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, .7fr);
+  gap: .7rem;
+  align-items: center;
+}
+
+.image {
+  height: 88px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 480px) {
+  .liveChat {
+    grid-template-columns: 1fr;
+  }
+}

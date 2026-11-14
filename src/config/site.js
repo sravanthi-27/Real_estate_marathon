@@ -33,6 +33,7 @@ export const SOCIALS = [
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Route', href: '/route' },
   { label: 'Sponsors', href: '/sponsors' },
   { label: 'Expo', href: '/expo' },
   { label: 'Merchandise', href: '/merchandise' },
@@ -41,7 +42,7 @@ export const NAV_LINKS = [
 ];
 
 export const FOOTER_COLUMNS = [
-  { title: 'Quick Links', links: [{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Sponsors', href: '/sponsors' }, { label: 'Expo', href: '/expo' }] },
+  { title: 'Quick Links', links: [{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Route', href: '/route' }, { label: 'Sponsors', href: '/sponsors' }, { label: 'Expo', href: '/expo' }] },
   { title: '', links: [{ label: 'Merchandise', href: '/merchandise' }, { label: 'Why Participate', href: '/why-participate' }, { label: 'Contact', href: '/contact' }, { label: 'Register', href: '/register' }] },
 ];
 

@@ -15,7 +15,6 @@ export default function RegisterBanner() {
           <p className={styles.hash}>{SITE.hashtag} &nbsp; #10KTreesForTelangana</p>
         </div>
         <div className={styles.qr}>
-          <Img src={images.why.qr} alt="Scan to register" contain className={styles.qrImg} />
           <Button href="/register">Register now</Button>
         </div>
       </div>
