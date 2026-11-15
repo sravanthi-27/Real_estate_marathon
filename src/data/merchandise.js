@@ -117,14 +117,21 @@ export const products = [
 
 export const corporateKits = {
   title: 'Corporate Running Kits',
-  subtitle: 'For builders, brokers and teams',
-  points: ['Custom company branding', 'Front and back print', 'Bulk pricing and delivery', 'Team photo support'],
-  minimum: 'Minimum order: 25 kits',
+  subtitle: 'For Builders & Real Estate Companies',
+  points: ['Customized Company Logo', 'Community Branding', 'Team Jerseys', 'Banners & Backdrops', 'Running Bibs', 'Volunteer T-Shirts'],
+  minimum: 'Minimum Order:',
 };
 
 export const limitedEdition = {
   title: 'Limited Edition Hyderabad Collection',
-  items: ['Charminar', 'Financial District', 'Tank Bund Buddha', 'Durgam Cheruvu Bridge', 'Telangana Rising 2047'].map((name, i) => ({ name, src: images.merchandise.limited[i] })),
+  subtitle: 'Special Design Series Featuring Iconic Hyderabad',
+  items: [
+    { name: 'Charminar', src: images.merchandise.limited[0] },
+    { name: 'Durgam Cheruvu', src: images.merchandise.limited[3] },
+    { name: 'Financial District', src: images.merchandise.limited[1] },
+    { name: 'Tank Bund', src: images.merchandise.limited[2] },
+    { name: 'Telangana Rising 2047', src: images.merchandise.limited[4] },
+  ],
 };
 
 export const orderFormFields = [

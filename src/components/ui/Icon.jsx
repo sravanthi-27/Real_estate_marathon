@@ -1,5 +1,5 @@
 import {
-  Activity, ArrowLeftRight, Award, Banknote, BadgeCheck, BookOpen, Briefcase, Building2, Calendar, CalendarPlus, Camera, Check, CheckCircle2, ChevronDown, ChevronLeft, Compass, Crown, Flame, GraduationCap, House,
+  Activity, ArrowLeftRight, Award, Banknote, BadgeCheck, BookOpen, Briefcase, Building2, Calendar, CalendarPlus, Camera, Check, CheckCircle2, ChevronDown, ChevronLeft, Coffee, Compass, Crown, Flame, GraduationCap, HardHat, House,
   ChevronRight, Clock, CreditCard, Download, Droplets, Dumbbell, Eye, Facebook, Filter, FileText, Flag, Footprints, Gift as GiftIcon, Globe, Handshake, Heart,
   HeartPulse, Info, Instagram, Landmark, Leaf, Lightbulb, Linkedin, Loader2, Lock, Mail, MapPin, Medal, Megaphone, Menu, MessageCircle, MessagesSquare, Monitor,
   Mountain, Music2, Network, PanelsTopLeft, PartyPopper, Pencil, Phone, Plus, QrCode, Recycle, Rocket, Search, Settings, ShieldCheck, ShoppingBag, Shirt, Smartphone, Sprout, Star, Stethoscope,
@@ -10,6 +10,7 @@ const ICONS = {
   activity: Activity, 'arrow-left-right': ArrowLeftRight, award: Award, banknote: Banknote, 'badge-check': BadgeCheck, briefcase: Briefcase, building: Building2, calendar: Calendar,
   'calendar-plus': CalendarPlus, camera: Camera, check: Check, 'check-circle': CheckCircle2, 'chevron-down': ChevronDown,
   'chevron-left': ChevronLeft, 'chevron-right': ChevronRight, crown: Crown, 'graduation-cap': GraduationCap, 'book-open': BookOpen, clock: Clock, 'credit-card': CreditCard, download: Download,
+  cap: HardHat, mug: Coffee,
   droplets: Droplets, dumbbell: Dumbbell, eye: Eye, facebook: Facebook, filter: Filter, 'file-text': FileText, flag: Flag, footprints: Footprints, compass: Compass,
   globe: Globe, handshake: Handshake, heart: Heart, 'heart-pulse': HeartPulse, info: Info, instagram: Instagram, landmark: Landmark,
   leaf: Leaf, lightbulb: Lightbulb, linkedin: Linkedin, loader: Loader2, lock: Lock, mail: Mail, 'map-pin': MapPin, medal: Medal, flame: Flame, house: House,

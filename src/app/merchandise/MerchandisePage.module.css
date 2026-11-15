@@ -58,7 +58,8 @@
 
 .storeSection,
 .lastSection {
-  padding: .8rem 0;
+  padding: 13px;
+  margin-inline: calc(-10vw + 1.5px);
 }
 
 .storeSection {
@@ -79,21 +80,8 @@
 
 .lastGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.lastGrid > div {
-  height: 100%;
-  padding: .75rem;
-}
-
-.lastGrid h2 {
-  margin-bottom: .6rem;
-  font-size: var(--fs-sm);
-}
-
-.lastGrid p {
-  margin-top: .35rem;
-  font-size: .65rem;
+  width: min(100%, 1050px);
+  margin: 0 auto;
 }
 
 .page :global(.card__title) {

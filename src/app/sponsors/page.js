@@ -17,7 +17,7 @@ export default function SponsorsPage() {
           <SponsorSidebar />
         </div>
       </section>
-      <CtaStrip />
+      <CtaStrip variant="sponsor" />
     </>
   );
 }

@@ -93,6 +93,7 @@ export const images = {
   },
   sponsors: {
     hero: p('sponsors', '9d29b3152deb96e8403acab33b88a2292df3d055.png'),
+    runnerIcon: p('sponsors', 'Navy Running Figure Icon.png'),
     title: [p('sponsors', 'c48112dc50d188b694e219662b9261ca974898a2.png')],
     powered: [
       p('sponsors', '3aba080f5448d71126196abe020980eec3bbec17.png'),
@@ -185,6 +186,9 @@ export const images = {
     ],
     corporateFront: p('merchandise', '3_corporate_kits/corporate_front.png'),
     corporateBack: p('merchandise', '3_corporate_kits/corporate_back.png'),
+    showcaseJersey: p('merchandise', '8_rising_2047_set/jersey.png'),
+    showcaseCap: p('merchandise', '8_rising_2047_set/cap.png'),
+    showcaseMedal: p('merchandise', '8_rising_2047_set/medal.png'),
     limited: [
       p('merchandise', '7_hyderabad_icons/charminar.png'),
       p('merchandise', '7_hyderabad_icons/financial_district.png'),

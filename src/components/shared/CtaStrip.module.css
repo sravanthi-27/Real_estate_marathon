@@ -316,3 +316,135 @@
     transform: none;
   }
 }
+
+.sponsorStrip {
+  width: min(1050px, calc(100% - 30px));
+  min-height: 180px;
+  margin: 24px auto 20px;
+  border: 1px solid #dce5f1;
+  border-radius: 6px;
+  background: #e8eff8;
+  color: #14233d;
+}
+
+.sponsorStrip .runner {
+  top: 50%;
+  right: 24px;
+  left: auto;
+  width: 145px;
+  max-width: none;
+  height: 145px;
+  transform: translateY(-50%);
+}
+
+.sponsorStrip .runner img {
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.sponsorStrip .row {
+  display: flex;
+  min-height: 180px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 22px 195px 22px 28px;
+}
+
+.sponsorCopy {
+  max-width: 620px;
+}
+
+.sponsorStrip .title {
+  position: static;
+  width: auto;
+  margin: 0;
+  transform: none;
+  color: #14233d;
+  font-size: 25px;
+  line-height: 1.15;
+  white-space: normal;
+}
+
+.description {
+  margin: 8px 0 0;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.sponsorStrip .actions {
+  position: static;
+  inset: auto;
+  margin-top: 13px;
+}
+
+.sponsorStrip .button {
+  position: static;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  transform: none;
+}
+
+.sponsorStrip .button:hover:not(:disabled) {
+  transform: none;
+}
+
+@media (max-width: 760px) {
+  .sponsorStrip {
+    min-height: 0;
+    margin: 18px auto;
+  }
+
+  .sponsorStrip .runner {
+    top: 50%;
+    right: 10px;
+    left: auto;
+    width: 75px;
+    height: 88px;
+    transform: translateY(-50%);
+  }
+
+  .sponsorStrip .row {
+    min-height: 0;
+    padding: 20px 88px 20px 18px;
+  }
+
+  .sponsorStrip .title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .description {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .sponsorStrip .actions {
+    margin-top: 10px;
+  }
+
+  .sponsorStrip .button {
+    height: 34px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .sponsorStrip .runner {
+    right: 5px;
+    width: 60px;
+    height: 72px;
+  }
+
+  .sponsorStrip .row {
+    padding-right: 68px;
+  }
+
+  .sponsorStrip .title {
+    font-size: 18px;
+  }
+}
