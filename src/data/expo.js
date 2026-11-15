@@ -12,41 +12,82 @@ export const expoSnapshot = {
 
 export const aboutExpo = {
   title: 'About the Real Estate Expo',
-  text: 'The Real Estate Expo is a premier showcase of projects, innovations and opportunities from across the property ecosystem - held alongside the marathon so runners, families and industry meet in one place.',
+  text: 'The Real Estate Expo is a premier business and networking platform bringing together top developers, realtors, investors, architects, consultants, fintech, PropTech and industry leaders under one roof.',
   features: [
-    { icon: 'users', title: 'Visit & Network' },
-    { icon: 'building', title: 'Discover Projects' },
-    { icon: 'trending-up', title: 'Investment Opportunities' },
-    { icon: 'lightbulb', title: 'Tech & Innovation' },
-    { icon: 'handshake', title: 'Business Collaboration' },
-    { icon: 'award', title: 'Learn & Grow' },
+    { icon: 'users', title: 'Meet & Network', text: 'Connect with 10,000+ real estate companies, industry leaders and decision makers.' },
+    { icon: 'building', title: 'Discover Projects', text: 'Explore residential, commercial, plotted developments and luxury projects.' },
+    { icon: 'trending-up', title: 'Investment Opportunities', text: 'Find the right investment opportunities and get expert financial guidance.' },
+    { icon: 'settings', title: 'Tech & Innovation', text: 'Experience the latest in PropTech, Smart Homes, Construction Tech and Sustainable Solutions.' },
+    { icon: 'graduation-cap', title: 'Learn & Grow', text: 'Attend seminars, panel discussions and workshops by industry experts.' },
+    { icon: 'handshake', title: 'Business Collaborations', text: 'Create partnerships and collaborations that drive the future.' },
   ],
 };
 
 export const whyExhibit = {
   title: 'Why Exhibit?',
-  points: ['Showcase projects to 10,000+ visitors', 'Generate qualified buyer leads', 'Launch and promote new projects', 'Connect with partners and channel networks', 'Boost brand awareness'],
+  points: [
+    'Showcase your brand to 10000+ participants',
+    'Generate high-quality leads',
+    'Strengthen brand visibility and trust',
+    'Launch new projects and offers',
+    'Network with potential partners and investors',
+    "Be part of Hyderabad's biggest real estate movement",
+  ],
   image: images.expo.whyExhibit,
 };
 
 export const expoHighlights = {
   title: 'Expo Highlights',
   items: [
-    { icon: 'store', title: '100+ Stalls' },
-    { icon: 'banknote', title: 'Exclusive Offers' },
-    { icon: 'users', title: 'Panel Talks' },
-    { icon: 'building', title: 'Product Launches' },
-    { icon: 'ticket', title: 'Live Projects' },
-    { icon: 'handshake', title: 'Vendor Meets' },
+    { icon: 'landmark', title: '100+', text: 'Exhibitors' },
+    { icon: 'users', title: '5000+', text: 'Business Visitors' },
+    { icon: 'messages-square', title: 'Panel', text: 'Discussions' },
+    { icon: 'megaphone', title: 'Product', text: 'Launches' },
+    { icon: 'building', title: 'Live Project', text: 'Showcases' },
+    { icon: 'tags', title: 'Special Offers &', text: 'Spot Bookings' },
   ],
 };
 
-export const expoZones = ['Residential Zone', 'Commercial Zone', 'Luxury Living Zone', 'Investment Zone', 'Proptech Zone', 'Sustainability Zone'].map((title, i) => ({ title, src: images.expo.zones[i] }));
+export const expoZones = [
+  { title: 'Residential Zone', description: 'Apartments, Villas, Gated Communities & Plotted Developments' },
+  { title: 'Commercial Zone', description: 'Office Spaces, IT Parks, Retail Spaces & Co-working Solutions' },
+  { title: 'Luxury Living Zone', description: 'Premium Homes, Luxury Amenities & Lifestyle Experiences' },
+  { title: 'Investment Zone', description: 'Investment Advisory, Financial Institutions, Home Loans & NRI Services' },
+  { title: 'Proptech Zone', description: 'Technology, Innovation, Smart Solutions & Digital Platforms' },
+  { title: 'Sustainability Zone', description: 'Green Building Materials, Sustainable Projects & Eco-friendly Solutions' },
+].map((zone, i) => ({ ...zone, src: images.expo.zones[i] }));
 
 export const expectColumns = [
-  { title: 'What to Expect?', items: ['Live demonstrations', 'Expert presentations', 'Knowledge sessions', 'Entertainment & engagement', 'Food & refreshments'] },
-  { title: 'For Exhibitors', items: ['Prime stall locations', 'Branding opportunities', 'Lead generation support', 'Networking lounge access', 'Dedicated event support'] },
-  { title: 'For Visitors', items: ['Free entry for runners', 'Exclusive launch offers', 'Home loan assistance', 'Expert Q&A desks', 'Family-friendly activities'] },
+  {
+    title: 'What to Expect?',
+    items: [
+      { icon: 'monitor', label: 'Live Demonstrations' },
+      { icon: 'user-round', label: 'Expert Consultations' },
+      { icon: 'book-open', label: 'Knowledge Sessions' },
+      { icon: 'party-popper', label: 'Entertainment & Experiences' },
+      { icon: 'utensils', label: 'Food & Refreshments' },
+    ],
+  },
+  {
+    title: 'For Exhibitors',
+    items: [
+      { icon: 'panels-top-left', label: 'Booth Space Options' },
+      { icon: 'target', label: 'Branding & Visibility' },
+      { icon: 'filter', label: 'Lead Generation' },
+      { icon: 'network', label: 'Networking Opportunities' },
+      { icon: 'handshake', label: 'Post-Event Engagement' },
+    ],
+  },
+  {
+    title: 'For Visitors',
+    items: [
+      { icon: 'ticket', label: 'Free Entry for All' },
+      { icon: 'search', label: 'Explore Top Projects' },
+      { icon: 'compass', label: 'Expert Guidance' },
+      { icon: 'gift', label: 'Exciting Offers' },
+      { icon: 'award', label: 'Win Lucky Draws' },
+    ],
+  },
 ];
 
 export const stallFormFields = [

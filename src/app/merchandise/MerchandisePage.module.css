@@ -43,115 +43,17 @@
   background: rgba(255, 255, 255, .18);
 }
 
+.hero .sponsorLink {
+  left: 73%;
+  width: 20%;
+}
+
 .kitSection {
-  padding: .8rem 0;
+  padding: 0;
 }
 
 .kitSection :global(.container) {
-  padding: 0 .65rem;
-}
-
-.kitSection h2 {
-  font-size: var(--fs-md);
-}
-
-.kitSection p {
-  margin-top: .25rem;
-  font-size: var(--fs-xs);
-}
-
-.kitSection :global(.container) > div:first-child {
-  margin-bottom: .6rem;
-}
-
-.infoGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  gap: .65rem;
-  align-items: start;
-}
-
-.infoGrid > article,
-.challenge > div,
-.register > form {
-  height: 100%;
-  padding: .75rem;
-  background: #fff;
-  border: 1px solid #e8ebf0;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-}
-
-.heading {
-  margin-bottom: .55rem;
-  color: var(--color-primary-dark);
-  font-size: var(--fs-sm);
-  text-transform: uppercase;
-}
-
-.steps {
-  display: grid;
-  gap: .28rem;
-}
-
-.step {
-  display: flex;
-  align-items: center;
-  gap: .45rem;
-  color: var(--color-text);
-  font-size: var(--fs-xs);
-}
-
-.stepImage {
-  flex: 0 0 28px;
-  width: 28px;
-  height: 28px;
-  background: transparent;
-}
-
-.challenge :global(.card) {
-  height: 100%;
-  padding: .75rem;
-}
-
-.challenge :global(.card__title) {
-  margin-bottom: .45rem;
-  font-size: var(--fs-sm);
-}
-
-.challenge :global(th),
-.challenge :global(td) {
-  padding: .3rem .2rem;
-  font-size: .65rem;
-}
-
-.register :global(.form) {
-  gap: .5rem;
-}
-
-.register :global(.card__title) {
-  margin-bottom: .35rem;
-  font-size: var(--fs-sm);
-}
-
-.register :global(.grid) {
-  gap: .4rem;
-}
-
-.register :global(label) {
-  font-size: .65rem;
-}
-
-.register :global(input),
-.register :global(select) {
-  min-height: 32px;
-  padding: .35rem;
-  font-size: .68rem;
-}
-
-.register :global(.btn) {
-  padding: .45rem .65rem;
-  font-size: .68rem;
+  padding: 0;
 }
 
 .storeSection,
@@ -159,19 +61,26 @@
   padding: .8rem 0;
 }
 
+.storeSection {
+  padding: 24px 15px;
+  background: #fff;
+}
+
 .storeGrid,
 .lastGrid {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-  gap: .65rem;
-  align-items: start;
+  gap: 13px;
+}
+
+.storeGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .lastGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.storeGrid > div > :global(.card),
 .lastGrid > div {
   height: 100%;
   padding: .75rem;
@@ -194,15 +103,10 @@
 }
 
 @media (max-width: 760px) {
-  .infoGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .storeGrid {
+    grid-template-columns: 1fr;
   }
 
-  .register {
-    grid-column: 1 / -1;
-  }
-
-  .storeGrid,
   .lastGrid {
     grid-template-columns: 1fr;
   }
@@ -221,13 +125,5 @@
   .sponsorLink {
     left: 73%;
     width: 23%;
-  }
-
-  .infoGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .register {
-    grid-column: auto;
   }
 }

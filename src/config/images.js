@@ -156,11 +156,11 @@ export const images = {
       p('expo', '7df5b3bd74ad921bb1bbf3990cf57fd6961b1465.jpg'),
     ],
     gallery: [
-      p('expo', 'Global Innovation Summit Panel.png'),
       p('expo', 'Mayor Elena Vance Inauguration Ceremony.png'),
+      p('expo', 'Global Innovation Summit Panel.png'),
       p('expo', 'Global Networking Summit 2025.png'),
-      p('expo', 'Collaborative Business Meeting in a Modern Office.png'),
       p('expo', 'TechInnovate Future Mobility Showcase.png'),
+      p('expo', 'Collaborative Business Meeting in a Modern Office.png'),
     ],
   },
   merchandise: {

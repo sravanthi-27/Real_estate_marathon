@@ -17,7 +17,7 @@ const TOP_LEVEL = ['name', 'email', 'phone', 'organisation', 'subject', 'message
  * fields: [{ name, label, type: 'text'|'email'|'tel'|'textarea'|'select', required, options, placeholder, span }]
  * Fields named name/email/phone/organisation/subject/message are stored as columns, everything else in `payload`.
  */
-export default function EnquiryForm({ id, type, title, intro, fields, submitLabel = 'Submit', successMessage = 'Thank you! We will get back to you shortly.', extraPayload, beforeSubmit }) {
+export default function EnquiryForm({ id, type, title, intro, fields, children, className = '', submitLabel = 'Submit', successMessage = 'Thank you! We will get back to you shortly.', extraPayload, beforeSubmit }) {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ state: 'idle', message: '' });
@@ -33,7 +33,7 @@ export default function EnquiryForm({ id, type, title, intro, fields, submitLabe
     const local = {};
     const result = validate(enquirySchema, body);
     Object.assign(local, result.errors);
-    fields.forEach((f) => { if (f.required && !(values[f.name] ?? '').toString().trim()) local[f.name] = `${f.label} is required`; });
+    fields.forEach((f) => { if (f.required && !(values[f.name] ?? '').toString().trim()) local[f.name] = `${f.label || f.placeholder || 'This field'} is required`; });
     if (Object.keys(local).length) { setErrors(local); return; }
 
     try {
@@ -49,15 +49,16 @@ export default function EnquiryForm({ id, type, title, intro, fields, submitLabe
   }
 
   return (
-    <form id={id} onSubmit={submit} className={`card ${styles.form}`} noValidate>
+    <form id={id} onSubmit={submit} className={`card ${styles.form} ${className}`} noValidate>
       {title && <h3 className="card__title">{title}</h3>}
       {intro && <p className={styles.intro}>{intro}</p>}
+      {children}
       <div className={styles.grid}>
         {fields.map((f) => (
           <Field key={f.name} label={f.label} required={f.required} error={errors[f.name]} htmlFor={`${id}-${f.name}`} className={f.span === 2 ? styles.span2 : ''}>
             {f.type === 'select'
               ? <Select id={`${id}-${f.name}`} value={values[f.name]} onChange={(v) => set(f.name, v)} options={f.options.map((o) => ({ value: o, label: o }))} placeholder={f.placeholder || 'Select'} invalid={!!errors[f.name]} />
-              : <TextInput id={`${id}-${f.name}`} multiline={f.type === 'textarea'} type={f.type === 'textarea' ? undefined : f.type || 'text'} value={values[f.name]} onChange={(v) => set(f.name, v)} placeholder={f.placeholder} invalid={!!errors[f.name]} />}
+              : <TextInput id={`${id}-${f.name}`} aria-label={f.label || f.placeholder || f.name} multiline={f.type === 'textarea'} type={f.type === 'textarea' ? undefined : f.type || 'text'} value={values[f.name]} onChange={(v) => set(f.name, v)} placeholder={f.placeholder} invalid={!!errors[f.name]} />}
           </Field>
         ))}
         <input className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" name="website" value={values.website || ''} onChange={(e) => set('website', e.target.value)} />
