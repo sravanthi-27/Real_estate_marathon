@@ -13,6 +13,8 @@ Re-generate this file any time with `npm run images`.
 ## public/images/home/
 - hero.png
 - map.png
+- Futuristic Orange Runner in Motion.png
+- Minimalist Skyline Landmark Banner.png
 
 ## public/images/home/event partners/
 - c48112dc50d188b694e219662b9261ca974898a2 (1).png

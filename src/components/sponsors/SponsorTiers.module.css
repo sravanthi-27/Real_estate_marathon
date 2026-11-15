@@ -1,16 +1,47 @@
-.wrap { display: flex; flex-direction: column; gap: .42rem; }
-.wrap > section { padding: .35rem .55rem; border-radius: 5px; box-shadow: none; }
-.title { text-align: center; font-family: var(--font-main); font-size: .55rem; font-weight: var(--fw-bold); color: var(--color-primary-dark); text-transform: uppercase; letter-spacing: .045em; margin-bottom: .25rem; display: flex; align-items: center; gap: .45rem; }
-.title::before, .title::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
-.row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: .25rem .4rem; }
-.logo { background: transparent; border: 0; border-radius: 0; }
-.xl .logo { width: min(100%, 130px); height: 52px; }
-.lg .logo { width: clamp(58px, 12%, 92px); height: 36px; }
-.md .logo { width: clamp(50px, 15%, 82px); height: 32px; }
-.sm .logo { width: clamp(44px, 14%, 74px); height: 28px; }
+.wrap { display: grid; height: 247px; grid-template-rows: 143px 84px; gap: 20px; min-width: 0; margin-top: 25px; }
+.tierCard { position: relative; min-width: 0; padding: 0; border: 1px solid #eaeaea; border-radius: 7px; box-shadow: none; }
+.tierCard--title, .tierCard--powered, .tierCard--platinum, .tierCard--gold, .tierCard--silver { background: #f7f7f7; }
+.tierCard--title { height: 143px; }
+.tierCard--powered { height: 84px; }
+.title { position: absolute; z-index: 2; top: -9px; left: 50%; display: flex; width: max-content; max-width: 100%; align-items: center; justify-content: center; gap: 8px; margin: 0; transform: translateX(-50%); color: #101d42; font-family: var(--font-heading); font-size: 14px; font-weight: 800; line-height: 18px; letter-spacing: .3px; text-align: center; text-transform: uppercase; white-space: nowrap; }
+.title::before, .title::after { content: ''; width: 14px; height: 1px; flex: none; background: #f05a16; }
+.title span { padding: 0 12px; background: #fff; }
+.row { display: flex; min-width: 0; align-items: center; justify-content: center; }
+.tierCard--title .row { position: absolute; top: 52%; left: 0; width: 100%; transform: translateY(-50%); }
+.xl .logo { width: 85px; height: 100px; }
+.tierCard--powered .row { position: absolute; top: 25px; right: 12px; left: 12px; height: 45px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.lg .logoCell { position: relative; display: flex; width: 100%; height: 45px; align-items: center; justify-content: center; }
+.lg .logo { width: 75px; max-width: 100%; height: 43px; }
+.logoCell { display: flex; align-items: center; justify-content: center; }
+.separator { position: absolute; top: 1px; right: 0; width: 1px; height: 43px; background: #e8e8e8; }
+.secondaryWrap { display: flex; min-width: 0; flex-direction: column; gap: 22px; }
+.secondaryWrap .tierCard { height: 102px; padding: 0; background: #f7f7f7; }
+.secondaryWrap .title { top: -9px; margin: 0; font-size: 14px; }
+.secondaryWrap .title span { background: #fff; }
+.secondaryWrap .title::before, .secondaryWrap .title::after { background: #f05a16; }
+.secondaryWrap .row { position: absolute; top: 28px; right: 20px; left: 20px; display: grid; height: 45px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.secondaryWrap .logoCell { position: relative; display: flex; width: 100%; height: 45px; align-items: center; justify-content: center; }
+.secondaryWrap .logo { width: min(75px, 100%); height: 43px; }
+.secondaryWrap .separator { top: 1px; height: 43px; }
+.laterWrap { display: flex; min-width: 0; flex-direction: column; gap: 22px; }
+.laterWrap .tierCard { height: 102px; padding: 0; background: #f7f7f7; }
+.laterWrap .title { top: -9px; margin: 0; font-size: 13px; }
+.laterWrap .row { position: absolute; top: 28px; right: 12px; left: 12px; display: grid; height: 45px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.laterWrap .logoCell { position: relative; display: flex; width: 100%; height: 45px; align-items: center; justify-content: center; }
+.laterWrap .logo { width: min(65px, 100%); height: 43px; }
+.laterWrap .separator { top: 1px; height: 43px; }
+.md .logo, .sm .logo { width: clamp(50px, 20%, 82px); height: 32px; }
 
-@media (max-width: 560px) {
-  .xl .logo { height: 58px; }
-  .lg .logo { width: 27%; height: 40px; }
-  .md .logo, .sm .logo { width: 28%; height: 38px; }
+@media (max-width: 760px) {
+  .secondaryWrap { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+  .wrap { height: auto; grid-template-rows: 143px 84px; margin-top: 0; }
+  .lg .logo { width: min(75px, 100%); height: 43px; }
+  .secondaryWrap { gap: 22px; }
+  .secondaryWrap .row { right: 8px; left: 8px; }
+  .secondaryWrap .logo { width: min(65px, 100%); }
+  .laterWrap .row { right: 8px; left: 8px; }
+  .laterWrap .logo { width: min(65px, 100%); }
 }

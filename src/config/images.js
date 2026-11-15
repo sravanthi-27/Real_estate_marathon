@@ -17,6 +17,8 @@ export const images = {
   home: {
     hero: p('home', 'hero.png'),
     map: p('home', 'map.png'),
+    ctaRunner: p('home', 'Futuristic Orange Runner in Motion.png'),
+    ctaSkyline: p('home', 'Minimalist Skyline Landmark Banner.png'),
     partners: {
       principal: [
         eventPartner('c48112dc50d188b694e219662b9261ca974898a2'),
@@ -58,15 +60,16 @@ export const images = {
     ],
     organizers: [
       p('home', 'community/b98db517f26b182b0fd78283b87240d4ee1bbd77.jpg'),
-      p('home', 'community/124b07233952195363169b49204bae4e1329190d.jpg'),
+      p('home', 'community/6267e4a0bcb5661afb74429bc72fecc48b75d115.jpg'),
       p('home', 'community/7a3f2fcd2b3977e57e2c8439708dadd7805a37df.jpg'),
       p('home', 'community/237cf77f27482a14f79343209cd6e28953684b0a.jpg'),
-      p('home', 'community/6267e4a0bcb5661afb74429bc72fecc48b75d115.jpg'),
+      p('home', 'community/124b07233952195363169b49204bae4e1329190d.jpg'),
       p('home', 'community/124b07233952195363169b49204bae4e1329190d (1).jpg'),
     ],
   },
   route: {
     hero: p('route', 'hero.png'),
+    courseMap: p('route', '10K Gachibowli Route Map.png'),
     points: [
       p('route', 'a7db16ebdffac9c7e4efeca50b2e66ef2a2785e4.jpg'),
       p('route', '6a4981f3e8bcdb048829e365620399d28837ed60.jpg'),
@@ -82,10 +85,10 @@ export const images = {
     hyderabad: p('about', 'd37db04368961c51a04dbe6f63c9cb0e2e9bd9f9.png'),
     organizers: [
       p('about', 'community/b98db517f26b182b0fd78283b87240d4ee1bbd77.jpg'),
-      p('about', 'community/124b07233952195363169b49204bae4e1329190d.jpg'),
+      p('about', 'community/6267e4a0bcb5661afb74429bc72fecc48b75d115.jpg'),
       p('about', 'community/7a3f2fcd2b3977e57e2c8439708dadd7805a37df.jpg'),
       p('about', 'community/237cf77f27482a14f79343209cd6e28953684b0a.jpg'),
-      p('about', 'community/6267e4a0bcb5661afb74429bc72fecc48b75d115.jpg'),
+      p('about', 'community/124b07233952195363169b49204bae4e1329190d.jpg'),
     ],
   },
   sponsors: {
@@ -135,6 +138,7 @@ export const images = {
     ],
     media: [
       p('sponsors', '84639ab5b9b7c66fe30af2868d01aee8fd695673.png'),
+      p('sponsors', '78b6bf50456b9e1bca54c6e5dc9ec5f6e56c9579.png'),
       p('sponsors', '4bf576712bb24371292062dfba416d69950f93b1.png'),
       p('sponsors', '9f0e1feeb5c750c2c2c09d44451e956b050a2137.png'),
       p('sponsors', 'f514e64156b11ede155c02e789f6ebad2ffdb320.png'),

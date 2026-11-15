@@ -11,134 +11,215 @@
   object-fit: cover;
 }
 
-.mapSection,
-.detailsSection,
+.mapSection {
+  padding: 17px 0;
+  background: #fff;
+}
+
+.detailsSection {
+  padding: 5px 0;
+}
+
 .supportSection {
-  padding: .65rem;
+  padding: .65rem 0;
 }
 
 .mapPanel {
   display: grid;
-  grid-template-columns: minmax(0, 2.2fr) minmax(180px, .7fr);
-  gap: .65rem;
-  padding: .65rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-white);
-}
-
-.mapColumn h1,
-.routeDetails h2,
-.pointsPanel > h2 {
-  margin-bottom: .45rem;
-  color: var(--color-primary-dark);
-  font-size: .82rem;
-  text-transform: uppercase;
+  grid-template-columns: minmax(0, 2.7fr) minmax(234px, 1fr);
+  gap: 8px;
+  align-items: stretch;
 }
 
 .mapFrame {
-  position: relative;
-  height: clamp(210px, 30vw, 350px);
+  width: 100%;
+  aspect-ratio: 1660 / 950;
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: #e8eee8;
+  border: 5px solid #0b1f44;
+  border-radius: 0 0 0 0;
+  background: #fff;
 }
 
-.mapFrame iframe {
-  display: block;
+.routeMap {
   width: 100%;
   height: 100%;
-  border: 0;
+  background: #fff;
 }
 
-.startBadge {
-  position: absolute;
-  bottom: .45rem;
-  left: .45rem;
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-  padding: .35rem .5rem;
-  border-radius: 4px;
-  background: var(--color-primary-dark);
-  color: var(--color-white);
-  font-size: .55rem;
-  font-weight: var(--fw-semibold);
+.routeMap img {
+  object-fit: contain;
+  object-position: center;
 }
 
-.startBadge svg {
-  color: var(--color-accent);
+.routeSidebar {
+  display: grid;
+  height: 100%;
+  grid-template-rows: minmax(0, 188fr) minmax(0, 228fr);
+  gap: 10px;
 }
 
-.disclaimer,
-.elevation > p {
-  margin-top: .35rem;
-  color: var(--color-muted);
-  font-size: .52rem;
-  line-height: 1.4;
+.routeDetails,
+.routeInformation {
+  min-width: 0;
+  min-height: 0;
+  padding: 13px;
+  border-radius: 9px;
+  background: #0b1f44;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .12);
 }
 
-.routeDetails {
-  display: flex;
-  flex-direction: column;
-  padding: .65rem;
-  border-radius: 4px;
-  background: var(--color-primary-dark);
-  color: var(--color-white);
+.routeDetails h2,
+.routeInformation h2,
+.pointsPanel > h2 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
 }
 
-.routeDetails h2 {
-  color: var(--color-white);
+.routeDetails h2::after,
+.routeInformation h2::after {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 7px 0 8px;
+  background: rgba(255, 255, 255, .12);
+  content: '';
 }
 
 .routeDetails ul {
-  display: grid;
-  gap: .55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .routeDetails li {
   display: flex;
-  align-items: flex-start;
-  gap: .35rem;
-  font-size: .55rem;
-  line-height: 1.4;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 12px;
 }
 
 .routeDetails li svg {
   flex: none;
-  margin-top: 1px;
-  color: var(--color-accent);
+  color: #ff5722;
 }
 
-.mapLink {
-  display: inline-flex;
+.informationRows {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.informationGroup {
+  min-width: 0;
+}
+
+.informationGroup:nth-child(3) {
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.informationRow,
+.informationLabel {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: .3rem;
-  margin-top: auto;
-  padding: .45rem;
-  border-radius: 4px;
-  background: var(--color-accent);
-  color: var(--color-white);
-  font-size: .52rem;
-  font-weight: var(--fw-bold);
+}
+
+.informationRow {
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.informationLabel {
+  min-width: 0;
+  gap: 5px;
+  color: #d7e0ed;
+  font-family: var(--font-main);
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 11px;
   text-transform: uppercase;
+}
+
+.informationLabel svg {
+  flex: none;
+}
+
+.informationRow strong {
+  flex: none;
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 11px;
+  text-align: right;
+}
+
+.informationNote {
+  display: block;
+  margin-top: 2px;
+  color: #d7e0ed;
+  font-family: var(--font-main);
+  font-size: 7px;
+  line-height: 9px;
+  text-align: right;
+}
+
+.statusList {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #d7e0ed;
+  font-family: var(--font-main);
+  font-size: 8px;
+  line-height: 10px;
+  text-transform: uppercase;
+}
+
+.statusRow > svg:first-child {
+  flex: none;
+  color: #25a9e0;
+}
+
+.statusRow .statusCheck {
+  margin-left: auto;
+  color: #00cfa6;
 }
 
 .detailsGrid {
   display: grid;
-  grid-template-columns: minmax(180px, .75fr) minmax(0, 2.25fr);
-  gap: .65rem;
+  grid-template-columns: minmax(0, 32fr) minmax(0, 66fr);
+  gap: 11px;
+  align-items: stretch;
 }
 
 .elevation,
 .pointsPanel {
   min-width: 0;
-  padding: .65rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary-dark);
-  color: var(--color-white);
+  height: 185px;
+  padding: 11px;
+  border-radius: 9px;
+  background: #0b1f44;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .12);
 }
 
 .elevation {
@@ -146,77 +227,138 @@
   flex-direction: column;
 }
 
-.elevation h2 {
+.elevationHeader {
   display: flex;
   align-items: center;
-  gap: .3rem;
-  margin-bottom: .5rem;
-  color: var(--color-white);
-  font-size: .68rem;
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 23px;
+}
+
+.elevation h2,
+.pointsPanel > h2 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 13px;
+  letter-spacing: .3px;
   text-transform: uppercase;
 }
 
-.elevation h2 svg {
-  color: var(--color-accent);
+.metrics {
+  display: flex;
+  flex: none;
+  gap: 5px;
 }
 
-.profilePending {
+.metric {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: .6rem;
-  min-height: 100px;
+  min-width: 55px;
+  height: 23px;
+  padding: 2px 5px;
+  border: 1px solid #1b467a;
+  border-radius: 3px;
+  background: #10294f;
 }
 
-.profilePending > span {
-  display: flex;
-  height: 38px;
-  align-items: flex-end;
-  justify-content: space-around;
-  gap: .25rem;
-  padding: 0 .4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .24);
+.metric span {
+  color: #b8c7da;
+  font-family: var(--font-main);
+  font-size: 5px;
+  font-weight: 500;
+  line-height: 6px;
+  text-transform: uppercase;
 }
 
-.profilePending i {
-  width: 14%;
-  height: 35%;
-  border-radius: 2px 2px 0 0;
-  background: rgba(255, 107, 26, .45);
+.metric strong {
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 8px;
 }
 
-.profilePending i:nth-child(2),
-.profilePending i:nth-child(5) { height: 55%; }
-.profilePending i:nth-child(3) { height: 75%; }
-.profilePending i:nth-child(4) { height: 90%; }
+.chart {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  overflow: visible;
+}
 
-.profilePending p {
-  color: rgba(255, 255, 255, .75);
-  font-size: .48rem;
-  line-height: 1.4;
+.gridLine {
+  stroke: rgba(255, 255, 255, .1);
+  stroke-dasharray: 2 3;
+  stroke-width: .6;
+}
+
+.axisText,
+.yAxisTitle,
+.xAxisTitle {
+  fill: #a9b7ca;
+  font-family: var(--font-main);
+  font-size: 6px;
+}
+
+.yAxisTitle {
+  font-size: 5px;
+}
+
+.xAxisTitle {
+  font-size: 7px;
+}
+
+.chartArea {
+  fill: url(#elevation-fill);
+}
+
+.chartLine {
+  fill: none;
+  stroke: #ff5722;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.chartMarker {
+  fill: #fff;
+  stroke: #ff5722;
+  stroke-width: 1.5;
 }
 
 .pointsPanel > h2 {
-  color: var(--color-white);
+  margin-bottom: 7px;
 }
 
 .pointsGrid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: .4rem;
+  gap: 9px;
 }
 
 .point {
+  display: flex;
+  height: 138px;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, .15);
-  border-radius: 4px;
-  background: rgba(255, 255, 255, .07);
+  padding: 5px;
+  border: 1px solid #1b3456;
+  border-radius: 6px;
+  background: #071831;
 }
 
 .pointImage {
-  height: clamp(55px, 7vw, 90px);
+  width: 100%;
+  height: 78px;
+  flex: none;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .pointImage img {
@@ -224,78 +366,309 @@
 }
 
 .point > div {
-  padding: .3rem;
+  min-width: 0;
+  padding: 5px 0 0;
 }
 
 .point h3 {
-  color: var(--color-white);
-  font-size: .48rem;
-  line-height: 1.3;
+  display: -webkit-box;
+  overflow: hidden;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 8px;
   text-transform: uppercase;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .point p {
-  margin-top: .12rem;
-  color: rgba(255, 255, 255, .72);
-  font-size: .42rem;
-  line-height: 1.3;
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 2px;
+  color: #a9b7ca;
+  font-family: var(--font-main);
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .supportGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: .5rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .supportCard {
+  position: relative;
   display: flex;
+  height: 111px;
+  min-height: 111px;
   min-width: 0;
-  gap: .45rem;
-  padding: .6rem;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: var(--radius-sm);
-  background: var(--color-primary-dark);
-  color: var(--color-white);
-}
-
-.supportCard > span {
-  display: grid;
-  width: 25px;
-  height: 25px;
-  flex: none;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(255, 107, 26, .16);
-  color: var(--color-accent);
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 10px;
+  background: #081a39;
+  color: #fff;
 }
 
 .supportCard h2 {
-  margin-bottom: .2rem;
-  font-size: .55rem;
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 14px;
   text-transform: uppercase;
 }
 
-.supportCard p {
-  color: rgba(255, 255, 255, .75);
-  font-size: .46rem;
-  line-height: 1.4;
+.supportHeader {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.supportIcon {
+  flex: none;
+  margin-top: 1px;
+}
+
+.supportCard--hydration .supportIcon,
+.supportCard--hydration .supportHeader strong {
+  color: #16b9f0;
+}
+
+.supportCard--medical .supportIcon {
+  display: grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: #f1262d;
+  color: #fff;
+}
+
+.supportCard--medical .supportHeader strong {
+  color: #ff7417;
+}
+
+.supportHeader strong,
+.supportHeader span {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 8px;
+  line-height: 10px;
+}
+
+.supportHeader strong {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.supportHeader span {
+  margin-top: 3px;
+  color: #c4cdda;
+}
+
+.supportDescription {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.supportDescription p,
+.supportCard--note > p {
+  margin: 0;
+  color: #c4cdda;
+  font-family: var(--font-main);
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 11px;
+}
+
+.supportIllustration {
+  display: grid;
+  width: 20px;
+  height: 44px;
+  flex: none;
+  place-items: center;
+}
+
+.supportCard--hydration .supportIllustration {
+  width: 17px;
+  height: 43px;
+  border: 1px solid #16b9f0;
+  border-radius: 4px;
+  background: rgba(22, 185, 240, .17);
+  color: #16b9f0;
+  font-size: 6px;
+  font-weight: 700;
+}
+
+.supportCard--medical .supportIllustration {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background: #f1262d;
+  color: #fff;
+}
+
+.supportCard--safety,
+.supportCard--facilities {
+  padding-right: 40px;
+}
+
+.supportListHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.supportListHeader .supportIcon {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+}
+
+.supportListHeader h2 {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.supportCard--safety .supportIcon {
+  color: #16cda0;
+}
+
+.supportCard--facilities .supportIcon {
+  color: #ff9b22;
+}
+
+.supportItems {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.supportItems li {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+  color: #c4cdda;
+  font-family: var(--font-main);
+  font-size: 8px;
+  line-height: 10px;
+}
+
+.supportItems li svg {
+  flex: none;
+  color: #ff7417;
+}
+
+.supportCard--safety .supportIllustration {
+  position: absolute;
+  right: 9px;
+  bottom: 22px;
+  color: #fff;
+}
+
+.supportCard--facilities .supportIllustration {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  display: flex;
+  height: auto;
+  align-items: center;
+  gap: 4px;
+  transform: translateY(-50%);
+}
+
+.supportCard--facilities .supportIllustration i {
+  display: block;
+  width: 7px;
+  height: 31px;
+  border-radius: 1px;
+  background: #16b9f0;
+}
+
+.supportCard--facilities .supportIllustration i + i {
+  height: 37px;
+  background: #c4cdda;
+}
+
+.noteHeading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.noteHeading svg {
+  flex: none;
+  color: #fff;
+}
+
+.supportCard--note > p {
+  margin-top: 2px;
+}
+
+@media (max-width: 1100px) {
+  .mapPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .routeSidebar {
+    height: auto;
+    grid-template-rows: auto auto;
+  }
+
+  .routeDetails {
+    min-height: 188px;
+  }
+
+  .routeInformation {
+    min-height: 228px;
+  }
+
 }
 
 @media (max-width: 800px) {
   .mapPanel {
-    grid-template-columns: minmax(0, 1fr) minmax(150px, .7fr);
+    gap: 7px;
   }
 
   .detailsGrid {
     grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .elevation,
+  .pointsPanel {
+    height: 185px;
   }
 
   .pointsGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(96px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 3px;
+  }
+
+  .detailsGrid {
+    min-width: 0;
   }
 
   .supportGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -304,24 +677,48 @@
     aspect-ratio: 1.8;
   }
 
+  .mapSection {
+    padding: 14px 0;
+  }
+
   .mapPanel {
     grid-template-columns: 1fr;
   }
 
-  .mapFrame {
-    height: 240px;
+  .routeSidebar {
+    grid-template-columns: 1fr;
   }
 
-  .routeDetails ul {
-    grid-template-columns: 1fr 1fr;
+  .elevation,
+  .pointsPanel {
+    padding: 10px;
+  }
+
+  .elevationHeader {
+    gap: 4px;
+  }
+
+  .elevation h2,
+  .pointsPanel > h2 {
+    font-size: 9px;
+  }
+
+  .metric {
+    min-width: 48px;
+  }
+
+  .pointsGrid {
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
   }
 }
 
 @media (max-width: 380px) {
-  .pointsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .supportGrid {
+    grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 600px) {
   .supportGrid {
     grid-template-columns: 1fr;
   }

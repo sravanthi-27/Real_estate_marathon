@@ -5,10 +5,10 @@ import styles from './HomeOrganizers.module.css';
 
 export default function HomeOrganizers() {
   return (
-    <section className={`section ${styles.section}`}>
+    <section className={`section home-organizers ${styles.section}`}>
       <div className="container">
         <SectionTitle>Organized by Industry. For the Community.</SectionTitle>
-        <PeopleRow people={homeOrganizers} />
+        <PeopleRow people={homeOrganizers} className={styles.people} />
       </div>
     </section>
   );

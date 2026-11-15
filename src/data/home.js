@@ -64,5 +64,6 @@ export const homeOrganizers = [
   id: `organizer-${index + 1}`,
   ...person,
   name: person.role,
+  role: person.description,
   src: images.home.organizers[index],
 }));

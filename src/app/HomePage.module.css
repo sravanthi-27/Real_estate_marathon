@@ -1,3 +1,7 @@
 .home > :global(section.section) {
   padding-block: 22px;
 }
+
+.home > :global(section.section.home-organizers) {
+  padding: 28px 0 64px;
+}

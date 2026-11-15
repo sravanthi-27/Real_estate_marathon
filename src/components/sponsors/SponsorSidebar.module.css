@@ -1,18 +1,45 @@
-.side { display: flex; flex-direction: column; gap: .45rem; }
-.side > article { padding: .6rem; border-radius: 5px; box-shadow: none; }
-.side :global(.card__title) { margin-bottom: .32rem; font-size: .62rem; }
-.side :global(ul) { gap: .25rem; }
-.side :global(li) { font-size: .48rem; line-height: 1.35; }
-.intro { font-size: .5rem; color: var(--color-muted); margin-top: .35rem; line-height: 1.4; }
-.cta { position: relative; overflow: hidden; background: var(--color-surface-2); }
-.cta h3 { font-size: .6rem; }
-.cta p { font-size: .48rem; color: var(--color-muted); margin-bottom: .45rem; }
-.cta a { padding: .35rem .6rem; font-size: .5rem; }
-
-@media (max-width: 760px) {
-  .side { display: grid; grid-template-columns: 1fr 1fr; }
-}
+.purposeAside { min-width: 0; }
+.purposeCard { height: 266px; min-height: 266px; padding: 17px; border: 1px solid #e5eaf0; border-radius: 7px; background: #fff; }
+.purposeCard h2 { color: #f05a16; font-family: var(--font-heading); font-size: 13px; font-weight: 800; line-height: 1.2; letter-spacing: .2px; text-transform: uppercase; }
+.intro { margin-top: 0; color: #8290a5; font-size: 9px; line-height: 1.4; }
+.benefits { display: flex; flex-direction: column; gap: 9px; margin-top: 12px; }
+.benefits li { display: flex; min-width: 0; align-items: flex-start; gap: 9px; }
+.benefitIcon { display: grid; width: 25px; height: 25px; min-width: 25px; flex: none; place-items: center; border-radius: 50%; background: #f0f3f7; color: #263b59; }
+.benefitCopy { display: flex; min-width: 0; flex-direction: column; padding-top: 1px; }
+.benefitCopy strong { color: #182541; font-size: 10px; font-weight: 700; line-height: 1.25; }
+.benefitCopy > span { color: #8491a5; font-size: 8px; line-height: 1.35; }
+.side { display: flex; flex-direction: column; gap: 20px; }
+.categoryAside { min-width: 0; }
+.categoriesCard { height: 328px; padding: 18px 20px; overflow: hidden; border: 1px solid #112440; border-radius: 7px; background: #061326; color: #f4f6fb; }
+.categoryAside > .categoriesCard { padding: 18px 20px; border-radius: 7px; }
+.categoriesCard h2 { margin-bottom: 10px; color: #ff7417; font-family: var(--font-heading); font-size: 13px; font-weight: 800; line-height: 16px; text-transform: uppercase; }
+.categoryList { display: flex; height: calc(100% - 26px); flex-direction: column; }
+.categoryList li { display: grid; min-height: 0; flex: 1; grid-template-columns: 13px minmax(0, 1fr) auto; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,.09); font-family: var(--font-main); font-size: 10px; line-height: 1.2; }
+.categoryList li:last-child { border-bottom: 0; }
+.categoryList strong { color: #f4f6fb; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.categoryList li:last-child strong { color: #ff7417; }
+.categoryIcon--title { color: #ffc327; fill: #ffc327; }
+.categoryIcon--powered { color: #ff7417; fill: #ff7417; }
+.categoryIcon--platinum,
+.categoryIcon--silver { color: #c3cfdf; }
+.categoryIcon--gold { color: #ffb000; }
+.categoryIcon--bronze { color: #b94b0a; fill: #b94b0a; }
+.categoryIcon--supporting { color: #16cdaa; }
+.categoryIcon--inkind { color: #ffd21d; fill: #ffd21d; }
+.benefitCard { height: 223px; padding: 20px; border: 1px solid #e1e7ef; border-radius: 7px; box-shadow: none; }
+.benefitCard h2,
+.cta h2 { color: #101d42; font-family: var(--font-heading); font-size: 14px; font-weight: 700; line-height: 18px; text-transform: uppercase; }
+.benefitList { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.benefitList li { display: flex; min-width: 0; align-items: flex-start; gap: 7px; color: #46566d; font-family: var(--font-main); font-size: 10px; line-height: 1.4; }
+.benefitList svg { flex: none; margin-top: 1px; color: #16b99a; }
+.cta { position: relative; height: 138px; overflow: hidden; padding: 20px; border: 1px solid #cdd9e9; border-radius: 7px; background: #e6edf7; box-shadow: none; }
+.cta h2 { max-width: 78%; }
+.cta p { max-width: 70%; margin-top: 4px; color: #53647b; font-size: 10px; line-height: 1.35; }
+.cta a { position: relative; z-index: 1; margin-top: 11px; padding: 8px 14px; font-size: 9px; font-weight: 700; }
+.ctaRunner { position: absolute; right: 18px; bottom: 13px; color: #081a39; stroke-width: 1.8; }
 
 @media (max-width: 480px) {
-  .side { grid-template-columns: 1fr; }
+  .categoriesCard { padding: 18px 16px; }
+  .benefitCard { height: auto; min-height: 223px; }
+  .cta { height: 138px; }
 }

@@ -10,44 +10,59 @@ export const aboutIntro = {
   eventDetails: [
     { icon: 'calendar', label: 'Date', value: 'Coming Soon' },
     { icon: 'map-pin', label: 'Venue', value: 'Gachibowli Stadium, Hyderabad' },
-    { icon: 'clock', label: 'Time', value: '5:00 AM onwards' },
+    { icon: 'clock', label: 'Time', value: '6:00 AM onwards' },
   ],
 };
 
 export const visionMission = {
-  vision: { icon: 'eye', title: 'Our Vision', text: 'To create a healthier, more connected real estate community across Telangana and beyond.' },
-  mission: { icon: 'target', title: 'Our Mission', text: 'To bring together the industry and residents through a shared run - promoting fitness, collaboration and community pride.' },
+  vision: { icon: 'eye', title: 'Our Vision', text: 'To create a healthier real estate community and contribute towards building a vibrant, active and sustainable Telangana.' },
+  mission: { icon: 'target', title: 'Our Mission', text: 'To bring together real estate professionals, communities and stakeholders to promote wellness, collaboration and growth through the power of running.' },
 };
 
 export const aboutStats = [
   { value: '10000+', label: 'Participants', icon: 'users' },
-  { value: '250+', label: 'Real Estate Companies', icon: 'building' },
-  { value: '100+', label: 'Exhibitors', icon: 'store' },
-  { value: '50', label: 'Speakers', icon: 'handshake' },
-  { value: 'One', label: 'Stronger Community', icon: 'heart' },
+  { value: '250+', label: 'Gated Communities', icon: 'building' },
+  { value: '100+', label: 'Real Estate Companies', icon: 'building' },
+  { value: '50', label: 'Sponsors', icon: 'handshake' },
+  { value: 'One', label: 'Stronger Community', icon: 'users' },
 ];
 
 export const whyThisMarathon = [
-  { icon: 'heart-pulse', title: 'Health & Wellness', text: 'Encouraging fit and healthy lifestyles.' },
-  { icon: 'users', title: 'Networking', text: 'Connect with leaders and peers across the industry.' },
-  { icon: 'trending-up', title: 'Industry Growth', text: 'Showcasing innovation and opportunity.' },
-  { icon: 'building', title: 'Community Building', text: 'Strengthening bonds between neighbourhoods.' },
-  { icon: 'flag', title: 'Telangana Rising 2047', text: 'Supporting the vision of a developed Telangana.' },
+  { icon: 'heart', title: 'Health & Wellness', text: 'Encouraging a fit and healthy lifestyle.' },
+  { icon: 'users', title: 'Networking', text: 'Connect with industry leaders & professionals.' },
+  { icon: 'trending-up', title: 'Industry Growth', text: 'Strengthen the real estate ecosystem together.' },
+  { icon: 'users', title: 'Community Building', text: 'Building stronger communities for a better tomorrow.' },
+  { icon: 'map-pin', title: 'Telangana Rising 2047', text: 'Supporting the vision of a developed Telangana.' },
 ];
 
 export const impact = {
   title: 'Our Impact',
-  items: ['Promoting health and fitness', 'Encouraging social responsibility', 'Supporting sustainable development', 'Inspiring community participation'],
+  description: 'This event is designed to leave a lasting impact on society by supporting health, unity and sustainable development.',
+  items: [
+    { icon: 'heart', title: 'PROMOTE\nHEALTHY LIVING' },
+    { icon: 'users', title: 'ENCOURAGE\nSOCIAL RESPONSIBILITY' },
+    { icon: 'building', title: 'SUPPORT SUSTAINABLE\nURBAN DEVELOPMENT' },
+    { icon: 'zap', title: 'INSPIRE FUTURE\nGENERATIONS' },
+  ],
   image: images.about.hyderabad,
 };
 
 export const whoCanParticipate = {
   title: 'Who Can Participate?',
-  items: ['Builders & developers', 'Real estate professionals', 'Architects & consultants', 'Channel partners & brokers', 'Bankers & lenders', 'Residents & families', 'Fitness enthusiasts', 'Anyone who wants to make a difference'],
+  items: [
+    'Builders & Developers',
+    'Realtors & Channel Partners',
+    'Architects & Engineers',
+    'Investors & Consultants',
+    'Home Buyers & Residents',
+    'Fitness Enthusiasts',
+    'Students & Families',
+    'Anyone who wants to make a difference!',
+  ],
 };
 
 export const organizers = {
-  title: 'Organized by Industry, for the Community',
+  title: 'Organized by Industry, for the Community.',
   people: [
     { name: 'Chief Patron', role: 'Leading the vision, inspiring the change.' },
     { name: 'Event Chairman', role: 'Driving purpose, building connections.' },
