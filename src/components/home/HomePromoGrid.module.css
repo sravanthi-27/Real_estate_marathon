@@ -6,8 +6,10 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 1.3fr);
-  gap: .9rem;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, .82fr) minmax(0, 1.35fr);
+  max-width: 1250px;
+  margin-inline: auto;
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -15,8 +17,11 @@
 .highlights {
   display: flex;
   min-width: 0;
+  min-height: 308px;
   flex-direction: column;
-  padding: 1rem;
+  padding: 21px 24px;
+  border-radius: 13px;
+  box-shadow: none;
 }
 
 .heading {
@@ -30,13 +35,14 @@
 .highlights h2,
 .expo h2 {
   color: var(--color-primary-dark);
-  font-size: var(--fs-sm);
+  font-size: 1.5rem;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
 .heading > span {
   color: var(--color-accent);
-  font-size: .55rem;
+  font-size: .72rem;
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
 }
@@ -44,27 +50,30 @@
 .products {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: .4rem;
-  margin: .65rem 0;
+  gap: 9px;
+  margin: 15px 0;
 }
 
 .product {
   display: flex;
   min-width: 0;
+  height: 120px;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-surface);
-  padding: .25rem;
+  border-radius: 9px;
+  background: #fafbfe;
+  padding: 6px 5px 4px;
   text-align: center;
 }
 
 .productImage {
   width: 100%;
-  height: 3.2rem;
-  border-radius: 4px;
+  height: 64px;
+  flex: 0 0 64px;
+  border-radius: 6px;
+  background: transparent;
 }
 
 .productImage img {
@@ -75,26 +84,28 @@
   overflow: hidden;
   max-width: 100%;
   color: var(--color-primary-dark);
-  font-size: .52rem;
+  font-size: .72rem;
+  line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .product > span {
   color: var(--color-accent);
-  font-size: .55rem;
+  font-size: .75rem;
   font-weight: var(--fw-semibold);
+  line-height: 1.2;
 }
 
 .outlineLink,
 .expoLink {
   display: inline-flex;
-  min-height: 1.8rem;
+  min-height: 42px;
   align-items: center;
   justify-content: center;
   gap: .3rem;
-  border-radius: var(--radius-sm);
-  font-size: .56rem;
+  border-radius: 8px;
+  font-size: .75rem;
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
 }
@@ -113,54 +124,58 @@
 .expo {
   display: flex;
   min-width: 0;
+  min-height: 308px;
   flex-direction: column;
-  padding: 1rem;
-  border-radius: var(--radius-md);
+  padding: 21px 24px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
   background: var(--color-primary-dark);
   color: var(--color-white);
-  box-shadow: var(--shadow-sm);
 }
 
 .kicker {
   color: #ff9a54;
-  font-size: .53rem;
+  font-size: .72rem;
   font-weight: var(--fw-semibold);
   letter-spacing: .06em;
   text-transform: uppercase;
 }
 
 .expo h2 {
-  margin: .15rem 0 .7rem;
+  margin: 5px 0 14px;
   color: var(--color-white);
 }
 
 .expoFeatures {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .4rem;
+  gap: 8px 9px;
   flex: 1;
 }
 
 .expoFeatures span {
   display: grid;
-  min-height: 2.3rem;
+  min-height: 57px;
   align-content: center;
   justify-items: center;
-  gap: .15rem;
-  padding: .3rem;
+  gap: 3px;
+  padding: 5px;
   border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--radius-sm);
-  font-size: .5rem;
+  border-radius: 9px;
+  font-size: .69rem;
   line-height: 1.25;
   text-align: center;
 }
 
 .expoFeatures svg {
+  width: 16px;
+  height: 16px;
   color: var(--color-accent);
 }
 
 .expoLink {
-  margin-top: .7rem;
+  min-height: 42px;
+  margin-top: 12px;
   background: var(--color-accent);
   color: var(--color-white);
 }
@@ -170,37 +185,47 @@
 }
 
 .highlights h2 {
-  margin-bottom: .6rem;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eef0f4;
 }
 
 .highlightGrid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: .35rem;
+  gap: 9px;
 }
 
 .highlight {
   min-width: 0;
+  height: 138px;
   overflow: hidden;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: 9px;
+  background: var(--color-white);
   text-align: center;
 }
 
 .highlightImage {
-  height: 3.6rem;
+  height: 72px;
+  padding: 4px;
+  border-radius: 6px;
+  background: #fafbfe;
 }
 
 .highlightImage img {
   object-fit: cover;
+  border-radius: 6px;
+  background: #fafbfe;
 }
 
 .highlight > span {
   display: block;
-  min-height: 2rem;
-  padding: .25rem .1rem;
+  min-height: 51px;
+  padding: 6px 3px 3px;
   color: var(--color-primary-dark);
-  font-size: .48rem;
+  font-size: .69rem;
+  font-weight: var(--fw-medium);
   line-height: 1.25;
 }
 
@@ -209,21 +234,25 @@
   align-items: center;
   justify-content: center;
   gap: .35rem;
-  margin-top: auto;
-  padding: .45rem .25rem 0;
+  margin-top: 12px;
+  padding: 0;
   color: var(--color-muted);
-  font-size: .53rem;
+  font-size: .72rem;
+  line-height: 1.3;
   text-align: center;
 }
 
 .note svg {
   flex: none;
+  width: 16px;
+  height: 16px;
   color: var(--color-accent);
 }
 
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    gap: 18px;
   }
 
   .expo {
@@ -236,7 +265,7 @@
   }
 
   .highlightImage {
-    height: 6rem;
+    height: 72px;
   }
 }
 
@@ -251,18 +280,21 @@
     grid-row: auto;
   }
 
-  .productImage {
-    height: 4rem;
+  .merch,
+  .highlights,
+  .expo {
+    min-height: 0;
   }
 
-  .product strong,
-  .product > span,
-  .outlineLink,
-  .expoLink {
-    font-size: .65rem;
+  .products {
+    gap: 6px;
   }
 
-  .highlightImage {
-    height: 5rem;
+  .product {
+    height: 120px;
+  }
+
+  .highlightGrid {
+    gap: 6px;
   }
 }

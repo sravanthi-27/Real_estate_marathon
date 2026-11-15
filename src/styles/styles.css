@@ -60,7 +60,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 12px); }
-body { font-family: var(--font-main); font-size: var(--fs-base); color: var(--color-text); background: var(--color-surface); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-main); font-size: var(--fs-base); color: var(--color-text); background: var(--color-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; letter-spacing: .01em; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -70,7 +70,7 @@ input, select, textarea { font-family: inherit; font-size: var(--fs-sm); }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
 .appShell { margin: 0; }
-.appShell > main { margin-inline: 10%; }
+.appShell > main { margin-inline: 10%; background: var(--color-bg); }
 .container { width: 100%; max-width: none; margin: 0 auto; padding: 0; }
 .section { padding: var(--section-space) 0; }
 .section--white { background: var(--color-white); }

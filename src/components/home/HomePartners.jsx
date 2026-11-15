@@ -1,13 +1,11 @@
 import Img from '@/components/ui/Img';
-import SectionTitle from '@/components/ui/SectionTitle';
 import { homePartners } from '@/data/home';
 import styles from './HomePartners.module.css';
 
 export default function HomePartners() {
   return (
-    <section className={`section ${styles.section}`}>
-      <div className="container">
-        <SectionTitle sub="Prominent real estate brand partners">Event Partners &amp; Associate Sponsors</SectionTitle>
+    <section className={`section ${styles.section}`} aria-label="Event partners and sponsors">
+      <div className={`container ${styles.container}`}>
         <div className={styles.panel}>
           {homePartners.map((group) => (
             <div className={styles.group} key={group.title}>
@@ -17,7 +15,7 @@ export default function HomePartners() {
                   <Img
                     key={src}
                     src={src}
-                    alt={`${group.title} logo ${index + 1}`}
+                    alt={`${group.names[index]} logo`}
                     contain
                     className={styles.logo}
                   />

@@ -21,22 +21,36 @@ export const raceCategoryDetails = {
 };
 
 export const homePartners = [
-  { title: 'Powered by & Principal Partners', logos: images.home.partners.principal },
-  { title: 'Builder & Infrastructure Partners', logos: images.home.partners.builders },
+  {
+    title: 'Powered by & Principal Partners',
+    logos: images.home.partners.principal,
+    names: ['Prestige Group', 'My Home Group', 'Rajapushpa', 'Ramky', 'Sumadhura', 'APR Group'],
+  },
+  {
+    title: 'Builder & Infrastructure Partners',
+    logos: images.home.partners.builders,
+    names: ['SAS Infra', 'Anuhar Homes', 'Cybercity', 'Vertex', 'Brigade', 'ASBL', 'SV Infra', 'EIPL'],
+  },
+  {
+    title: 'Banking & Financial Partners',
+    logos: images.home.partners.financial,
+    names: ['LIC HFL', 'PNB Housing', 'Bank of Baroda'],
+  },
 ];
 
 const homeProductIds = ['tee-white', 'cap', 'bottle', 'medal', 'bag'];
+const homeProductLabels = ['T-Shirt', 'Cap', 'Bottle', 'Medal', 'Sports Bag'];
 export const homeMerchandise = homeProductIds.map((id, index) => {
   const product = products.find((item) => item.id === id);
-  return { ...product, src: images.home.merch[index] };
+  return { ...product, displayName: homeProductLabels[index], src: images.home.merch[index] };
 });
 
 export const homeExpoHighlights = [
   { title: 'Flag off', src: images.home.expoHighlights[0] },
-  { title: 'Builders & developers', src: images.home.expoHighlights[1] },
-  { title: 'Corporate partners', src: images.home.expoHighlights[2] },
+  { title: 'Builders Run', src: images.home.expoHighlights[1] },
+  { title: 'Corporate Team', src: images.home.expoHighlights[2] },
   { title: 'Awards', src: images.home.expoHighlights[3] },
-  { title: 'Food court', src: images.home.expoHighlights[4] },
+  { title: 'Food Courts', src: images.home.expoHighlights[4] },
 ];
 
 export const homeOrganizers = [

@@ -1,6 +1,8 @@
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
+import Img from '@/components/ui/Img';
 import { CATEGORIES } from '@/config/registration';
+import { images } from '@/config/images';
 import { raceCategoryDetails, route } from '@/data/home';
 import styles from './RouteSection.module.css';
 
@@ -45,7 +47,7 @@ export default function RouteSection() {
           <div className={styles.routeHeading}>
             <div>
               <h2 className="card__title">{route.title}</h2>
-              <p className={styles.subtitle}>Interactive map · Gachibowli Stadium</p>
+              <p className={styles.subtitle}>Illustrative route · Gachibowli Stadium</p>
             </div>
             <a className={styles.mapLink} href={route.mapUrl} target="_blank" rel="noreferrer">
               View full map <Icon name="arrow-right" size={13} />
@@ -53,13 +55,7 @@ export default function RouteSection() {
           </div>
           <div className={styles.routeContent}>
             <div className={styles.mapFrame}>
-              <iframe
-                title="Interactive OpenStreetMap centered on Gachibowli Stadium"
-                src={route.mapEmbedUrl}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <span className={styles.mapBadge}><Icon name="map-pin" size={12} /> Start / Finish</span>
+              <Img src={images.home.map} alt="Illustrative marathon route map showing Gachibowli Stadium, Financial District, Durgam Cheruvu and route checkpoints" className={styles.mapImage} />
             </div>
             <div className={styles.stats}>
               {route.stats.map((stat) => (
@@ -70,7 +66,7 @@ export default function RouteSection() {
               ))}
             </div>
           </div>
-          <p className={styles.mapNote}>Map is interactive. The official road-by-road course will be published here once confirmed.</p>
+          <p className={styles.mapNote}>Illustrative event route. Course details may be updated before race day.</p>
         </article>
       </div>
     </section>

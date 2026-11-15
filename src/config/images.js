@@ -16,6 +16,7 @@ export const images = {
   },
   home: {
     hero: p('home', 'hero.png'),
+    map: p('home', 'map.png'),
     partners: {
       principal: [
         eventPartner('c48112dc50d188b694e219662b9261ca974898a2'),
@@ -35,6 +36,11 @@ export const images = {
         eventPartner('6923490c2d9188e738e071d330067aa17cfbaae5'),
         eventPartner('f81f0eadce2dbd06f2072a98ea0a3f0cb284f023'),
       ],
+      financial: [
+        p('sponsors', 'dd86c1b2adad69d259827e417fc95be0bdf075d0.png'),
+        p('sponsors', 'c22387f12cb4a712c3efc7c220cd3005fb97766c.png'),
+        p('sponsors', '0ce6c86fe6e46130daca8f41fa599aa6376dfb9b.png'),
+      ],
     },
     merch: [
       p('home', 'real-estate-marathon-kits/kits/merchandise/01_official-t-shirt.png'),
@@ -44,11 +50,11 @@ export const images = {
       p('home', 'real-estate-marathon-kits/kits/merchandise/03_sports-bag.png'),
     ],
     expoHighlights: [
-      p('home', 'community/237cf77f27482a14f79343209cd6e28953684b0a.jpg'),
-      p('home', 'community/6267e4a0bcb5661afb74429bc72fecc48b75d115.jpg'),
-      p('home', 'community/124b07233952195363169b49204bae4e1329190d.jpg'),
-      p('home', 'community/b98db517f26b182b0fd78283b87240d4ee1bbd77.jpg'),
-      p('home', 'community/7a3f2fcd2b3977e57e2c8439708dadd7805a37df.jpg'),
+      p('home', 'event highlights/e9ec162f9a0a6fd71dd1595bfffbb77acc59f96a.png'),
+      p('home', 'event highlights/e9ec162f9a0a6fd71dd1595bfffbb77acc59f96a.png'),
+      p('home', 'event highlights/1435cd605f366e4e3db0db1dcf348938fc136a50.png'),
+      p('home', 'event highlights/74aca4c2e1b25983cdc2b87b491188fe60550c9b.png'),
+      p('home', 'event highlights/178b6d9b06c7c0418a48284ec0d4b960fb9dbe50.png'),
     ],
     organizers: [
       p('home', 'community/b98db517f26b182b0fd78283b87240d4ee1bbd77.jpg'),

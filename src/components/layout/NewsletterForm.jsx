@@ -22,7 +22,7 @@ export default function NewsletterForm() {
   return (
     <form onSubmit={submit} className={styles.form} noValidate>
       <div className={styles.row}>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" aria-label="Email address" className={styles.input} />
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email Address" aria-label="Email address" className={styles.input} />
         <button className={styles.btn} disabled={state.status === 'loading'}>{state.status === 'loading' ? '...' : 'Subscribe'}</button>
       </div>
       {state.message && <p className={state.status === 'ok' ? styles.ok : styles.err} role="status">{state.message}</p>}

@@ -17,7 +17,7 @@ export default function HomePromoGrid() {
             {homeMerchandise.map((product) => (
               <div className={styles.product} key={product.name}>
                 <Img src={product.src} alt={product.name} contain className={styles.productImage} />
-                <strong>{product.name}</strong>
+                <strong>{product.displayName}</strong>
                 <span>{product.price}</span>
               </div>
             ))}
@@ -34,7 +34,7 @@ export default function HomePromoGrid() {
             <span><Icon name="banknote" size={14} /> Home loans</span>
             <span><Icon name="lightbulb" size={14} /> Smart living</span>
           </div>
-          <Link className={styles.expoLink} href="/expo">Explore the expo <Icon name="arrow-right" size={13} /></Link>
+          <Link className={styles.expoLink} href="/expo">Book your stall <Icon name="arrow-right" size={13} /></Link>
         </article>
 
         <article className={`card ${styles.highlights}`}>

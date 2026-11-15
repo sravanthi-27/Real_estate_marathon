@@ -42,7 +42,7 @@ const metrics = [
 
 export default function CommunitySection() {
   return (
-    <section className="section" aria-label="Why participate and Telangana Rising 2047">
+    <section className={`section ${styles.homeSection}`} aria-label="Why participate and Telangana Rising 2047">
       <div className={`container ${styles.container}`}>
         <div className={styles.main}>
           <article className={styles.column}>
