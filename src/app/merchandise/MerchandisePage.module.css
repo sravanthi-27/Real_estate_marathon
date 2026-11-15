@@ -86,13 +86,11 @@
   padding: .75rem;
 }
 
-.storeGrid h2,
 .lastGrid h2 {
   margin-bottom: .6rem;
   font-size: var(--fs-sm);
 }
 
-.storeGrid p,
 .lastGrid p {
   margin-top: .35rem;
   font-size: .65rem;
