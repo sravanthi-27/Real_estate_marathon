@@ -1,13 +1,23 @@
+import { Award } from 'lucide-react';
 import styles from './Leaderboard.module.css';
 
-export default function Leaderboard({ title, columns, rows }) {
+export default function Leaderboard({ title, description, columns, rows }) {
   return (
-    <div className="card">
+    <article className={`card ${styles.card}`}>
       <h3 className="card__title">{title}</h3>
+      <p className={styles.description}>{description}</p>
       <table className={styles.table}>
-        <thead><tr><th>#</th>{columns.map((c) => <th key={c}>{c}</th>)}</tr></thead>
-        <tbody>{rows.map((r, i) => <tr key={r[0]}><td>{i + 1}</td>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody>
+        <thead><tr><th>Rank</th>{columns.map((c) => <th key={c}>{c}</th>)}</tr></thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={row[0]}>
+              <td>{i === 0 && <Award aria-label="First place" />}<span>{i + 1}</span></td>
+              {row.map((cell, j) => <td key={j}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
       </table>
-    </div>
+      <a className={styles.fullLeaderboard} href="/merchandise#community-leaderboard">View Full Leaderboard</a>
+    </article>
   );
 }

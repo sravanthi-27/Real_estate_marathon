@@ -11,6 +11,7 @@ export default function HomeHero() {
         src={images.home.hero}
         alt="World's First Real Estate Marathon event banner"
         className={styles.banner}
+        loading="eager"
       />
       <div className={styles.registerCard}>
         <p className={styles.priceLabel}>Price for any marathon category is</p>

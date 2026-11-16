@@ -59,12 +59,15 @@
 .storeSection,
 .lastSection {
   padding: 13px;
-  margin-inline: calc(-10vw + 1.5px);
 }
 
 .storeSection {
   padding: 24px 15px;
   background: #fff;
+}
+
+.lastSection {
+  padding: 24px 15px;
 }
 
 .storeGrid,
@@ -80,8 +83,7 @@
 
 .lastGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  width: min(100%, 1050px);
-  margin: 0 auto;
+  width: 100%;
 }
 
 .page :global(.card__title) {

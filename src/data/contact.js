@@ -1,57 +1,61 @@
 import { images } from '@/config/images';
-import { CONTACT, EVENT } from '@/config/site';
-
-export const quickContacts = [
-  { icon: 'users', title: 'Event Queries', value: CONTACT.email },
-  { icon: 'phone', title: 'Registration Support', value: CONTACT.phone },
-  { icon: 'handshake', title: 'Sponsorship Enquiries', value: CONTACT.email },
-  { icon: 'building', title: 'Expo & Exhibitors', value: CONTACT.email },
-];
 
 export const eventSnapshot = {
   title: 'Event Snapshot',
   rows: [
-    { label: 'Event', value: "World's First Real Estate Marathon" },
-    { label: 'Date', value: 'Coming Soon' },
-    { label: 'Time', value: EVENT.timeLabel },
-    { label: 'Venue', value: EVENT.venue },
-    { label: 'Categories', value: '3K / 5K / 10K / 21K' },
-    { label: 'Registration', value: 'Rs 99 per family' },
+    { icon: 'activity', label: 'Event', value: "World's First Real Estate Marathon" },
+    { icon: 'route', label: 'Distance', value: '10 KM' },
+    { icon: 'map-pin', label: 'Venue', value: 'Gachibowli Stadium' },
+    { icon: 'route', label: 'Route', value: 'Gachibowli → Financial District → Gachibowli' },
+    { icon: 'users', label: 'Participants', value: '10,000+', emphasis: true },
+    { icon: 'building', label: 'Communities', value: '250+' },
+    { icon: 'building', label: 'Companies', value: '100+' },
+    { icon: 'handshake', label: 'Sponsors', value: '50+' },
+    { icon: 'tree', label: 'Trees Planned', value: '10,000+', emphasis: true, green: true },
   ],
 };
 
 export const helpTopics = [
   { title: 'Participant Registration', image: images.contact.serviceIcons.participantRegistration },
-  { title: 'Sponsorship Opportunities', image: images.contact.serviceIcons.sponsorPartnership },
-  { title: 'Expo Stall Booking', image: images.contact.serviceIcons.expoStallBooking },
   { title: 'Community Registration', image: images.contact.serviceIcons.communityRegistration },
+  { title: 'Sponsor Partnership', image: images.contact.serviceIcons.sponsorPartnership },
+  { title: 'Expo Stall Booking', image: images.contact.serviceIcons.expoStallBooking },
   { title: 'Merchandise Orders', image: images.contact.serviceIcons.merchandiseOrders },
-  { title: 'Emergency Support', image: images.contact.serviceIcons.emergencySupport },
   { title: 'Media Partnership', image: images.contact.serviceIcons.mediaPartnership },
-  { title: 'Volunteer Opportunities', image: images.contact.serviceIcons.volunteers },
+  { title: 'Volunteers', image: images.contact.serviceIcons.volunteers },
+  { title: 'Emergency Support', image: images.contact.serviceIcons.emergencySupport },
+];
+
+const organizerProfiles = [
+  { name: 'Chief Patron', role: 'Leading the vision, inspiring the change.' },
+  { name: 'Event Chairman', role: 'Driving purpose, building connections.' },
+  { name: 'Event Director', role: 'Planning today, transforming tomorrow.' },
+  { name: 'Race Director', role: 'On the track, for an unforgettable race.' },
+  { name: 'Advisory Board', role: 'Guiding the path towards excellence.' },
+  { name: 'Advisory Board', role: 'Guiding the path towards excellence.' },
 ];
 
 export const organizers = images.contact.organizers.map((src, i) => ({
+  ...organizerProfiles[i],
   id: `organizer-${i + 1}`,
-  name: `Event Team ${i + 1}`,
-  role: 'Organizing Committee',
   src,
 }));
 
 export const departments = [
-  { icon: 'ticket', title: 'Participant Support', value: CONTACT.email },
-  { icon: 'handshake', title: 'Sponsorship Team', value: CONTACT.email },
-  { icon: 'store', title: 'Expo Desk', value: CONTACT.email },
-  { icon: 'users', title: 'Community Partnerships', value: CONTACT.email },
-  { icon: 'megaphone', title: 'Media Desk', value: CONTACT.email },
+  { icon: 'headset', title: 'Participant Support', phone: '+91 98765 43211', email: 'participant@realestatejobs.co.in', tone: 'participant' },
+  { icon: 'handshake', title: 'Sponsorship Desk', phone: '+91 98765 43212', email: 'sponsors@realestatejobs.co.in', tone: 'sponsorship' },
+  { icon: 'store', title: 'Expo Sales', phone: '+91 98765 43213', email: 'expo@realestatejobs.co.in', tone: 'expo' },
+  { icon: 'network', title: 'Community Partnerships', phone: '+91 98765 43214', email: 'communities@realestatejobs.co.in', tone: 'community' },
+  { icon: 'shirt', title: 'Merchandise Support', phone: '+91 98765 43215', email: 'merchandise@realestatejobs.co.in', tone: 'merchandise' },
+  { icon: 'megaphone', title: 'Media & PR', phone: '+91 98765 43216', email: 'media@realestatejobs.co.in', tone: 'media' },
 ];
 
 export const contactFormFields = [
-  { name: 'name', label: 'Full name', required: true },
-  { name: 'email', label: 'Email', type: 'email', required: true },
-  { name: 'phone', label: 'Mobile', type: 'tel' },
-  { name: 'subject', label: 'Subject', type: 'select', options: helpTopics.map((h) => h.title), required: true },
-  { name: 'message', label: 'Message', type: 'textarea', span: 2, required: true },
+  { name: 'name', label: '', placeholder: 'Your Name', required: true },
+  { name: 'phone', label: '', placeholder: 'Mobile Number', type: 'tel', required: true },
+  { name: 'email', label: '', placeholder: 'Email Address', type: 'email', required: true },
+  { name: 'subject', label: '', placeholder: 'Select Category', type: 'select', options: helpTopics.map((h) => h.title), required: true, span: 2 },
+  { name: 'message', label: '', placeholder: 'Message / Enquiry', type: 'textarea', span: 2, required: true },
 ];
 
 export const volunteer = {

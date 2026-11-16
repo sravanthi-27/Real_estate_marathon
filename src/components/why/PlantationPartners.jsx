@@ -5,13 +5,21 @@ import styles from './PlantationPartners.module.css';
 
 export default function PlantationPartners() {
   return (
-    <div className="card">
+    <article className={`card ${styles.card}`}>
       <h2 className="card__title">{plantationPartners.title}</h2>
       <p className={styles.text}>{plantationPartners.text}</p>
-      <Img src={plantationPartners.image} alt="Community members caring for a young tree" contain className={styles.image} />
-      <ul className={styles.steps}>
-        {plantationPartners.steps.map((step) => <li key={step}><Icon name="check-circle" size={14} />{step}</li>)}
+      <ul className={styles.partners}>
+        {plantationPartners.partners.map((partner) => (
+          <li key={partner.name}>
+            <span className={styles.logo}>
+              {partner.src
+                ? <Img src={partner.src} alt="" contain className={styles.logoImage} />
+                : <Icon name={partner.icon} size={27} />}
+            </span>
+            <span className={styles.name}>{partner.name}</span>
+          </li>
+        ))}
       </ul>
-    </div>
+    </article>
   );
 }

@@ -206,6 +206,11 @@ export const images = {
   why: {
     hero: p('why-participate', '9e8608fda44a7dda3de7858d00cd8bf0066877f3.png'),
     runForPlanet: p('why-participate', 'c661e0a3495390851fcbd70390fcaca4fee1fef8.png'),
+    partnerLogos: [
+      p('why-participate', 'c1dbe10fd9a5675ada3fb23229419fd7abebea48.png'),
+      p('why-participate', '641ecc444a6f14432ddbbef2db524a3069432bc7.png'),
+      p('why-participate', 'bb1f9f8ac500b6838154d32a8e73ff9124d9d9c3.png'),
+    ],
     finisher: [
       p('why-participate', '6cf7455352df89378612959df462071f2558072d.png'),
       p('why-participate', 'b90f6e860c63a65e248d113b3c8fa9bb78c8ecd3.png'),
@@ -213,7 +218,7 @@ export const images = {
       p('why-participate', '8f911ffa34774661b0984bf36a9e3429da368b88.png'),
     ],
     plantation: p('why-participate', 'e187a1bb9cc2320bf2a237b36ec5a8f08bcf8920.png'),
-    banner: p('why-participate', 'c661e0a3495390851fcbd70390fcaca4fee1fef8.png'),
+    banner: p('why-participate', 'Run, Walk, Plant a Tree.png'),
   },
   contact: {
     hero: p('contact', '66e8d34d673ddbf3913879e1eb2adcb180db12c9.png'),
@@ -235,7 +240,8 @@ export const images = {
       mediaPartnership: p('contact', 'event_services_icons/media_partnership.png'),
       volunteers: p('contact', 'event_services_icons/volunteers.png'),
     },
-    map: p('contact', 'a9d90d74fcdee120e0ab36868977f36bad97736d.png'),
+    map: p('contact', 'a9be233f26a46dfe0086c37e55132bb25214d9f0.png'),
+    skyline: p('contact', 'a9d90d74fcdee120e0ab36868977f36bad97736d.png'),
     volunteer: p('contact', '811cb5a8362b182323efabd90a39e0f632d19ce5.jpg'),
     support: p('contact', 'f08e969dc59821da3212d8becf9266b6cd09d0c6.jpg'),
   },

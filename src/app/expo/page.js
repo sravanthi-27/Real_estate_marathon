@@ -14,7 +14,7 @@ export const metadata = { title: 'Real Estate Expo' };
 export default function ExpoPage() {
   return (
     <>
-      <Img src={images.expo.hero} alt="Real Estate Expo 2026 — Connect, Collaborate, Grow" className={styles.hero} />
+      <Img src={images.expo.hero} alt="Real Estate Expo 2026 — Connect, Collaborate, Grow" className={styles.hero} loading="eager" />
       <section className={`section section--white ${styles.about}`}>
         <div className="container">
           <SectionTitle sub={aboutExpo.text}>{aboutExpo.title}</SectionTitle>

@@ -15,7 +15,7 @@ export default function MerchandisePage() {
   return (
     <div className={styles.page}>
       <div className={styles.hero}>
-        <Img src={images.merchandise.hero} alt="Run in your community colors — Real Estate Marathon Hyderabad" className={styles.heroImage} />
+        <Img src={images.merchandise.hero} alt="Run in your community colors — Real Estate Marathon Hyderabad" className={styles.heroImage} loading="eager" />
         <a className={styles.orderLink} href="#store" aria-label="Order your kit" />
         <a className={styles.sponsorLink} href="#kit-sponsor-cta" aria-label="Sponsor community kits" />
       </div>

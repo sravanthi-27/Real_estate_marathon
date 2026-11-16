@@ -7,6 +7,7 @@ Full website (Home, About, Sponsors, Expo, Merchandise, Why Participate, Contact
 npm install
 cp .env.example .env.local      # then fill in the values (step 2)
 npm run images                  # creates image folders + checklist
+npm run optimize-images         # generates compressed WebP delivery copies
 npm run dev                     # http://localhost:3000
 ```
 
@@ -21,8 +22,9 @@ SUPABASE_SERVICE_ROLE_KEY=...
 The service-role key stays on the server only (never prefix it with NEXT_PUBLIC_). Row Level Security is ON with no public policies, so all data access goes through the API routes.
 
 ## 3. Payments
-- `PAYMENT_PROVIDER=demo` (default): no real money, auto-approves. Use for development/staging only.
+- `PAYMENT_PROVIDER=demo`: no real money, auto-approves. Use only in development or non-production preview environments.
 - `PAYMENT_PROVIDER=razorpay`: set `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `RAZORPAY_WEBHOOK_SECRET`. In the Razorpay dashboard add webhook `https://YOUR-DOMAIN/api/payments/webhook` (event: `payment.captured`).
+- Production defaults to Razorpay and rejects the demo provider; configure Razorpay credentials before accepting registrations.
 - Card / bank details are entered on the gateway, never in our forms.
 - Test the Razorpay flow with test keys before going live (it was not run against a live gateway here).
 
@@ -30,6 +32,7 @@ The service-role key stays on the server only (never prefix it with NEXT_PUBLIC_
 ```
 supabase/schema.sql          database schema (run once)
 scripts/setup-images.mjs     creates image folders + public/images/IMAGES.md
+scripts/optimize-images.mjs  generates compressed WebP copies for site images
 src/
   app/                       routes: /, /about, /sponsors, /expo, /merchandise,
                              /why-participate, /contact, /register, /register/confirmation

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import {
-  BLOOD_GROUPS, CATEGORIES, COMMUNITY_ROLES, COMMUNITY_OTHER, EMERGENCY_RELATIONSHIPS, FAMILY_RELATIONSHIPS,
-  GENDERS, HEALTH_CHECKUPS, LONGEST_DISTANCES, PACER_GROUPS, PROPERTY_TYPES, TSHIRT_SIZES,
+  BLOOD_GROUPS, CATEGORIES, COMMUNITIES, COMMUNITY_ROLES, COMMUNITY_OTHER, EMERGENCY_RELATIONSHIPS, FAMILY_RELATIONSHIPS,
+  GENDERS, HEALTH_CHECKUPS, LONGEST_DISTANCES, NATIONALITIES, PACER_GROUPS, PROPERTY_TYPES, STATES, TSHIRT_SIZES,
 } from '@/config/registration';
 import { ageFromDob } from '@/lib/utils';
 
@@ -34,7 +34,7 @@ export const personalSchema = z.object({
   gender: pick(GENDERS, 'Select gender'),
   dob,
   bloodGroup: pick(BLOOD_GROUPS, 'Select blood group'),
-  nationality: text('Select nationality', 40),
+  nationality: pick(NATIONALITIES, 'Select nationality'),
   category: pick(CATEGORIES.map((c) => c.id), 'Select a running category'),
   tshirtSize: pick(TSHIRT_SIZES, 'Select T-shirt size'),
   bibName,
@@ -45,7 +45,7 @@ export const personalSchema = z.object({
   society: optionalText(160),
   pincode,
   city: text('City is required', 80),
-  state: text('Select state', 60),
+  state: pick(STATES, 'Select state'),
   emergencyName: text('Emergency contact name is required', 100),
   emergencyMobile: mobile,
   emergencyRelationship: pick(EMERGENCY_RELATIONSHIPS, 'Select relationship'),
@@ -74,7 +74,7 @@ export const familySchema = z.object({ members: z.array(familyMemberSchema).max(
 
 export const communitySchema = z.object({
   skip: z.boolean(),
-  communityName: z.string().optional(),
+  communityName: optionalText(160),
   customCommunityName: z.string().trim().max(160).optional(),
   tower: optionalText(60),
   flatNumber: z.string().trim().max(60).optional(),
@@ -88,7 +88,13 @@ export const communitySchema = z.object({
   if (v.skip) return;
   const need = (key, msg) => { if (!v[key] || !String(v[key]).trim()) ctx.addIssue({ code: 'custom', path: [key], message: msg }); };
   need('communityName', 'Select your community');
+  if (v.communityName && !values(COMMUNITIES).includes(v.communityName) && v.communityName !== COMMUNITY_OTHER) {
+    ctx.addIssue({ code: 'custom', path: ['communityName'], message: 'Select a valid community' });
+  }
   if (v.communityName === COMMUNITY_OTHER) need('customCommunityName', 'Enter your community name');
+  if (v.state && !values(STATES).includes(v.state)) {
+    ctx.addIssue({ code: 'custom', path: ['state'], message: 'Select a valid state' });
+  }
   need('flatNumber', 'Flat / villa number is required');
   need('locality', 'Locality is required');
   need('state', 'Select state');

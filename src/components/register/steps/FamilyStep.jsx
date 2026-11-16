@@ -28,8 +28,10 @@ export default function FamilyStep({ errors }) {
   const set = (patch) => { setDraft((d) => ({ ...d, ...patch })); setDraftErrors({}); };
   const age = ageFromDob(draft.dob);
   const included = PRICING.includedFamilyMembers;
+  const familyLimitReached = members.length >= 8 && !editing;
 
   function save() {
+    if (familyLimitReached) return;
     const res = validate(familyMemberSchema, draft);
     if (!res.ok) { setDraftErrors(res.errors); return; }
     const exists = members.some((m) => m.id === draft.id);
@@ -49,6 +51,7 @@ export default function FamilyStep({ errors }) {
         <span><strong>Family Squad Pass (flat fee).</strong> Your Rs {PRICING.baseFamilyPassPaise / 100} pass covers up to {included} family members. Additional members are Rs {PRICING.extraMemberPaise / 100} each. Currently added: <strong>{members.length}</strong>.</span>
       </div>
       {errors.members && <p className={styles.err} role="alert">{errors.members}</p>}
+      {familyLimitReached && <p className={styles.sub} role="status">You can add up to 8 family members.</p>}
 
       {members.length > 0 && (
         <FormSection number={<Icon name="users" size={14} />} title={`Added family members (${members.length})`}>
@@ -94,7 +97,7 @@ export default function FamilyStep({ errors }) {
           <ChipGroup label="T-shirt size" value={draft.tshirtSize} onChange={(v) => set({ tshirtSize: v })} options={TSHIRT_SIZES} />
         </Field>
         <div style={{ marginTop: '1rem', display: 'flex', gap: '.6rem', flexWrap: 'wrap' }}>
-          <Button onClick={save} size="sm"><Icon name="plus" size={14} /> {editing ? 'Update member' : 'Save & add family member'}</Button>
+          <Button onClick={save} size="sm" disabled={familyLimitReached}><Icon name="plus" size={14} /> {editing ? 'Update member' : 'Save & add family member'}</Button>
           {editing && <Button variant="ghost" size="sm" onClick={() => { setDraft(blank()); setEditing(false); setDraftErrors({}); }}>Cancel</Button>}
         </div>
       </FormSection>

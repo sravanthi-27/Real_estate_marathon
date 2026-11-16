@@ -2,5 +2,6 @@
 !.env.example
 node_modules/
 .next
+.next-dev
 out
 .DS_Store

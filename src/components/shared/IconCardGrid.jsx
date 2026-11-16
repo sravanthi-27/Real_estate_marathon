@@ -3,9 +3,9 @@ import Img from '@/components/ui/Img';
 import styles from './IconCardGrid.module.css';
 
 /** Grid of small cards: icon + title + text. items: [{icon,title,text}] */
-export default function IconCardGrid({ items, columns = 4, highlightIndex = -1, compact = false }) {
+export default function IconCardGrid({ items, columns = 4, highlightIndex = -1, compact = false, className = '' }) {
   return (
-    <div className={`${styles.grid} ${compact ? styles.compact : ''}`} style={{ '--cols': columns }}>
+    <div className={`${styles.grid} ${compact ? styles.compact : ''} ${className}`} style={{ '--cols': columns }}>
       {items.map((it, i) => (
         <article key={it.title} className={`${styles.card} ${i === highlightIndex ? styles.hl : ''}`}>
           <span className={it.image ? styles.image : styles.icon}>

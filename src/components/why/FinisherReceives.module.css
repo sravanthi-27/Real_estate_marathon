@@ -1,4 +1,140 @@
-.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .45rem; text-align: center; }
-.img { height: 95px; border-radius: var(--radius-sm); background: transparent; }
-.grid figcaption { font-size: var(--fs-xs); font-weight: var(--fw-medium); margin-top: .3rem; }
-@media (max-width: 520px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.card {
+  display: flex;
+  min-width: 0;
+  height: clamp(350px, 27vw, 380px);
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #e2e6ec;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 7px;
+  color: #14233d;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.title span {
+  width: 58px;
+  height: 1px;
+  flex: 0 0 auto;
+  background: #ff5a1f;
+}
+
+.grid {
+  display: grid;
+  height: 260px;
+  min-height: 260px;
+  flex: 0 0 260px;
+  grid-template-areas:
+    "medal medal certificate certificate certificate certificate certificate certificate treeCertificate treeCertificate"
+    "location location location location location location updates updates updates updates";
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-rows: 1.25fr .75fr;
+  gap: 7px 8px;
+  text-align: center;
+}
+
+.grid figure {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.item1 { grid-area: medal; }
+.item2 { grid-area: certificate; }
+.item3 { grid-area: treeCertificate; }
+.item4 { grid-area: location; }
+.item5 { grid-area: updates; }
+
+.img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.item1 .img img {
+  object-position: center 70%;
+}
+
+.item2 .img img {
+  object-position: center;
+}
+
+.item2::before {
+  position: absolute;
+  z-index: 1;
+  background: rgb(30 157 211 / 40%);
+  content: '';
+  inset: 0;
+  pointer-events: none;
+}
+
+.grid figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 3px;
+  bottom: 6px;
+  left: 3px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 80%);
+}
+
+.grid figure::after {
+  position: absolute;
+  background: linear-gradient(transparent 55%, rgb(0 0 0 / 48%));
+  content: '';
+  inset: 0;
+  pointer-events: none;
+}
+
+.item2::after {
+  background: linear-gradient(transparent 55%, rgb(0 40 70 / 48%));
+}
+
+.impact {
+  display: flex;
+  min-height: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 7px;
+  border-radius: 6px;
+  background: #e5f6e8;
+  color: #26843a;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 16px;
+  text-align: center;
+}
+
+.impact svg {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 520px) {
+  .title span { width: 32px; }
+}

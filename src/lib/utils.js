@@ -9,6 +9,8 @@ export function formatINR(paise) {
 export function ageFromDob(iso, today = new Date()) {
   if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return null;
   const [y, m, d] = iso.split('-').map(Number);
+  const parsed = new Date(Date.UTC(y, m - 1, d));
+  if (parsed.getUTCFullYear() !== y || parsed.getUTCMonth() !== m - 1 || parsed.getUTCDate() !== d) return null;
   let age = today.getFullYear() - y;
   const month = today.getMonth() + 1;
   if (month < m || (month === m && today.getDate() < d)) age -= 1;

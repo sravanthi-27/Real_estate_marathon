@@ -10,7 +10,7 @@ export const metadata = { title: 'Sponsors' };
 export default function SponsorsPage() {
   return (
     <>
-      <Img src={images.sponsors.hero} alt="Our sponsors and partners in progress" className={styles.hero} />
+      <Img src={images.sponsors.hero} alt="Our sponsors and partners in progress" className={styles.hero} loading="eager" />
       <section className={styles.sponsorSection}>
         <div className={`container ${styles.layout}`}>
           <SponsorTiers />

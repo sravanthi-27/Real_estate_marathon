@@ -1,0 +1,331 @@
+.section {
+  position: relative;
+  left: 50%;
+  width: min(125%, 1280px);
+  padding: 18px 0 22px;
+  transform: translateX(-50%);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.27fr) minmax(0, .74fr);
+  align-items: start;
+  gap: 19px;
+  margin: 0 auto;
+}
+
+.card {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #e1e8f0;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(15, 32, 55, .05);
+  box-sizing: border-box;
+}
+
+.socialCard {
+  position: relative;
+  display: flex;
+  min-height: 267px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title {
+  margin: 0;
+  color: #0b1f44;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 3px 0 0;
+  color: #718096;
+  font-size: 9px;
+  line-height: 13px;
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 13px;
+}
+
+.socials > a,
+.unavailableSocial {
+  display: flex;
+  min-width: 27px;
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.unavailableSocial {
+  cursor: default;
+}
+
+.socialIcon {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 5px;
+  background: #718096;
+  color: #fff;
+}
+
+.facebook { background: #1877f2; }
+.instagram { background: #e4405f; }
+.linkedin { background: #0a66c2; }
+.youtube { background: #f00; }
+.whatsapp { background: #25d366; }
+
+.socialLabel {
+  margin-top: 5px;
+  color: #718096;
+  font-size: 7px;
+  line-height: 9px;
+}
+
+.skyline {
+  width: 100%;
+  height: 85px;
+  margin: auto auto 0;
+  background: transparent;
+}
+
+.skyline img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.faqCard {
+  min-height: 286px;
+}
+
+.leftTitle {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.faqItem {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f7f9fb;
+}
+
+.question {
+  display: flex;
+  width: 100%;
+  min-height: 26px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  background: transparent;
+  color: #34445c;
+  text-align: left;
+  cursor: pointer;
+}
+
+.question > span {
+  min-width: 0;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 13px;
+}
+
+.chevron {
+  flex: 0 0 11px;
+  color: #8fa2b9;
+  transition: transform .2s ease;
+}
+
+.question[aria-expanded="true"] .chevron {
+  transform: rotate(90deg);
+}
+
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding: 0 8px;
+  color: #718096;
+  font-size: 9px;
+  line-height: 13px;
+  transition: padding .2s ease;
+}
+
+.answerOpen {
+  grid-template-rows: 1fr;
+  padding-bottom: 7px;
+}
+
+.answerContent {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.answer p {
+  margin: 0;
+}
+
+.answer a {
+  color: #2878ff;
+}
+
+.viewFaq {
+  display: flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  border-radius: 4px;
+  background: #0b1f44;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.supportColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.supportCard {
+  display: flex;
+  min-height: 140px;
+  flex-direction: column;
+  align-items: center;
+  padding: 13px;
+}
+
+.supportCard:last-child {
+  min-height: 130px;
+}
+
+.supportIcon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.chatIcon {
+  background: #eef5ff;
+  color: #2878ff;
+}
+
+.whatsappIcon {
+  background: #e9fbf3;
+  color: #00a86b;
+}
+
+.supportTitle {
+  margin: 6px 0 0;
+  color: #0b1f44;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.supportCard .subtitle {
+  margin-top: 4px;
+  font-size: 8px;
+}
+
+.chatButton,
+.whatsappButton {
+  display: flex;
+  width: 100%;
+  min-height: 25px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: auto;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.chatButton { background: #0b1f44; }
+.whatsappButton { background: #25d366; }
+
+.whatsappButton svg,
+.chatButton svg {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 900px) and (min-width: 701px) {
+  .section {
+    padding-inline: 18px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .supportColumn {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .supportCard {
+    flex: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 16px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .socialCard {
+    min-height: 245px;
+  }
+
+  .faqCard {
+    min-height: 0;
+  }
+
+  .supportColumn {
+    flex-direction: column;
+  }
+}

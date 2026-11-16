@@ -1,4 +1,111 @@
-.table { width: 100%; border-collapse: collapse; font-size: var(--fs-xs); }
-.table th { text-align: left; color: var(--color-muted); font-weight: var(--fw-semibold); padding: .35rem .3rem; border-bottom: 1px solid var(--color-border); }
-.table td { padding: .5rem .3rem; border-bottom: 1px solid var(--color-surface); }
-.table tr:first-child td { font-weight: var(--fw-semibold); color: var(--color-accent); }
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.description {
+  max-width: 250px;
+  align-self: center;
+  margin: -1px 0 6px;
+  color: #718096;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  color: #26334b;
+}
+
+.table th {
+  padding: 4px 2px;
+  border-bottom: 1px solid #e1e6ee;
+  color: #8a9ab1;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+.table th:first-child,
+.table td:first-child {
+  width: 11%;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 29%;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 25%;
+  text-align: center;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 35%;
+  text-align: right;
+}
+
+.table th:nth-child(4) {
+  overflow-wrap: anywhere;
+}
+
+.table td {
+  padding: 4px 2px;
+  border-bottom: 1px solid #edf0f3;
+  font-size: 12px;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.table td:first-child {
+  color: #718096;
+}
+
+.table td:first-child svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 1px;
+  color: #f2a900;
+  vertical-align: -1px;
+}
+
+.table tbody tr:first-child td:first-child {
+  color: #ff5a1f;
+  font-weight: 700;
+}
+
+.table td:last-child {
+  color: #149a5a;
+  font-weight: 600;
+}
+
+.fullLeaderboard {
+  display: grid;
+  width: 135px;
+  height: 27px;
+  flex: 0 0 27px;
+  place-items: center;
+  align-self: center;
+  margin-top: auto;
+  border: 1px solid #d7dee8;
+  border-radius: 5px;
+  color: #14233d;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 13px;
+  text-transform: uppercase;
+}
+
+.fullLeaderboard:hover {
+  background: #f7f9fc;
+}

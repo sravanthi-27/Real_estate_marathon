@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <>
       <section aria-label="About the World's First Real Estate Marathon">
-        <Img src={images.about.hero} alt="About the World's First Real Estate Marathon in Hyderabad" className={styles.heroImage} />
+        <Img src={images.about.hero} alt="About the World's First Real Estate Marathon in Hyderabad" className={styles.heroImage} loading="eager" />
       </section>
       <AboutIntro />
       <VisionMission />
