@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Checkbox from '@/components/ui/form/Checkbox';
 import Field from '@/components/ui/form/Field';
@@ -9,7 +9,7 @@ import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import PaymentPanel from './PaymentPanel';
 import { useRegistration } from '../RegistrationProvider';
-import { CATEGORIES, COMMUNITY_OTHER, PAYMENT_METHODS, STEPS } from '@/config/registration';
+import { CATEGORIES, COMMUNITY_OTHER, PACER_GROUPS, PAYMENT_METHODS, STEPS } from '@/config/registration';
 import { SITE } from '@/config/site';
 import { buildFees } from '@/lib/pricing';
 import { formatDate, formatINR } from '@/lib/utils';
@@ -25,16 +25,19 @@ export default function ReviewPayStep({ goToStep, onBack }) {
   const [declErrors, setDeclErrors] = useState({});
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const paymentInProgress = useRef(false);
 
   const { personal: p, family, community: c, medical, declarations } = data;
   const cat = CATEGORIES.find((x) => x.id === p.category);
   const fees = buildFees({ category: p.category, familyCount: family.members.length });
   const communityName = c.skip ? 'Individual runner' : (c.communityName === COMMUNITY_OTHER ? c.customCommunityName : c.communityName);
+  const pacer = PACER_GROUPS.find((item) => item.value === data.running.pacerGroup);
   const stepIndex = (id) => STEPS.findIndex((s) => s.id === id);
 
   function setDecl(patch) { update('declarations', patch); setDeclErrors({}); }
 
   async function pay() {
+    if (paymentInProgress.current) return;
     setError('');
     // 1) re-validate everything; jump to the first step with a problem
     for (const [stepId, cfg] of Object.entries(STEP_SCHEMAS)) {
@@ -45,6 +48,7 @@ export default function ReviewPayStep({ goToStep, onBack }) {
     const full = validate(createRegistrationSchema, { personal: p, family, community: c, medical, running: data.running, declarations });
     if (!full.ok) { setError('Please review your details and try again.'); return; }
 
+    paymentInProgress.current = true;
     setBusy(true);
     try {
       // 2) create the registration once; reuse it when retrying a failed payment
@@ -70,27 +74,37 @@ export default function ReviewPayStep({ goToStep, onBack }) {
       router.push(`/register/confirmation?ref=${encodeURIComponent(sub.reference)}&t=${encodeURIComponent(sub.token)}`);
     } catch (e) {
       setError(e.message || 'Payment could not be completed.');
+      paymentInProgress.current = false;
       setBusy(false);
     }
   }
 
   return (
-    <div>
-      <h2 className={styles.title}>Registration Review & Payment</h2>
-      <p className={styles.sub}>Verify your participant details, confirm mandatory declarations and complete payment.</p>
+    <div className={styles.reviewStep}>
+      <header className={styles.reviewIntro}>
+        <div>
+          <div className={styles.reviewEyebrow}><span>Final step</span> Registration review &amp; payment</div>
+          <h2 className={styles.title}>Registration review &amp; payment</h2>
+          <p>Verify your registration details, confirm the event declarations, and complete payment securely.</p>
+        </div>
+        <aside className={styles.reviewStatus}>
+          <Icon name="shield-check" size={17} />
+          <span><strong>Registration details</strong><small>Ready for final review</small></span>
+        </aside>
+      </header>
 
       <FormSection number={1} title="Registration summary">
         <div className={styles.summary}>
           <div className={styles.sumCard}>
             <h4>Primary runner <button type="button" className={styles.link} onClick={() => goToStep(0)}>Edit</button></h4>
             <strong>{p.fullName}</strong>
-            <p>{cat?.label} &middot; Size {p.tshirtSize}</p>
-            <p>DOB {formatDate(p.dob)} &middot; {p.bloodGroup}</p>
-            <p>{p.mobile} &middot; {p.email}</p>
+            <p>{cat?.label} &middot; Size {p.tshirtSize} &middot; {p.bloodGroup}</p>
+            <p>{formatDate(p.dob)} &middot; {p.mobile}</p>
+            <p>{p.email}</p>
           </div>
           <div className={styles.sumCard}>
             <h4>Family members ({family.members.length}) <button type="button" className={styles.link} onClick={() => goToStep(1)}>Edit</button></h4>
-            {family.members.length === 0 ? <p>No family members added</p> : family.members.map((m) => <p key={m.id}><strong style={{ display: 'inline' }}>{m.fullName}</strong> - {CATEGORIES.find((x) => x.id === m.category)?.short}</p>)}
+            {family.members.length === 0 ? <p>No additional family members</p> : family.members.map((m) => <p key={m.id}><strong style={{ display: 'inline' }}>{m.fullName}</strong> &middot; {CATEGORIES.find((x) => x.id === m.category)?.short}</p>)}
           </div>
           <div className={styles.sumCard}>
             <h4>Society / community <button type="button" className={styles.link} onClick={() => goToStep(2)}>Edit</button></h4>
@@ -98,20 +112,26 @@ export default function ReviewPayStep({ goToStep, onBack }) {
             {!c.skip && <p>{[c.tower, c.flatNumber, c.locality].filter(Boolean).join(', ')}</p>}
           </div>
         </div>
-        <div className={`${styles.banner} ${styles.green}`}>
-          <Icon name="stethoscope" size={18} />
-          <span><strong>Emergency contact:</strong> {p.emergencyName} ({p.emergencyRelationship}) &middot; {p.emergencyMobile}. <button type="button" className={styles.link} onClick={() => goToStep(3)}>Modify medical</button></span>
+        <div className={`${styles.reviewInfo} ${styles.reviewMedical}`}>
+          <span className={styles.reviewInfoIcon}><Icon name="heart-pulse" size={15} /></span>
+          <span><strong>Emergency contact &amp; medical details</strong><small>{p.emergencyName} ({p.emergencyRelationship}) &middot; +91 {p.emergencyMobile} &nbsp;|&nbsp; {p.bloodGroup} blood group</small></span>
+          <button type="button" className={styles.link} onClick={() => goToStep(3)}>Edit details</button>
+        </div>
+        <div className={`${styles.reviewInfo} ${styles.reviewRunning}`}>
+          <span className={styles.reviewInfoIcon}><Icon name="flag" size={15} /></span>
+          <span><strong>Running experience</strong><small>{data.running.priorExperience === 'yes' ? 'Has timed event experience' : 'First timed event'} &middot; {data.running.longestDistance} longest distance &middot; {pacer?.title || 'Pacer not selected'}</small></span>
+          <button type="button" className={styles.link} onClick={() => goToStep(4)}>Edit details</button>
         </div>
       </FormSection>
 
       <FormSection number={2} title="Mandatory declarations & event rules">
-        <div className="stack">
-          <Field error={declErrors.medical}>
+        <div className={styles.reviewDeclarations}>
+          <Field error={declErrors.medical} className={styles.reviewDeclaration}>
             <Checkbox id="decl-medical" checked={declarations.medical} onChange={(v) => setDecl({ medical: v })}>
               <strong>Medical fitness &amp; assumption of risk.</strong> I declare that I and my registered family members are medically fit to participate, that the information provided is accurate, and that we participate at our own risk.
             </Checkbox>
           </Field>
-          <Field error={declErrors.indemnity}>
+          <Field error={declErrors.indemnity} className={styles.reviewDeclaration}>
             <Checkbox id="decl-indemnity" checked={declarations.indemnity} onChange={(v) => setDecl({ indemnity: v })}>
               <strong>Organizer &amp; sponsor indemnity.</strong> I release the organizers, sponsors and partners from liability for any injury, loss or damage arising from participation, and agree to follow the event rules.
             </Checkbox>
@@ -127,9 +147,10 @@ export default function ReviewPayStep({ goToStep, onBack }) {
               <tr className={styles.total}><td>Total payable</td><td>{formatINR(fees.totalPaise)}</td></tr>
             </tbody>
           </table>
+          <p className={styles.feeSecure}><Icon name="shield-check" size={12} /> No hidden charges. Secure checkout.</p>
         </FormSection>
         <FormSection number={4} title="Select payment option">
-          <RadioCards label="Payment method" value={data.paymentMethod} onChange={(v) => setField('paymentMethod', v)} options={PAYMENT_METHODS} />
+          <RadioCards label="Payment method" columns={1} value={data.paymentMethod} onChange={(v) => setField('paymentMethod', v)} options={PAYMENT_METHODS} />
           <PaymentPanel method={data.paymentMethod} bank={data.bank} onBank={(v) => setField('bank', v)} />
         </FormSection>
       </div>

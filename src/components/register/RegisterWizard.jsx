@@ -11,7 +11,7 @@ import RunningStep from './steps/RunningStep';
 import ReviewPayStep from './steps/ReviewPayStep';
 import { useRegistration } from './RegistrationProvider';
 import { STEPS } from '@/config/registration';
-import { STEP_SCHEMAS } from '@/lib/validation/registration';
+import { medicalContactSchema, STEP_SCHEMAS } from '@/lib/validation/registration';
 import { validate } from '@/lib/validation/utils';
 import styles from './RegisterWizard.module.css';
 
@@ -30,13 +30,19 @@ export default function RegisterWizard() {
   // Once errors are showing, keep them in sync as the user fixes fields.
   useEffect(() => {
     if (!cfg || Object.keys(errors).length === 0) return;
-    setErrors(validate(cfg.schema, slice).errors);
+    const updatedErrors = validate(cfg.schema, slice).errors;
+    if (def.id === 'medical') Object.assign(updatedErrors, validate(medicalContactSchema, data.personal).errors);
+    setErrors(updatedErrors);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slice]);
+  }, [slice, data.personal]);
 
   const goTo = (i) => { setErrors({}); setStep(i); scrollTop(); };
 
   function next() {
+    if (def.id === 'medical') {
+      const contacts = validate(medicalContactSchema, data.personal);
+      if (!contacts.ok) { setErrors(contacts.errors); scrollToError(); return; }
+    }
     if (cfg) {
       const res = validate(cfg.schema, slice);
       if (!res.ok) { setErrors(res.errors); scrollToError(); return; }
@@ -58,12 +64,12 @@ export default function RegisterWizard() {
         <div className={`card ${styles.card}`}>
           {def.id === 'participant' && <ParticipantStep errors={errors} />}
           {def.id === 'family' && <FamilyStep errors={errors} />}
-          {def.id === 'community' && <CommunityStep errors={errors} onSkip={skipCommunity} />}
-          {def.id === 'medical' && <MedicalStep errors={errors} />}
-          {def.id === 'running' && <RunningStep errors={errors} />}
+          {def.id === 'community' && <CommunityStep errors={errors} onSkip={skipCommunity} onBack={() => goTo(step - 1)} onContinue={next} />}
+          {def.id === 'medical' && <MedicalStep errors={errors} onBack={() => goTo(step - 1)} onContinue={next} />}
+          {def.id === 'running' && <RunningStep errors={errors} onBack={() => goTo(step - 1)} onContinue={next} />}
           {def.id === 'review' && <ReviewPayStep goToStep={goTo} onBack={() => goTo(step - 1)} />}
 
-          {def.id !== 'review' && (
+          {def.id !== 'review' && def.id !== 'community' && def.id !== 'medical' && def.id !== 'running' && (
             <footer className={styles.footer}>
               {step > 0 ? <Button variant="ghost" onClick={() => goTo(step - 1)}><Icon name="chevron-left" size={16} /> Back</Button> : <span />}
               <span className={styles.progress}>Step {step + 1} of {STEPS.length} &middot; Fields marked * are required</span>

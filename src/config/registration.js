@@ -51,7 +51,7 @@ export const STATES = [
 ].map((v) => ({ value: v, label: v }));
 
 export const COMMUNITIES = [
-  'Community / Society 1', 'Community / Society 2', 'Community / Society 3', 'Community / Society 4', 'Community / Society 5',
+  'Prestige High Fields', 'My Home Bhooja', 'Aparna Sarovar Zenith', 'Rajapushpa Atria', 'Lanco Hills',
 ].map((v) => ({ value: v, label: v }));
 export const COMMUNITY_OTHER = 'other';
 
@@ -59,7 +59,7 @@ export const PROPERTY_TYPES = [
   { value: 'high-rise', title: 'High-Rise Apartment', description: 'Tower / gated community' },
   { value: 'villa', title: 'Gated Luxury Villa', description: 'Villa community' },
   { value: 'independent', title: 'Independent House', description: 'Standalone house' },
-  { value: 'township', title: 'Township / Rowhouse', description: 'Integrated township' },
+  { value: 'township', title: 'Residential Township', description: 'Integrated mega townships' },
 ];
 
 export const COMMUNITY_ROLES = [

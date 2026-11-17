@@ -36,6 +36,7 @@ export async function createRegistration(input) {
     const rows = family.members.map((m) => ({
       registration_id: reg.id, full_name: m.fullName, relationship: m.relationship, date_of_birth: m.dob,
       gender: m.gender, category: m.category, tshirt_size: m.tshirtSize, bib_name: m.bibName || null,
+      photo_path: m.photoPath || null,
     }));
     const { error: famError } = await sb.from('family_members').insert(rows);
     if (famError) {
@@ -61,11 +62,12 @@ export async function getPublicRegistration(reference, token) {
   if (error) throw new ApiError(500, 'Could not load registration', error);
   if (!reg) throw new ApiError(404, 'Registration not found');
 
-  const { data: payment } = await sb
+  const { data: payment, error: paymentError } = await sb
     .from('payments')
     .select('method, provider_payment_id, amount_paise, paid_at')
     .eq('registration_id', reg.id).eq('status', 'paid')
     .order('paid_at', { ascending: false }).limit(1).maybeSingle();
+  if (paymentError) throw new ApiError(500, 'Could not load payment confirmation', paymentError);
 
   const cat = CATEGORIES.find((c) => c.id === reg.category);
   return {
@@ -82,7 +84,7 @@ export async function getPublicRegistration(reference, token) {
       name: m.full_name, relationship: m.relationship, bibNumber: m.bib_number, tshirtSize: m.tshirt_size,
       category: CATEGORIES.find((c) => c.id === m.category)?.label || m.category,
     })),
-    amountPaise: reg.amount_paise,
+    amountPaise: payment?.amount_paise ?? reg.amount_paise,
     payment: payment ? { method: payment.method, paymentId: payment.provider_payment_id, paidAt: payment.paid_at } : null,
   };
 }

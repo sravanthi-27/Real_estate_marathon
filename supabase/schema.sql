@@ -71,6 +71,7 @@ create table if not exists family_members (
   category text not null check (category in ('3k', '5k', '10k', '21k')),
   tshirt_size text not null,
   bib_name text,
+  photo_path text,
   bib_number int unique,
   created_at timestamptz not null default now()
 );

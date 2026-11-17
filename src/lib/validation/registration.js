@@ -29,11 +29,24 @@ const minAgeIssue = (ctx, category, birth, path = ['dob']) => {
   }
 };
 
+const medicalContactFields = {
+  bloodGroup: pick(BLOOD_GROUPS, 'Select blood group'),
+  emergencyName: text('Emergency contact name is required', 100),
+  emergencyMobile: mobile,
+  emergencyRelationship: pick(EMERGENCY_RELATIONSHIPS, 'Select relationship'),
+};
+
+export const medicalContactSchema = z.object({ ...medicalContactFields, mobile }).superRefine((v, ctx) => {
+  if (v.mobile && v.mobile === v.emergencyMobile) {
+    ctx.addIssue({ code: 'custom', path: ['emergencyMobile'], message: 'Emergency contact must be a different number' });
+  }
+});
+
 export const personalSchema = z.object({
   fullName: text('Full name is required', 100),
   gender: pick(GENDERS, 'Select gender'),
   dob,
-  bloodGroup: pick(BLOOD_GROUPS, 'Select blood group'),
+  ...medicalContactFields,
   nationality: pick(NATIONALITIES, 'Select nationality'),
   category: pick(CATEGORIES.map((c) => c.id), 'Select a running category'),
   tshirtSize: pick(TSHIRT_SIZES, 'Select T-shirt size'),
@@ -46,17 +59,12 @@ export const personalSchema = z.object({
   pincode,
   city: text('City is required', 80),
   state: pick(STATES, 'Select state'),
-  emergencyName: text('Emergency contact name is required', 100),
-  emergencyMobile: mobile,
-  emergencyRelationship: pick(EMERGENCY_RELATIONSHIPS, 'Select relationship'),
   photoPath: uploadPath,
   idProofPath: uploadPath,
   privacyAccepted: z.literal(true, { errorMap: () => ({ message: 'Please accept the data privacy statement' }) }),
 }).superRefine((v, ctx) => {
   minAgeIssue(ctx, v.category, v.dob);
-  if (v.mobile && v.mobile === v.emergencyMobile) {
-    ctx.addIssue({ code: 'custom', path: ['emergencyMobile'], message: 'Emergency contact must be a different number' });
-  }
+  if (v.mobile && v.mobile === v.emergencyMobile) ctx.addIssue({ code: 'custom', path: ['emergencyMobile'], message: 'Emergency contact must be a different number' });
 });
 
 export const familyMemberSchema = z.object({
@@ -68,6 +76,7 @@ export const familyMemberSchema = z.object({
   category: pick(CATEGORIES.map((c) => c.id), 'Select a category'),
   tshirtSize: pick(TSHIRT_SIZES, 'Select T-shirt size'),
   bibName,
+  photoPath: optionalUploadPath,
 }).superRefine((v, ctx) => minAgeIssue(ctx, v.category, v.dob));
 
 export const familySchema = z.object({ members: z.array(familyMemberSchema).max(8, 'You can add up to 8 family members') });
@@ -95,6 +104,7 @@ export const communitySchema = z.object({
   if (v.state && !values(STATES).includes(v.state)) {
     ctx.addIssue({ code: 'custom', path: ['state'], message: 'Select a valid state' });
   }
+  need('tower', 'Tower / block name is required');
   need('flatNumber', 'Flat / villa number is required');
   need('locality', 'Locality is required');
   need('state', 'Select state');

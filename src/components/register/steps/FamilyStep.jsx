@@ -6,6 +6,7 @@ import Select from '@/components/ui/form/Select';
 import DatePicker from '@/components/ui/form/DatePicker';
 import ChipGroup from '@/components/ui/form/ChipGroup';
 import RadioCards from '@/components/ui/form/RadioCards';
+import FileUpload from '@/components/ui/form/FileUpload';
 import FormSection, { FieldGrid } from '@/components/ui/form/FormSection';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
@@ -17,7 +18,7 @@ import { familyMemberSchema } from '@/lib/validation/registration';
 import { validate } from '@/lib/validation/utils';
 import styles from './steps.module.css';
 
-const blank = () => ({ id: uid(), fullName: '', relationship: '', dob: '', gender: '', category: '', tshirtSize: '', bibName: '' });
+const blank = () => ({ id: uid(), fullName: '', relationship: '', dob: '', gender: '', category: '', tshirtSize: '', bibName: '', photoPath: '', photoName: '' });
 
 export default function FamilyStep({ errors }) {
   const { data, update } = useRegistration();
@@ -46,9 +47,18 @@ export default function FamilyStep({ errors }) {
       <h2 className={styles.title}>Family Members <small style={{ fontSize: '.6em', color: 'var(--color-muted)' }}>(optional)</small></h2>
       <p className={styles.sub}>Add immediate family members who will run with you. You can skip this step.</p>
 
-      <div className={styles.banner}>
-        <Icon name="ticket" size={18} />
-        <span><strong>Family Squad Pass (flat fee).</strong> Your Rs {PRICING.baseFamilyPassPaise / 100} pass covers up to {included} family members. Additional members are Rs {PRICING.extraMemberPaise / 100} each. Currently added: <strong>{members.length}</strong>.</span>
+      <div className={styles.familyPassBanner}>
+        <span className={styles.familyPassPrice}>₹{PRICING.baseFamilyPassPaise / 100}</span>
+        <div className={styles.familyPassContent}>
+          <div className={styles.familyPassHeading}>
+            <strong>Family Squad Pass (Flat ₹{PRICING.baseFamilyPassPaise / 100})</strong>
+            <span>Up to {included + 1} co-runners included</span>
+          </div>
+          <p>
+            One flat pass covers your registration and up to {included} immediate family members at no extra fee.
+            Each runner gets an official dry-fit jersey, personalized RFID bib, finisher medal, and post-run breakfast.
+          </p>
+        </div>
       </div>
       {errors.members && <p className={styles.err} role="alert">{errors.members}</p>}
       {familyLimitReached && <p className={styles.sub} role="status">You can add up to 8 family members.</p>}
@@ -60,8 +70,8 @@ export default function FamilyStep({ errors }) {
               <li key={m.id} className={styles.member}>
                 <span><strong>{m.fullName}</strong>{m.relationship} &middot; {CATEGORIES.find((c) => c.id === m.category)?.short} &middot; Size {m.tshirtSize} &middot; DOB {formatDate(m.dob)}</span>
                 <span className={styles.actions}>
-                  <button type="button" className={styles.link} onClick={() => edit(m)}><Icon name="pencil" size={12} /> Edit</button>
-                  <button type="button" className={`${styles.link} ${styles.danger}`} onClick={() => remove(m.id)}><Icon name="trash" size={12} /> Remove</button>
+                  <button type="button" className={`${styles.memberAction} ${styles.editAction}`} onClick={() => edit(m)}>Edit</button>
+                  <button type="button" className={`${styles.memberAction} ${styles.removeAction}`} onClick={() => remove(m.id)} aria-label={`Remove ${m.fullName}`}>Remove</button>
                 </span>
               </li>
             ))}
@@ -95,6 +105,17 @@ export default function FamilyStep({ errors }) {
         <div style={{ height: '.9rem' }} />
         <Field label="T-shirt size" required error={draftErrors.tshirtSize}>
           <ChipGroup label="T-shirt size" value={draft.tshirtSize} onChange={(v) => set({ tshirtSize: v })} options={TSHIRT_SIZES} />
+        </Field>
+        <div style={{ height: '.9rem' }} />
+        <Field label="Member photo (optional)">
+          <FileUpload
+            kind="photo"
+            title="Upload photo"
+            hint="JPG / PNG / WEBP, up to 3 MB"
+            value={draft.photoPath}
+            fileName={draft.photoName}
+            onChange={(photoPath, photoName) => set({ photoPath, photoName })}
+          />
         </Field>
         <div style={{ marginTop: '1rem', display: 'flex', gap: '.6rem', flexWrap: 'wrap' }}>
           <Button onClick={save} size="sm" disabled={familyLimitReached}><Icon name="plus" size={14} /> {editing ? 'Update member' : 'Save & add family member'}</Button>
