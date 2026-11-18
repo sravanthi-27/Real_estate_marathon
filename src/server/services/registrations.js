@@ -1,14 +1,16 @@
 import 'server-only';
 import { ApiError } from '../errors';
 import { getAdminClient } from '../supabase';
-import { createRegistrationSchema } from '@/lib/validation/registration';
+import { accountRegistrationSchema } from '@/lib/validation/registration';
 import { buildFees } from '@/lib/pricing';
 import { CATEGORIES, COMMUNITY_OTHER } from '@/config/registration';
+import { createOrGetProfile } from './profiles';
 
 export async function createRegistration(input) {
-  const data = createRegistrationSchema.parse(input);
+  const { password, ...data } = accountRegistrationSchema.parse(input);
   const { personal: p, family, community, medical, running, declarations } = data;
   const { totalPaise } = buildFees({ category: p.category, familyCount: family.members.length });
+  const profile = await createOrGetProfile({ email: p.email, fullName: p.fullName, password });
 
   const communityRecord = community.skip
     ? null
@@ -18,6 +20,7 @@ export async function createRegistration(input) {
   const { data: reg, error } = await sb
     .from('registrations')
     .insert({
+      profile_id: profile.id,
       full_name: p.fullName, gender: p.gender, date_of_birth: p.dob, blood_group: p.bloodGroup, nationality: p.nationality,
       category: p.category, tshirt_size: p.tshirtSize, bib_name: p.bibName || null,
       mobile: p.mobile, alt_mobile: p.altMobile || null, email: p.email.toLowerCase(),

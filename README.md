@@ -1,6 +1,6 @@
 # Real Estate Marathon - Next.js + Supabase
 
-Full website (Home, About, Sponsors, Expo, Merchandise, Why Participate, Contact) + 6-step registration with payment and confirmation pass.
+Full website (Home, About, Sponsors, Expo, Merchandise, Why Participate, Contact) + 6-step registration, runner login/profile dashboard, payment and confirmation pass.
 
 ## 1. Run locally (copy-paste)
 ```bash
@@ -13,7 +13,7 @@ npm run dev                     # http://localhost:3000
 
 ## 2. Supabase setup
 1. Create a project at supabase.com.
-2. Dashboard -> SQL Editor -> paste all of `supabase/schema.sql` -> Run (creates tables, bib-number function, private storage bucket).
+2. Dashboard -> SQL Editor -> paste all of `supabase/schema.sql` -> Run (creates/updates tables, bib-number function, private storage bucket). Rerun it when upgrading an existing database to add runner profiles.
 3. Dashboard -> Project Settings -> API: copy **Project URL** and **service_role key** into `.env.local`:
 ```
 SUPABASE_URL=...
@@ -35,14 +35,15 @@ scripts/setup-images.mjs     creates image folders + public/images/IMAGES.md
 scripts/optimize-images.mjs  generates compressed WebP copies for site images
 src/
   app/                       routes: /, /about, /sponsors, /expo, /merchandise,
-                             /why-participate, /contact, /register, /register/confirmation
-    api/                     registrations, uploads, payments (create/verify/webhook), enquiries, newsletter
+                             /why-participate, /contact, /register, /register/confirmation, /login, /profile
+    api/                     profiles, registrations, uploads, payments (create/verify/webhook), enquiries, newsletter
   components/
     ui/ (+ form/)            Button, Img, Icon, Select, DatePicker, FileUpload ...
     layout/                  Navbar, Footer
     shared/                  PageHero, StatsBand, EnquiryForm, CtaStrip ... (reused on every page)
     home/ about/ sponsors/ expo/ merchandise/ why/ contact/    page-specific components
     register/ (+ steps/)     wizard, 6 steps, stepper, confirmation
+    login/ profile           runner login and registration dashboard
   config/                    site.js (event/contact), images.js (ALL image paths), registration.js (options)
   data/                      page text content (edit text here, not in components)
   lib/                       validation (zod, shared client+server), pricing, api client, utils
@@ -65,7 +66,8 @@ Open `public/images/IMAGES.md` for the exact file names. Until a file exists a p
 ## 7. Where data lands in Supabase
 | Table | Contents |
 |---|---|
-| registrations, family_members | participants, bib numbers (assigned on payment) |
+| profiles, profile_sessions | runner accounts (scrypt password hashes) and hashed, expiring login sessions |
+| registrations, family_members | participants, bib numbers (assigned on payment), linked to runner profiles |
 | payments | gateway orders and status |
 | enquiries | contact, sponsor, expo stall, volunteer, community, kit sponsor, corporate kit, merchandise orders (`type` column) |
 | newsletter_subscribers | footer signups |

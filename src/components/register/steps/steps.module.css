@@ -101,7 +101,7 @@
 .reviewDeclaration { padding: .5rem .6rem; border: 1px solid #e3eaf2; border-radius: 5px; background: #f8fafc; }
 .reviewDeclaration :global(label) { font-size:  calc(var(--content-font-scale) * 9px); line-height: 1.45; }
 .reviewDeclaration :global(label strong) { color: var(--color-primary-dark); }
-.reviewStep :global([class*="form_check"]) { width: 14px; height: 14px; }
+.reviewStep :global([class*="form_check"]) input { width: 14px; height: 14px; }
 .payGrid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: .7rem; margin-bottom: .7rem; }
 .payGrid > :global([class*="FormSection_section"]) { min-width: 0; margin-bottom: 0; padding: .65rem; border: 1px solid #e3eaf2; border-radius: 6px; background: #fff; }
 .payGrid > :global([class*="FormSection_section"]) > :global([class*="FormSection_head"]) { margin-bottom: .55rem; padding-bottom: .4rem; }
@@ -231,4 +231,11 @@
   .summary { grid-template-columns: 1fr; }
   .reviewInfo { align-items: flex-start; flex-wrap: wrap; }
   .reviewInfo > .link { margin-left: 28px; }
+}
+.profileNote { margin-bottom: .9rem; color: var(--color-muted); font-size: var(--fs-xs); }
+.profileFields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.profileLogin { margin-top: .75rem; color: var(--color-muted); font-size: var(--fs-xs); }
+.profileLogin a { color: var(--color-accent-dark); font-weight: var(--fw-semibold); }
+@media (max-width: 520px) {
+  .profileFields { grid-template-columns: 1fr; }
 }

@@ -39,6 +39,7 @@ export const NAV_LINKS = [
   { label: 'Merchandise', href: '/merchandise' },
   { label: 'Why Participate', href: '/why-participate' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Login', href: '/login' },
 ];
 
 export const FOOTER_COLUMNS = [

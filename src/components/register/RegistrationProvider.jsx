@@ -27,6 +27,7 @@ const Ctx = createContext(null);
 /** Holds the whole multi-step form. Persisted in sessionStorage so a refresh does not lose progress. */
 export function RegistrationProvider({ children }) {
   const [data, setData] = useState(emptyRegistration);
+  const [account, setAccount] = useState({ password: '', confirmPassword: '' });
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -57,9 +58,10 @@ export function RegistrationProvider({ children }) {
   const reset = useCallback(() => {
     try { sessionStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
     setData(emptyRegistration());
+    setAccount({ password: '', confirmPassword: '' });
   }, []);
 
-  const value = useMemo(() => ({ data, update, setField, reset, hydrated }), [data, update, setField, reset, hydrated]);
+  const value = useMemo(() => ({ data, update, setField, account, setAccount, reset, hydrated }), [data, update, setField, account, reset, hydrated]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 

@@ -1,8 +1,10 @@
 'use client';
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Checkbox from '@/components/ui/form/Checkbox';
 import Field from '@/components/ui/form/Field';
+import TextInput from '@/components/ui/form/TextInput';
 import RadioCards from '@/components/ui/form/RadioCards';
 import FormSection from '@/components/ui/form/FormSection';
 import Button from '@/components/ui/Button';
@@ -13,7 +15,7 @@ import { CATEGORIES, COMMUNITY_OTHER, PACER_GROUPS, PAYMENT_METHODS, STEPS } fro
 import { SITE } from '@/config/site';
 import { buildFees } from '@/lib/pricing';
 import { formatDate, formatINR } from '@/lib/utils';
-import { createRegistrationSchema, declarationsSchema, STEP_SCHEMAS } from '@/lib/validation/registration';
+import { accountRegistrationSchema, createRegistrationSchema, declarationsSchema, STEP_SCHEMAS } from '@/lib/validation/registration';
 import { validate } from '@/lib/validation/utils';
 import { apiPost } from '@/lib/api/client';
 import { openRazorpay } from '@/lib/api/razorpay';
@@ -21,9 +23,10 @@ import styles from './steps.module.css';
 
 export default function ReviewPayStep({ goToStep, onBack }) {
   const router = useRouter();
-  const { data, update, setField } = useRegistration();
+  const { data, update, setField, account, setAccount } = useRegistration();
   const [declErrors, setDeclErrors] = useState({});
   const [error, setError] = useState('');
+  const [accountErrors, setAccountErrors] = useState({});
   const [busy, setBusy] = useState(false);
   const paymentInProgress = useRef(false);
 
@@ -45,8 +48,21 @@ export default function ReviewPayStep({ goToStep, onBack }) {
     }
     const decl = validate(declarationsSchema, declarations);
     if (!decl.ok) { setDeclErrors(decl.errors); return; }
-    const full = validate(createRegistrationSchema, { personal: p, family, community: c, medical, running: data.running, declarations });
-    if (!full.ok) { setError('Please review your details and try again.'); return; }
+    const registrationData = { personal: p, family, community: c, medical, running: data.running, declarations };
+    if (!data.submission && account.password !== account.confirmPassword) {
+      setAccountErrors({ confirmPassword: 'Passwords do not match' });
+      setError('Please correct the account password fields.');
+      return;
+    }
+    const full = data.submission
+      ? validate(createRegistrationSchema, registrationData)
+      : validate(accountRegistrationSchema, { ...registrationData, password: account.password });
+    if (!full.ok) {
+      setAccountErrors(full.errors.password ? { password: full.errors.password } : {});
+      setError('Please review your details and try again.');
+      return;
+    }
+    setAccountErrors({});
 
     paymentInProgress.current = true;
     setBusy(true);
@@ -57,6 +73,7 @@ export default function ReviewPayStep({ goToStep, onBack }) {
         sub = await apiPost('/api/registrations', full.data);
         setField('submission', sub);
       }
+      setAccount({ password: '', confirmPassword: '' });
       // 3) start payment
       const order = await apiPost('/api/payments/create', { registrationId: sub.id, token: sub.token, method: data.paymentMethod });
       let result;
@@ -139,8 +156,27 @@ export default function ReviewPayStep({ goToStep, onBack }) {
         </div>
       </FormSection>
 
+      <FormSection number={3} title="Create your profile login">
+        <p className={styles.profileNote}>Use your email and password to log in later and view your marathon registration dashboard.</p>
+        <div className={styles.profileFields}>
+          <Field label="Create password" required error={accountErrors.password} htmlFor="profile-password" hint="At least 8 characters">
+            <TextInput id="profile-password" type="password" autoComplete="new-password" value={account.password} onChange={(password) => {
+              setAccount((current) => ({ ...current, password }));
+              setAccountErrors({});
+            }} />
+          </Field>
+          <Field label="Confirm password" required error={accountErrors.confirmPassword} htmlFor="profile-password-confirm">
+            <TextInput id="profile-password-confirm" type="password" autoComplete="new-password" value={account.confirmPassword} onChange={(confirmPassword) => {
+              setAccount((current) => ({ ...current, confirmPassword }));
+              setAccountErrors({});
+            }} />
+          </Field>
+        </div>
+        <p className={styles.profileLogin}>Already have a profile? <Link href="/login">Log in</Link></p>
+      </FormSection>
+
       <div className={styles.payGrid}>
-        <FormSection number={3} title="Fee summary">
+        <FormSection number={4} title="Fee summary">
           <table className={styles.fees}>
             <tbody>
               {fees.lines.map((l) => <tr key={l.key}><td>{l.label}</td><td>{l.amountPaise ? formatINR(l.amountPaise) : l.note}</td></tr>)}
@@ -149,7 +185,7 @@ export default function ReviewPayStep({ goToStep, onBack }) {
           </table>
           <p className={styles.feeSecure}><Icon name="shield-check" size={12} /> No hidden charges. Secure checkout.</p>
         </FormSection>
-        <FormSection number={4} title="Select payment option">
+        <FormSection number={5} title="Select payment option">
           <RadioCards label="Payment method" columns={1} value={data.paymentMethod} onChange={(v) => setField('paymentMethod', v)} options={PAYMENT_METHODS} />
           <PaymentPanel method={data.paymentMethod} bank={data.bank} onBank={(v) => setField('bank', v)} />
         </FormSection>

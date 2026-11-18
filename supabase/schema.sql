@@ -15,9 +15,31 @@ do $$ begin
   create type payment_status as enum ('created', 'paid', 'failed', 'refunded');
 exception when duplicate_object then null; end $$;
 
+-- ---------------------------------------------------------------- runner profiles
+create table if not exists profiles (
+  id uuid primary key default gen_random_uuid(),
+  email text unique not null,
+  full_name text not null,
+  password_salt text not null,
+  password_hash text not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create table if not exists profile_sessions (
+  id uuid primary key default gen_random_uuid(),
+  profile_id uuid not null references profiles (id) on delete cascade,
+  token_hash text unique not null,
+  expires_at timestamptz not null,
+  created_at timestamptz not null default now()
+);
+create index if not exists profile_sessions_profile_idx on profile_sessions (profile_id);
+create index if not exists profile_sessions_expiry_idx on profile_sessions (expires_at);
+
 -- ---------------------------------------------------------------- registrations
 create table if not exists registrations (
   id uuid primary key default gen_random_uuid(),
+  profile_id uuid references profiles (id) on delete set null,
   reference text unique not null default ('REM-' || to_char(now(), 'YYYY') || '-' || lpad(nextval('registration_ref_seq')::text, 5, '0')),
   access_token uuid not null default gen_random_uuid(),
   status registration_status not null default 'pending_payment',
@@ -57,8 +79,10 @@ create table if not exists registrations (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+alter table registrations add column if not exists profile_id uuid references profiles (id) on delete set null;
 create index if not exists registrations_email_idx on registrations (email);
 create index if not exists registrations_status_idx on registrations (status);
+create index if not exists registrations_profile_idx on registrations (profile_id);
 
 -- ---------------------------------------------------------------- family members
 create table if not exists family_members (
@@ -140,6 +164,8 @@ revoke all on function finalize_registration(uuid) from public, anon, authentica
 -- All access goes through the Next.js server using the service-role key.
 -- RLS is ON with NO policies, so anon/authenticated keys can read or write nothing.
 alter table registrations enable row level security;
+alter table profiles enable row level security;
+alter table profile_sessions enable row level security;
 alter table family_members enable row level security;
 alter table payments enable row level security;
 alter table enquiries enable row level security;

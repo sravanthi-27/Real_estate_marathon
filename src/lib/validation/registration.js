@@ -154,6 +154,14 @@ export const createRegistrationSchema = z.object({
   declarations: declarationsSchema,
 });
 
+export const accountPasswordSchema = z.string()
+  .min(8, 'Password must be at least 8 characters')
+  .max(128, 'Password must be 128 characters or fewer');
+
+export const accountRegistrationSchema = createRegistrationSchema.extend({
+  password: accountPasswordSchema,
+});
+
 /** Wizard step id -> which data slice it edits + its schema. */
 export const STEP_SCHEMAS = {
   participant: { slice: 'personal', schema: personalSchema },
