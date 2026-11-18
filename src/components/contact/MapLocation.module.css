@@ -7,7 +7,7 @@
   margin: 0 0 13px;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 17px;
+  font-size: calc(var(--content-font-scale) * 17px);
   font-weight: 700;
   line-height: 21px;
   text-align: center;
@@ -69,7 +69,7 @@
 }
 
 .action strong {
-  font-size: 8px;
+  font-size: calc(var(--content-font-scale) * 8px);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -77,7 +77,7 @@
 .action small {
   margin-top: 2px;
   color: #718096;
-  font-size: 7px;
+  font-size: calc(var(--content-font-scale) * 7px);
   white-space: nowrap;
 }
 
@@ -90,7 +90,7 @@
 .shareMessage {
   margin: 6px 0 0;
   color: #52647c;
-  font-size: 10px;
+  font-size: calc(var(--content-font-scale) * 10px);
   text-align: center;
 }
 

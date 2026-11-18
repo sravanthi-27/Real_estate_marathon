@@ -71,7 +71,7 @@
   min-height: 12px;
   margin-bottom: 5px;
   color: #101b32;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
   font-weight: 700;
   line-height: 12px;
 }
@@ -79,7 +79,7 @@
 .phone {
   margin-bottom: 4px;
   color: #26364f;
-  font-size: 8px;
+  font-size: calc(var(--content-font-scale) * 8px);
   font-weight: 500;
   line-height: 11px;
   white-space: nowrap;
@@ -88,7 +88,7 @@
 .email {
   max-width: 100%;
   color: #718096;
-  font-size: 7.5px;
+  font-size: calc(var(--content-font-scale) * 7.5px);
   font-weight: 400;
   line-height: 10px;
   overflow-wrap: anywhere;

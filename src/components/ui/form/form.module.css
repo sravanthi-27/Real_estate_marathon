@@ -23,7 +23,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 .option:hover, .optionActive { background: var(--color-surface); }
 .optionSelected { background: var(--color-accent-soft); }
 .optionText small { display: block; color: var(--color-muted); font-size: var(--fs-xs); }
-.badge { background: var(--color-surface-2); color: var(--color-primary); font-size: .65rem; font-weight: var(--fw-bold); padding: .1rem .5rem; border-radius: 999px; text-transform: uppercase; }
+.badge { background: var(--color-surface-2); color: var(--color-primary); font-size:  calc(var(--content-font-scale) * .65rem); font-weight: var(--fw-bold); padding: .1rem .5rem; border-radius: 999px; text-transform: uppercase; }
 .empty { padding: .6rem; font-size: var(--fs-xs); color: var(--color-muted); }
 
 .cal { width: 280px; }
@@ -31,7 +31,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 .calHead select { flex: 1; padding: .3rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-white); }
 .navBtn { background: var(--color-surface); border-radius: var(--radius-sm); width: 30px; height: 30px; display: grid; place-items: center; }
 .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
-.dow { font-size: .65rem; color: var(--color-muted); padding: .2rem 0; font-weight: var(--fw-semibold); }
+.dow { font-size:  calc(var(--content-font-scale) * .65rem); color: var(--color-muted); padding: .2rem 0; font-weight: var(--fw-semibold); }
 .day { height: 32px; border-radius: var(--radius-sm); background: none; font-size: var(--fs-xs); }
 .day:hover:not(:disabled) { background: var(--color-surface-2); }
 .day:disabled { color: #c3c5d2; cursor: not-allowed; }

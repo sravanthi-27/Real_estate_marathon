@@ -15,7 +15,7 @@
   margin: 0;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: calc(var(--content-font-scale) * 20px);
   font-weight: 700;
   line-height: 21px;
   text-align: center;
@@ -25,7 +25,7 @@
 .subtitle {
   margin: 2px 0 13px;
   color: #718096;
-  font-size: 12px;
+  font-size: calc(var(--content-font-scale) * 12px);
   line-height: 16px;
   text-align: center;
 }
@@ -68,7 +68,7 @@
   align-items: center;
   gap: 8px;
   color: #24344d;
-  font-size: 12px;
+  font-size: calc(var(--content-font-scale) * 12px);
   font-weight: 400;
   line-height: 19px;
 }
@@ -101,7 +101,7 @@
   border-radius: 4px;
   background: #0b1f44;
   color: #fff;
-  font-size: 11px;
+  font-size: calc(var(--content-font-scale) * 11px);
   font-weight: 700;
   letter-spacing: .3px;
   text-decoration: none;
@@ -140,11 +140,11 @@
   }
 
   .title {
-    font-size: 18px;
+    font-size: calc(var(--content-font-scale) * 18px);
   }
 
   .subtitle {
-    font-size: 11px;
+    font-size: calc(var(--content-font-scale) * 11px);
   }
 
   .content {

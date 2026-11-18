@@ -18,7 +18,7 @@
   margin-bottom: 5px;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size:  calc(var(--content-font-scale) * 28px);
   font-weight: 700;
   line-height: 32px;
   letter-spacing: .3px;
@@ -30,7 +30,7 @@
   margin-bottom: 18px;
   color: #64748b;
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size:  calc(var(--content-font-scale) * 12px);
   font-weight: 400;
   line-height: 17px;
 }
@@ -65,7 +65,7 @@
   margin: 0;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 10px;
+  font-size:  calc(var(--content-font-scale) * 10px);
   font-weight: 700;
   line-height: 11px;
   text-transform: uppercase;
@@ -105,12 +105,12 @@
   }
 
   .description {
-    font-size: 11px;
+    font-size:  calc(var(--content-font-scale) * 11px);
     line-height: 16px;
   }
 
   .title {
-    font-size: 25px;
+    font-size:  calc(var(--content-font-scale) * 25px);
     line-height: 30px;
   }
 
@@ -125,7 +125,7 @@
   }
 
   .cardTitle {
-    font-size: 9px;
+    font-size:  calc(var(--content-font-scale) * 9px);
     line-height: 10px;
   }
 

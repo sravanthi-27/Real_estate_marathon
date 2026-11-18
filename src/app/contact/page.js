@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PeopleRow from '@/components/shared/PeopleRow';
 import EnquiryForm from '@/components/shared/EnquiryForm';
 import SectionTitle from '@/components/ui/SectionTitle';
@@ -20,7 +21,12 @@ export const metadata = { title: 'Contact' };
 export default function ContactPage() {
   return (
     <div className={styles.page}>
-      <Img src={images.contact.hero} alt="Get in touch — Real Estate Marathon Hyderabad" className={styles.hero} loading="eager" />
+      <div className={styles.hero}>
+        <Img src={images.contact.hero} alt="Get in touch — Real Estate Marathon Hyderabad" className={styles.heroImage} loading="eager" />
+        <Link href="/register" className={styles.heroRegister} aria-label="Register now">
+          Register Now
+        </Link>
+      </div>
       <ContactInfoSection />
       <section className={`section section--white ${styles.section}`}>
         <div className={`container ${styles.helpContainer}`}>

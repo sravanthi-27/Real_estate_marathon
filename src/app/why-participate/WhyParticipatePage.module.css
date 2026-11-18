@@ -45,7 +45,7 @@
 
 .reasonHeading h2 {
   color: #14233d;
-  font-size: 16px;
+  font-size:  calc(var(--content-font-scale) * 16px);
   font-weight: 800;
   line-height: 20px;
   text-transform: uppercase;
@@ -103,7 +103,7 @@
   min-height: 26px;
   color: #14233d;
   font-family: var(--font-heading);
-  font-size: 11px;
+  font-size:  calc(var(--content-font-scale) * 11px);
   font-weight: 700;
   line-height: 13px;
   text-transform: uppercase;
@@ -113,7 +113,7 @@
 .reasonCards > :global(article) p {
   margin-top: 5px;
   color: #64748b;
-  font-size: 9px;
+  font-size:  calc(var(--content-font-scale) * 9px);
   line-height: 11px;
 }
 
@@ -150,7 +150,7 @@
   margin: 8px 0 5px;
   color: #142c27;
   font-family: var(--font-heading);
-  font-size: 15px;
+  font-size:  calc(var(--content-font-scale) * 15px);
   font-weight: 700;
   line-height: 17px;
   text-transform: uppercase;
@@ -160,7 +160,7 @@
 .planetCard p {
   margin: 0 0 6px;
   color: #667085;
-  font-size: 9px;
+  font-size:  calc(var(--content-font-scale) * 9px);
   line-height: 13px;
 }
 
@@ -177,7 +177,7 @@
   align-items: center;
   gap: 6px;
   color: #374151;
-  font-size: 9px;
+  font-size:  calc(var(--content-font-scale) * 9px);
   line-height: 12px;
 }
 
@@ -204,7 +204,7 @@
 .impactGrid :global(.card__title) {
   margin: 0 0 4px;
   color: #10245b;
-  font-size: 17px;
+  font-size:  calc(var(--content-font-scale) * 17px);
   font-weight: 700;
   line-height: 19px;
   text-transform: uppercase;
@@ -265,7 +265,7 @@
   }
 
   .reasonHeading h2 {
-    font-size: 14px;
+    font-size:  calc(var(--content-font-scale) * 14px);
   }
 
   .reasons .reasonCards {

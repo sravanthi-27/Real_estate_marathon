@@ -10,8 +10,37 @@
   transform: translateX(-50%);
 }
 
-.hero img {
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+.heroRegister {
+  position: absolute;
+  z-index: 1;
+  top: 62.7%;
+  left: 27.3%;
+  width: 18%;
+  height: 9.5%;
+  overflow: hidden;
+  border-radius: 10px;
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.heroRegister:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--color-primary);
 }
 
 .section {
@@ -67,7 +96,7 @@
   margin: 0 0 20px;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 21px;
+  font-size: calc(var(--content-font-scale) * 21px);
   font-weight: 800;
   letter-spacing: .4px;
   line-height: 1.25;
@@ -101,7 +130,7 @@
 .organizers strong {
   color: #102344;
   font-family: var(--font-heading);
-  font-size: 10px;
+  font-size: calc(var(--content-font-scale) * 10px);
   font-weight: 800;
   line-height: 1.25;
   text-transform: uppercase;
@@ -111,7 +140,7 @@
   max-width: 140px;
   margin-top: 4px;
   color: #718096;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
   font-weight: 400;
   line-height: 1.4;
 }
@@ -149,7 +178,7 @@
   margin: 0;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 16px;
+  font-size: calc(var(--content-font-scale) * 16px);
   font-weight: 700;
   letter-spacing: .4px;
   line-height: 20px;
@@ -222,7 +251,7 @@
   margin: 0 0 2px;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 17px;
+  font-size: calc(var(--content-font-scale) * 17px);
   font-weight: 700;
   line-height: 21px;
   text-align: center;
@@ -249,7 +278,7 @@
   border: 1px solid #cfdceb;
   border-radius: 5px;
   color: #26364f;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
   line-height: 14px;
   box-sizing: border-box;
 }
@@ -268,7 +297,7 @@
 .contactForm :global([class*="form_control"]) {
   width: 100%;
   background: #fff;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
 }
 
 .contactForm :global([class*="form_input"]:focus),
@@ -290,7 +319,7 @@
   border-radius: 4px;
   background: #ff4f1f;
   color: #fff;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -302,7 +331,7 @@
 .contactForm :global([class*="EnquiryForm_ok"]),
 .contactForm :global([class*="EnquiryForm_err"]) {
   margin: 0;
-  font-size: 10px;
+  font-size: calc(var(--content-font-scale) * 10px);
 }
 
 @media (max-width: 900px) {

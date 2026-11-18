@@ -35,14 +35,14 @@
 .highlights h2,
 .expo h2 {
   color: var(--color-primary-dark);
-  font-size: 1.5rem;
+  font-size:  calc(var(--content-font-scale) * 1.5rem);
   line-height: 1.1;
   text-transform: uppercase;
 }
 
 .heading > span {
   color: var(--color-accent);
-  font-size: .72rem;
+  font-size:  calc(var(--content-font-scale) * .72rem);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
 }
@@ -84,7 +84,7 @@
   overflow: hidden;
   max-width: 100%;
   color: var(--color-primary-dark);
-  font-size: .72rem;
+  font-size:  calc(var(--content-font-scale) * .72rem);
   line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -92,7 +92,7 @@
 
 .product > span {
   color: var(--color-accent);
-  font-size: .75rem;
+  font-size:  calc(var(--content-font-scale) * .75rem);
   font-weight: var(--fw-semibold);
   line-height: 1.2;
 }
@@ -105,7 +105,7 @@
   justify-content: center;
   gap: .3rem;
   border-radius: 8px;
-  font-size: .75rem;
+  font-size:  calc(var(--content-font-scale) * .75rem);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
 }
@@ -135,7 +135,7 @@
 
 .kicker {
   color: #ff9a54;
-  font-size: .72rem;
+  font-size:  calc(var(--content-font-scale) * .72rem);
   font-weight: var(--fw-semibold);
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -162,7 +162,7 @@
   padding: 5px;
   border: 1px solid rgba(255,255,255,.12);
   border-radius: 9px;
-  font-size: .69rem;
+  font-size:  calc(var(--content-font-scale) * .69rem);
   line-height: 1.25;
   text-align: center;
 }
@@ -224,7 +224,7 @@
   min-height: 51px;
   padding: 6px 3px 3px;
   color: var(--color-primary-dark);
-  font-size: .69rem;
+  font-size:  calc(var(--content-font-scale) * .69rem);
   font-weight: var(--fw-medium);
   line-height: 1.25;
 }
@@ -237,7 +237,7 @@
   margin-top: 12px;
   padding: 0;
   color: var(--color-muted);
-  font-size: .72rem;
+  font-size:  calc(var(--content-font-scale) * .72rem);
   line-height: 1.3;
   text-align: center;
 }

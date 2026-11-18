@@ -31,7 +31,7 @@
   transform: translateX(-50%);
   color: #101d42;
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size:  calc(var(--content-font-scale) * 14px);
   font-weight: 800;
   line-height: 18px;
   letter-spacing: .3px;

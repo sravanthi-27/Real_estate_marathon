@@ -75,7 +75,7 @@
   margin: 0;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size:  calc(var(--content-font-scale) * 13px);
   font-weight: 700;
   line-height: 16px;
   text-transform: uppercase;
@@ -103,7 +103,7 @@
   gap: 6px;
   color: #fff;
   font-family: var(--font-main);
-  font-size: 9px;
+  font-size:  calc(var(--content-font-scale) * 9px);
   font-weight: 400;
   line-height: 12px;
 }
@@ -144,7 +144,7 @@
   gap: 5px;
   color: #d7e0ed;
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   font-weight: 400;
   line-height: 11px;
   text-transform: uppercase;
@@ -158,7 +158,7 @@
   flex: none;
   color: #fff;
   font-family: var(--font-main);
-  font-size: 9px;
+  font-size:  calc(var(--content-font-scale) * 9px);
   font-weight: 700;
   line-height: 11px;
   text-align: right;
@@ -169,7 +169,7 @@
   margin-top: 2px;
   color: #d7e0ed;
   font-family: var(--font-main);
-  font-size: 7px;
+  font-size:  calc(var(--content-font-scale) * 7px);
   line-height: 9px;
   text-align: right;
 }
@@ -189,7 +189,7 @@
   gap: 5px;
   color: #d7e0ed;
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   line-height: 10px;
   text-transform: uppercase;
 }
@@ -240,7 +240,7 @@
   margin: 0;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 10px;
+  font-size:  calc(var(--content-font-scale) * 10px);
   font-weight: 700;
   line-height: 13px;
   letter-spacing: .3px;
@@ -269,7 +269,7 @@
 .metric span {
   color: #b8c7da;
   font-family: var(--font-main);
-  font-size: 5px;
+  font-size:  calc(var(--content-font-scale) * 5px);
   font-weight: 500;
   line-height: 6px;
   text-transform: uppercase;
@@ -278,7 +278,7 @@
 .metric strong {
   color: #fff;
   font-family: var(--font-main);
-  font-size: 7px;
+  font-size:  calc(var(--content-font-scale) * 7px);
   font-weight: 700;
   line-height: 8px;
 }
@@ -302,15 +302,15 @@
 .xAxisTitle {
   fill: #a9b7ca;
   font-family: var(--font-main);
-  font-size: 6px;
+  font-size:  calc(var(--content-font-scale) * 6px);
 }
 
 .yAxisTitle {
-  font-size: 5px;
+  font-size:  calc(var(--content-font-scale) * 5px);
 }
 
 .xAxisTitle {
-  font-size: 7px;
+  font-size:  calc(var(--content-font-scale) * 7px);
 }
 
 .chartArea {
@@ -375,7 +375,7 @@
   overflow: hidden;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 7px;
+  font-size:  calc(var(--content-font-scale) * 7px);
   font-weight: 700;
   line-height: 8px;
   text-transform: uppercase;
@@ -389,7 +389,7 @@
   margin-top: 2px;
   color: #a9b7ca;
   font-family: var(--font-main);
-  font-size: 6px;
+  font-size:  calc(var(--content-font-scale) * 6px);
   font-weight: 400;
   line-height: 8px;
   -webkit-box-orient: vertical;
@@ -422,7 +422,7 @@
   margin: 0;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 11px;
+  font-size:  calc(var(--content-font-scale) * 11px);
   font-weight: 700;
   line-height: 14px;
   text-transform: uppercase;
@@ -464,7 +464,7 @@
 .supportHeader span {
   display: block;
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   line-height: 10px;
 }
 
@@ -491,7 +491,7 @@
   margin: 0;
   color: #c4cdda;
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   font-weight: 400;
   line-height: 11px;
 }
@@ -511,7 +511,7 @@
   border-radius: 4px;
   background: rgba(22, 185, 240, .17);
   color: #16b9f0;
-  font-size: 6px;
+  font-size:  calc(var(--content-font-scale) * 6px);
   font-weight: 700;
 }
 
@@ -541,7 +541,7 @@
 }
 
 .supportListHeader h2 {
-  font-size: 10px;
+  font-size:  calc(var(--content-font-scale) * 10px);
   line-height: 12px;
 }
 
@@ -567,7 +567,7 @@
   gap: 4px;
   color: #c4cdda;
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   line-height: 10px;
 }
 
@@ -700,7 +700,7 @@
 
   .elevation h2,
   .pointsPanel > h2 {
-    font-size: 9px;
+    font-size:  calc(var(--content-font-scale) * 9px);
   }
 
   .metric {

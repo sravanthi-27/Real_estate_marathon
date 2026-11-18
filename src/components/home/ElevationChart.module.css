@@ -2,4 +2,4 @@
 .grid { stroke: var(--color-border); stroke-width: 1; }
 .area { fill: var(--color-accent-soft); }
 .line { fill: none; stroke: var(--color-accent); stroke-width: 3; stroke-linejoin: round; }
-.label { font-size: 11px; fill: var(--color-muted); }
+.label { font-size:  calc(var(--content-font-scale) * 11px); fill: var(--color-muted); }

@@ -9,7 +9,7 @@
   align-self: center;
   margin: -1px 0 6px;
   color: #718096;
-  font-size: 12px;
+  font-size:  calc(var(--content-font-scale) * 12px);
   line-height: 14px;
   text-align: center;
 }
@@ -25,7 +25,7 @@
   padding: 4px 2px;
   border-bottom: 1px solid #e1e6ee;
   color: #8a9ab1;
-  font-size: 10.5px;
+  font-size:  calc(var(--content-font-scale) * 10.5px);
   font-weight: 600;
   line-height: 12px;
   text-align: left;
@@ -62,7 +62,7 @@
 .table td {
   padding: 4px 2px;
   border-bottom: 1px solid #edf0f3;
-  font-size: 12px;
+  font-size:  calc(var(--content-font-scale) * 12px);
   line-height: 15px;
   white-space: nowrap;
 }
@@ -100,7 +100,7 @@
   border: 1px solid #d7dee8;
   border-radius: 5px;
   color: #14233d;
-  font-size: 11px;
+  font-size:  calc(var(--content-font-scale) * 11px);
   font-weight: 600;
   line-height: 13px;
   text-transform: uppercase;

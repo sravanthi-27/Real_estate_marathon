@@ -31,13 +31,13 @@
 .sectionHeading :global(.card__title),
 .routeHeading :global(.card__title) {
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size:  calc(var(--content-font-scale) * 1rem);
   line-height: 1.1;
 }
 
 .subtitle {
   color: var(--color-muted);
-  font-size: .6rem;
+  font-size:  calc(var(--content-font-scale) * .6rem);
   line-height: 1.4;
 }
 
@@ -83,7 +83,7 @@
 .categoryName {
   min-height: 1.8rem;
   color: var(--color-primary-dark);
-  font-size: .58rem;
+  font-size:  calc(var(--content-font-scale) * .58rem);
   font-weight: var(--fw-bold);
   line-height: 1.2;
   text-transform: uppercase;
@@ -108,13 +108,13 @@
 .distance {
   color: var(--color-primary-dark);
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size:  calc(var(--content-font-scale) * 1.5rem);
   line-height: 1.1;
 }
 
 .distance small {
   font-family: var(--font-main);
-  font-size: .55rem;
+  font-size:  calc(var(--content-font-scale) * .55rem);
   font-weight: var(--fw-semibold);
 }
 
@@ -122,7 +122,7 @@
   min-height: 2.4rem;
   margin-top: 2px;
   color: var(--color-muted);
-  font-size: .53rem;
+  font-size:  calc(var(--content-font-scale) * .53rem);
   line-height: 1.4;
 }
 
@@ -133,7 +133,7 @@
   padding-top: 6px;
   border-top: 1px solid var(--color-border);
   color: var(--color-muted);
-  font-size: .5rem;
+  font-size:  calc(var(--content-font-scale) * .5rem);
   line-height: 1.4;
 }
 
@@ -152,7 +152,7 @@
 .price {
   color: var(--color-primary-dark);
   font-family: var(--font-heading);
-  font-size: 1.65rem;
+  font-size:  calc(var(--content-font-scale) * 1.65rem);
   font-weight: var(--fw-bold);
   line-height: 1;
 }
@@ -162,7 +162,7 @@
   min-width: 0;
   flex: 1;
   flex-direction: column;
-  font-size: .56rem;
+  font-size:  calc(var(--content-font-scale) * .56rem);
   line-height: 1.4;
 }
 
@@ -184,7 +184,7 @@
   justify-content: center;
   gap: 4px;
   padding: 0 8px;
-  font-size: .58rem;
+  font-size:  calc(var(--content-font-scale) * .58rem);
 }
 
 .routeHeading {
@@ -203,7 +203,7 @@
   border-radius: 4px;
   background: var(--color-primary-dark);
   color: var(--color-white);
-  font-size: .5rem;
+  font-size:  calc(var(--content-font-scale) * .5rem);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
 }
@@ -263,7 +263,7 @@
 
 .stat span {
   color: var(--color-muted);
-  font-size: .48rem;
+  font-size:  calc(var(--content-font-scale) * .48rem);
   font-weight: var(--fw-medium);
   line-height: 1.25;
   text-transform: uppercase;
@@ -273,7 +273,7 @@
   overflow-wrap: anywhere;
   color: var(--color-primary-dark);
   font-family: var(--font-heading);
-  font-size: .8rem;
+  font-size:  calc(var(--content-font-scale) * .8rem);
   font-weight: var(--fw-bold);
   line-height: 1.25;
 }
@@ -291,7 +291,7 @@
 .mapNote {
   margin-top: 5px;
   color: var(--color-muted);
-  font-size: .54rem;
+  font-size:  calc(var(--content-font-scale) * .54rem);
   line-height: 1.35;
 }
 

@@ -39,7 +39,7 @@
   margin: 0;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 17px;
+  font-size: calc(var(--content-font-scale) * 17px);
   font-weight: 700;
   line-height: 22px;
   text-align: center;
@@ -49,7 +49,7 @@
 .subtitle {
   margin: 3px 0 0;
   color: #718096;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
   line-height: 13px;
   text-align: center;
 }
@@ -95,7 +95,7 @@
 .socialLabel {
   margin-top: 5px;
   color: #718096;
-  font-size: 7px;
+  font-size: calc(var(--content-font-scale) * 7px);
   line-height: 9px;
 }
 
@@ -151,7 +151,7 @@
 
 .question > span {
   min-width: 0;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
   font-weight: 400;
   line-height: 13px;
 }
@@ -171,7 +171,7 @@
   grid-template-rows: 0fr;
   padding: 0 8px;
   color: #718096;
-  font-size: 9px;
+  font-size: calc(var(--content-font-scale) * 9px);
   line-height: 13px;
   transition: padding .2s ease;
 }
@@ -203,7 +203,7 @@
   border-radius: 4px;
   background: #0b1f44;
   color: #fff;
-  font-size: 8px;
+  font-size: calc(var(--content-font-scale) * 8px);
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -250,7 +250,7 @@
   margin: 6px 0 0;
   color: #0b1f44;
   font-family: var(--font-heading);
-  font-size: 16px;
+  font-size: calc(var(--content-font-scale) * 16px);
   font-weight: 700;
   line-height: 20px;
   text-align: center;
@@ -259,7 +259,7 @@
 
 .supportCard .subtitle {
   margin-top: 4px;
-  font-size: 8px;
+  font-size: calc(var(--content-font-scale) * 8px);
 }
 
 .chatButton,
@@ -273,7 +273,7 @@
   margin-top: auto;
   border-radius: 4px;
   color: #fff;
-  font-size: 8px;
+  font-size: calc(var(--content-font-scale) * 8px);
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;

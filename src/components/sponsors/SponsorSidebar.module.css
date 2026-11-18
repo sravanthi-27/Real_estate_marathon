@@ -25,7 +25,7 @@
 .cta h2 {
   color: #101d42;
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size:  calc(var(--content-font-scale) * 13px);
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
@@ -33,13 +33,13 @@
 
 .purposeCard h2 {
   color: #f05a16;
-  font-size: 17px;
+  font-size:  calc(var(--content-font-scale) * 17px);
 }
 
 .intro {
   margin-top: 5px;
   color: #8290a5;
-  font-size: 10px;
+  font-size:  calc(var(--content-font-scale) * 10px);
   line-height: 1.4;
 }
 
@@ -78,14 +78,14 @@
 
 .benefitCopy strong {
   color: #182541;
-  font-size: 10px;
+  font-size:  calc(var(--content-font-scale) * 10px);
   font-weight: 700;
   line-height: 1.25;
 }
 
 .benefitCopy > span {
   color: #8491a5;
-  font-size: 9px;
+  font-size:  calc(var(--content-font-scale) * 9px);
   line-height: 1.2;
 }
 
@@ -105,7 +105,7 @@
   margin-bottom: 5px;
   color: #ff7417;
   font-family: var(--font-heading);
-  font-size: 11px;
+  font-size:  calc(var(--content-font-scale) * 11px);
   font-weight: 800;
   line-height: 14px;
   text-transform: uppercase;
@@ -126,12 +126,12 @@
   gap: 5px;
   border-bottom: 1px solid rgba(255,255,255,.09);
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   line-height: 1.2;
 }
 
 .categoryList li:last-child { border-bottom: 0; }
-.categoryList strong { color: #f4f6fb; font-size: 8px; font-weight: 700; white-space: nowrap; }
+.categoryList strong { color: #f4f6fb; font-size:  calc(var(--content-font-scale) * 8px); font-weight: 700; white-space: nowrap; }
 .categoryList li:last-child strong { color: #ff7417; }
 .categoryIcon--title { color: #ffc327; fill: #ffc327; }
 .categoryIcon--powered { color: #ff7417; fill: #ff7417; }
@@ -153,7 +153,7 @@
 }
 
 .benefitCard h2,
-.cta h2 { font-size: 12px; }
+.cta h2 { font-size:  calc(var(--content-font-scale) * 12px); }
 
 .benefitList {
   display: flex;
@@ -169,7 +169,7 @@
   gap: 5px;
   color: #46566d;
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   line-height: 1.3;
 }
 
@@ -189,8 +189,8 @@
 }
 
 .cta h2 { max-width: 100%; }
-.cta p { max-width: 78%; margin-top: 2px; color: #53647b; font-size: 7.5px; line-height: 1.2; }
-.cta a { position: relative; z-index: 1; margin-top: 4px; padding: 4px 8px; font-size: 7.5px; font-weight: 700; }
+.cta p { max-width: 78%; margin-top: 2px; color: #53647b; font-size:  calc(var(--content-font-scale) * 7.5px); line-height: 1.2; }
+.cta a { position: relative; z-index: 1; margin-top: 4px; padding: 4px 8px; font-size:  calc(var(--content-font-scale) * 7.5px); font-weight: 700; }
 .ctaRunner { position: absolute; right: 11px; bottom: 8px; color: #081a39; stroke-width: 1.8; }
 
 @media (max-width: 760px) {
@@ -203,20 +203,20 @@
 
 @media (min-width: 761px) and (max-width: 900px) {
   .purposeCard { padding: 11px; }
-  .purposeCard h2 { font-size: 14px; }
-  .intro { font-size: 7.5px; }
+  .purposeCard h2 { font-size:  calc(var(--content-font-scale) * 14px); }
+  .intro { font-size:  calc(var(--content-font-scale) * 7.5px); }
   .benefits { gap: 3px; margin-top: 6px; }
   .benefitIcon { width: 20px; height: 20px; min-width: 20px; }
   .benefitIcon svg { width: 11px; height: 11px; }
-  .benefitCopy strong { font-size: 8.5px; }
-  .benefitCopy > span { font-size: 7.5px; line-height: 1.15; }
+  .benefitCopy strong { font-size:  calc(var(--content-font-scale) * 8.5px); }
+  .benefitCopy > span { font-size:  calc(var(--content-font-scale) * 7.5px); line-height: 1.15; }
   .benefitCard { padding: 11px; }
-  .benefitCard h2 { font-size: 11px; }
+  .benefitCard h2 { font-size:  calc(var(--content-font-scale) * 11px); }
   .benefitList { gap: 2px; margin-top: 5px; }
-  .benefitList li { gap: 4px; font-size: 7px; line-height: 1.2; }
+  .benefitList li { gap: 4px; font-size:  calc(var(--content-font-scale) * 7px); line-height: 1.2; }
   .benefitList svg { width: 9px; height: 9px; }
   .cta { padding: 8px 10px; }
-  .cta h2 { font-size: 10px; }
-  .cta p { max-width: 74%; margin-top: 2px; font-size: 7px; line-height: 1.15; }
-  .cta a { margin-top: 4px; padding: 4px 8px; font-size: 7px; }
+  .cta h2 { font-size:  calc(var(--content-font-scale) * 10px); }
+  .cta p { max-width: 74%; margin-top: 2px; font-size:  calc(var(--content-font-scale) * 7px); line-height: 1.15; }
+  .cta a { margin-top: 4px; padding: 4px 8px; font-size:  calc(var(--content-font-scale) * 7px); }
 }

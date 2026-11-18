@@ -41,6 +41,16 @@
   --fs-2xl: 2.25rem;
   --fs-3xl: 3.25rem;
   --fs-4xl: 4.25rem;
+  --content-font-scale: 1.2;
+  --content-fs-xs: calc(var(--fs-xs) * var(--content-font-scale));
+  --content-fs-sm: calc(var(--fs-sm) * var(--content-font-scale));
+  --content-fs-base: calc(var(--fs-base) * var(--content-font-scale));
+  --content-fs-md: calc(var(--fs-md) * var(--content-font-scale));
+  --content-fs-lg: calc(var(--fs-lg) * var(--content-font-scale));
+  --content-fs-xl: calc(var(--fs-xl) * var(--content-font-scale));
+  --content-fs-2xl: calc(var(--fs-2xl) * var(--content-font-scale));
+  --content-fs-3xl: calc(var(--fs-3xl) * var(--content-font-scale));
+  --content-fs-4xl: calc(var(--fs-4xl) * var(--content-font-scale));
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
@@ -70,7 +80,20 @@ input, select, textarea { font-family: inherit; font-size: var(--fs-sm); }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
 .appShell { margin: 0; }
-.appShell > main { margin-inline: 10%; background: var(--color-bg); }
+.appShell > main {
+  --fs-xs: var(--content-fs-xs);
+  --fs-sm: var(--content-fs-sm);
+  --fs-base: var(--content-fs-base);
+  --fs-md: var(--content-fs-md);
+  --fs-lg: var(--content-fs-lg);
+  --fs-xl: var(--content-fs-xl);
+  --fs-2xl: var(--content-fs-2xl);
+  --fs-3xl: var(--content-fs-3xl);
+  --fs-4xl: var(--content-fs-4xl);
+  margin-inline: 10%;
+  background: var(--color-bg);
+  font-size: var(--fs-base);
+}
 .container { width: 100%; max-width: none; margin: 0 auto; padding: 0; }
 .section { padding: var(--section-space) 0; }
 .section--white { background: var(--color-white); }

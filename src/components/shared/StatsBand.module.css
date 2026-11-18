@@ -65,7 +65,7 @@
   margin: 3px 0 1px;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 21px;
+  font-size:  calc(var(--content-font-scale) * 21px);
   font-weight: 700;
   line-height: 25px;
 }
@@ -73,7 +73,7 @@
 .item span {
   color: #fff;
   font-family: var(--font-main);
-  font-size: 8px;
+  font-size:  calc(var(--content-font-scale) * 8px);
   font-weight: 400;
   line-height: 11px;
   text-transform: none;
